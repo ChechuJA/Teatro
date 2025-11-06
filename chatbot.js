@@ -258,6 +258,10 @@ function initContactForm() {
     const contactForm = document.getElementById('contactForm');
     const formMessage = document.getElementById('formMessage');
     
+    // Constants for form submission timing
+    const FORM_SUBMISSION_DELAY_MS = 1000;
+    const MESSAGE_HIDE_DELAY_MS = 5000;
+    
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -269,21 +273,21 @@ function initContactForm() {
             const interest = document.getElementById('interest').value;
             const message = document.getElementById('message').value;
             
-            // Simulate form submission (in real app, this would send to a server)
+            // Display sending message
             formMessage.className = 'form-message';
             formMessage.textContent = 'Enviando mensaje...';
             formMessage.classList.add('success');
             
-            // Simulate server delay
+            // Simulate server delay for form submission
             setTimeout(() => {
                 formMessage.textContent = '¡Gracias por tu interés, ' + name + '! Te contactaremos pronto por email.';
                 contactForm.reset();
                 
-                // Hide message after 5 seconds
+                // Hide success message after delay
                 setTimeout(() => {
                     formMessage.style.display = 'none';
-                }, 5000);
-            }, 1000);
+                }, MESSAGE_HIDE_DELAY_MS);
+            }, FORM_SUBMISSION_DELAY_MS);
         });
     }
 }
