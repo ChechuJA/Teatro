@@ -250,4 +250,40 @@ class TheaterChatbot {
 // Initialize chatbot when page loads
 document.addEventListener('DOMContentLoaded', () => {
     new TheaterChatbot();
+    initContactForm();
 });
+
+// Contact form functionality
+function initContactForm() {
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('formMessage');
+    
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const interest = document.getElementById('interest').value;
+            const message = document.getElementById('message').value;
+            
+            // Simulate form submission (in real app, this would send to a server)
+            formMessage.className = 'form-message';
+            formMessage.textContent = 'Enviando mensaje...';
+            formMessage.classList.add('success');
+            
+            // Simulate server delay
+            setTimeout(() => {
+                formMessage.textContent = '¡Gracias por tu interés, ' + name + '! Te contactaremos pronto por email.';
+                contactForm.reset();
+                
+                // Hide message after 5 seconds
+                setTimeout(() => {
+                    formMessage.style.display = 'none';
+                }, 5000);
+            }, 1000);
+        });
+    }
+}
