@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teatro de Padres - Colegio Infantil</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🎭 Teatro de Padres</h1>
+            <p class="subtitle">Actuaciones para Educación Infantil</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="intro">
+            <h2>Bienvenidos</h2>
+            <p>Somos un grupo de padres que preparamos obras de teatro para los niños de Educación Infantil. 
+            Cada trimestre organizamos una nueva actuación para alegrar el día a los más pequeños.</p>
+        </section>
+
+        <section class="performances">
+            <h2>Programación del Curso</h2>
+            
+            <div class="performance-card">
+                <div class="trimester-badge">Primer Trimestre</div>
+                <h3>El Bosque Mágico</h3>
+                <div class="details">
+                    <p><strong>📅 Fecha:</strong> 15 de Diciembre, 2023</p>
+                    <p><strong>⏰ Hora:</strong> 10:00h</p>
+                    <p><strong>👥 Participantes:</strong> 12 padres</p>
+                    <p><strong>📍 Lugar:</strong> Salón de Actos del Colegio</p>
+                </div>
+                <p class="description">Una aventura mágica donde los animales del bosque aprenden sobre la amistad y el trabajo en equipo.</p>
+            </div>
+
+            <div class="performance-card">
+                <div class="trimester-badge">Segundo Trimestre</div>
+                <h3>Piratas en Busca del Tesoro</h3>
+                <div class="details">
+                    <p><strong>📅 Fecha:</strong> 20 de Marzo, 2024</p>
+                    <p><strong>⏰ Hora:</strong> 10:00h</p>
+                    <p><strong>👥 Participantes:</strong> 10 padres</p>
+                    <p><strong>📍 Lugar:</strong> Salón de Actos del Colegio</p>
+                </div>
+                <p class="description">Los pequeños piratas emprenden una emocionante búsqueda del tesoro aprendiendo sobre valores y compañerismo.</p>
+            </div>
+
+            <div class="performance-card upcoming">
+                <div class="trimester-badge">Tercer Trimestre</div>
+                <h3>El Viaje a las Estrellas</h3>
+                <div class="details">
+                    <p><strong>📅 Fecha:</strong> 15 de Junio, 2024</p>
+                    <p><strong>⏰ Hora:</strong> 10:00h</p>
+                    <p><strong>👥 Participantes:</strong> 11 padres</p>
+                    <p><strong>📍 Lugar:</strong> Salón de Actos del Colegio</p>
+                </div>
+                <p class="description">Una aventura espacial que enseña a los niños sobre el universo, los planetas y la importancia de soñar.</p>
+            </div>
+        </section>
+
+        <section class="chatbot-section">
+            <h2>🤖 Asistente Virtual</h2>
+            <p>¿Tienes alguna pregunta sobre las actuaciones? ¡Pregúntame!</p>
+            
+            <div class="chat-container">
+                <div id="chatMessages" class="chat-messages">
+                    <div class="message bot-message">
+                        <p>¡Hola! Soy tu asistente virtual. Puedo ayudarte con información sobre nuestras obras de teatro. 
+                        Pregúntame cosas como:</p>
+                        <ul>
+                            <li>"¿Cuándo es el teatro del primer trimestre?"</li>
+                            <li>"¿Cuántos participantes hay?"</li>
+                            <li>"¿Cuál es el título de la obra del segundo trimestre?"</li>
+                            <li>"¿Dónde se realiza?"</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chat-input-container">
+                    <input type="text" id="chatInput" placeholder="Escribe tu pregunta aquí..." />
+                    <button id="sendButton">Enviar</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="join">
+            <h2>¿Quieres Participar?</h2>
+            <p>Si eres padre o madre y te gustaría unirte a nuestro grupo de teatro, ¡serás bienvenido! 
+            No necesitas experiencia previa, solo ganas de divertirte y hacer felices a los niños.</p>
+            <p><strong>Contacto:</strong> teatro.padres@colegio.es</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023-2024 Teatro de Padres - Todos los derechos reservados</p>
+        </div>
+    </footer>
+
+    <script src="chatbot.js"></script>
+</body>
+</html>
