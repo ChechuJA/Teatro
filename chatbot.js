@@ -41,6 +41,13 @@ class TheaterChatbot {
         this.initEventListeners();
     }
 
+    // Escape HTML to prevent XSS attacks
+    escapeHtml(text) {
+        const div = document.createElement('div');
+        div.textContent = text;
+        return div.innerHTML;
+    }
+
     initEventListeners() {
         this.sendButton.addEventListener('click', () => this.handleSend());
         this.chatInput.addEventListener('keypress', (e) => {
@@ -72,7 +79,15 @@ class TheaterChatbot {
         messageDiv.className = `message ${sender === 'user' ? 'user-message' : 'bot-message'}`;
         
         if (typeof text === 'string') {
-            messageDiv.innerHTML = `<p>${text}</p>`;
+            // Escape HTML for user messages to prevent XSS
+            if (sender === 'user') {
+                const p = document.createElement('p');
+                p.textContent = text;
+                messageDiv.appendChild(p);
+            } else {
+                // Bot messages can contain safe HTML
+                messageDiv.innerHTML = `<p>${text}</p>`;
+            }
         } else {
             messageDiv.appendChild(text);
         }
