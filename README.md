@@ -1,12 +1,20 @@
-# Teatro de Padres - Colegio Infantil
+# Nova-tro-s - Teatro de Padres
 
-🎭 Website for parent theater performances at an elementary school
+🎭 **Hacemos lo que podemos**
+
+Website for Nova-tro-s, a parent theater group performing for children in elementary education.
+
+## About Nova-tro-s
+
+**Nova-tro-s** is a theater company formed by parents who are "novatos" (beginners) in theater. The name combines "novatos" and "teatro" to represent our spirit: we may not be professionals, but we do what we can with heart and dedication to bring joy to children.
 
 ## Description
 
-This is a website for parents who organize theater performances for children in elementary education. The site includes:
+This website organizes all our theater performances by school year and trimester. The site includes:
 
-- **Three trimester performances**: Information about each theater show throughout the school year
+- **School Courses Section**: Organized by academic year (e.g., 2025-2026)
+- **Three Trimesters per Course**: Each year has three trimesters with their own performances
+- **Materials Storage**: Each trimester folder stores images, scripts (Word/PDF), and related materials
 - **Interactive chatbot**: An AI assistant that can answer questions about the performances
 - **Responsive design**: Works great on desktop and mobile devices
 
@@ -21,11 +29,31 @@ The chatbot can answer questions like:
 - "¿Dónde se realiza?" (Where is it held?)
 - "¿A qué hora es?" (What time is it?)
 
-### Performances Schedule
+## Folder Structure
 
-1. **First Trimester**: El Bosque Mágico (The Magic Forest)
-2. **Second Trimester**: Piratas en Busca del Tesoro (Pirates in Search of Treasure)
-3. **Third Trimester**: El Viaje a las Estrellas (Journey to the Stars)
+The repository is organized by school years and trimesters:
+
+```
+2025-2026/
+├── README.md
+├── Trimestre1/
+│   └── README.md
+├── Trimestre2/
+│   └── README.md
+└── Trimestre3/
+    └── README.md
+```
+
+Each trimester folder will contain:
+- 📸 Images from the performances
+- 📄 Scripts and documents (Word/PDF)
+- 🎭 Additional theater materials
+
+### Current Course: 2025-2026
+
+- **Trimester 1** (Sep-Dec): Coming soon...
+- **Trimester 2** (Jan-Mar): Coming soon...
+- **Trimester 3** (Apr-Jun): Coming soon...
 
 ## GitHub Pages Deployment
 
@@ -61,5 +89,7 @@ To test the website locally:
 For questions about participating in the theater group, contact: teatro.padres@colegio.es
 
 ---
+
+**Nova-tro-s** - *Hacemos lo que podemos* 🎭
 
 Made with ❤️ by parents for children
