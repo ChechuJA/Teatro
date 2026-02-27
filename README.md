@@ -1,12 +1,12 @@
-# Nova-tro-s - Teatro de Padres
+# Nova-tro-s - Teatro de Familias
 
 🎭 **Hacemos lo que podemos**
 
-Website for Nova-tro-s, a parent theater group performing for children in elementary education.
+Website for Nova-tro-s, a family theater group performing for children in elementary education.
 
 ## About Nova-tro-s
 
-**Nova-tro-s** is a theater company formed by parents who are "novatos" (beginners) in theater. The name combines "novatos" and "teatro" to represent our spirit: we may not be professionals, but we do what we can with heart and dedication to bring joy to children.
+**Nova-tro-s** is a theater company formed by families who are "novatos" (beginners) in theater. The name combines "novatos" and "teatro" to represent our spirit: we may not be professionals, but we do what we can with heart and dedication to bring joy to children.
 
 ## Description
 
@@ -86,10 +86,10 @@ To test the website locally:
 
 ## Contact
 
-For questions about participating in the theater group, contact: teatro.padres@colegio.es
+For questions about participating in the theater group, contact: teatro.familias@colegio.es
 
 ---
 
 **Nova-tro-s** - *Hacemos lo que podemos* 🎭
 
-Made with ❤️ by parents for children
+Made with ❤️ by families for children
