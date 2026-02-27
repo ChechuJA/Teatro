@@ -26,7 +26,7 @@ const theaterData = {
             time: "10:00h",
             participants: 11,
             location: "Salón de Actos del Colegio",
-            description: "Una aventura espacial que enseña a los niños sobre el universo, los planetas y la importancia de soñar."
+            description: "Una aventura espacial que enseña a los peques sobre el universo, los planetas y la importancia de soñar."
         }
     ]
 };
@@ -115,7 +115,7 @@ class TheaterChatbot {
         }
 
         // Check for participant queries
-        if (this.matchesPattern(lowerMessage, ['cuántos', 'cuantos', 'participantes', 'padres', 'personas'])) {
+        if (this.matchesPattern(lowerMessage, ['cuántos', 'cuantos', 'participantes', 'familias', 'personas'])) {
             return this.getParticipantInfo(lowerMessage);
         }
 
@@ -181,16 +181,16 @@ class TheaterChatbot {
         
         if (trimesterIndex !== null) {
             const perf = theaterData.performances[trimesterIndex];
-            return `En la obra "${perf.title}" del ${perf.trimester} participan <strong>${perf.participants} padres</strong>.`;
+            return `En la obra "${perf.title}" del ${perf.trimester} participan <strong>${perf.participants} familias</strong>.`;
         }
         
         // Calculate total
         const total = theaterData.performances.reduce((sum, perf) => sum + perf.participants, 0);
-        let response = `En total, participan padres en las tres obras del año:<br><br>`;
+        let response = `En total, participan familias en las tres obras del año:<br><br>`;
         theaterData.performances.forEach(perf => {
-            response += `👥 <strong>${perf.title}</strong>: ${perf.participants} padres<br>`;
+            response += `👥 <strong>${perf.title}</strong>: ${perf.participants} familias<br>`;
         });
-        response += `<br>Entre todas las obras hay ${total} participaciones de padres (algunos repiten).`;
+        response += `<br>Entre todas las obras hay ${total} participaciones de familias (algunas repiten).`;
         return response;
     }
 
@@ -231,7 +231,7 @@ class TheaterChatbot {
         return `<strong>${perf.title}</strong> (${perf.trimester}):<br><br>` +
                `📅 Fecha: ${perf.date}<br>` +
                `⏰ Hora: ${perf.time}<br>` +
-               `👥 Participantes: ${perf.participants} padres<br>` +
+               `👥 Participantes: ${perf.participants} familias<br>` +
                `📍 Lugar: ${perf.location}<br><br>` +
                `${perf.description}`;
     }
@@ -241,7 +241,7 @@ class TheaterChatbot {
         theaterData.performances.forEach((perf, index) => {
             response += `<strong>${index + 1}. ${perf.title}</strong><br>`;
             response += `Fecha: ${perf.date} a las ${perf.time}<br>`;
-            response += `Participantes: ${perf.participants} padres<br><br>`;
+            response += `Participantes: ${perf.participants} familias<br><br>`;
         });
         return response;
     }
