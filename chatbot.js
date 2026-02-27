@@ -186,7 +186,7 @@ class TheaterChatbot {
         
         // Calculate total
         const total = theaterData.performances.reduce((sum, perf) => sum + perf.participants, 0);
-        let response = `En total, participan familias en las tres obras del año:<br><br>`;
+        let response = `Las familias que participan en las tres obras del año son:<br><br>`;
         theaterData.performances.forEach(perf => {
             response += `👥 <strong>${perf.title}</strong>: ${perf.participants} familias<br>`;
         });
