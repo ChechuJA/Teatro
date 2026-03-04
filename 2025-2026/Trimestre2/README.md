@@ -1,14 +1,104 @@
-# Segundo Trimestre 2025-2026
+# 🌍 Los Guardianes del Planeta
 
-Este directorio contiene los materiales del teatro del segundo trimestre del curso 2025-2026.
+## Segundo Trimestre 2025-2026
 
-## Contenido
+### 📖 Sobre la Obra
 
-Aquí se almacenarán:
-- 📸 Imágenes de la actuación
-- 📄 Guion de la obra (Word/PDF)
-- 🎭 Material adicional
+**Los Guardianes del Planeta** es una obra de teatro infantil educativa que enseña a los más pequeños sobre el cuidado del medio ambiente de una forma divertida, colorida y participativa.
+
+- **Duración:** 20 minutos
+- **Formato:** 3 actos
+- **Temática:** Educación ambiental
+- **Estilo:** Didáctico, ágil y participativo
+- **Personajes:** 21 roles
 
 ---
 
-**Nova-tro-s** - *Hacemos lo que podemos*
+## 🎭 Reparto - 21 Personajes
+
+| # | Participante | Personaje |
+|---|--------|-----------|
+| 1 | Soraya | Abeja 1 |
+| 2 | Steph | Apicultor |
+| 3 | Ester | Cocodrilo 1 |
+| 4 | Vero | Madre Tierra (Narradora) |
+| 5 | Virgi | Guacamayo 1 |
+| 6 | Manuela | Abeja Reina |
+| 7 | Esme | Guacamayo 2 |
+| 8 | Chechu | Pingüino 1 |
+| 9 | Espe | Abeja 2 |
+| 10 | Rubén | Niño Protagonista |
+| 11 | Cristina | Lobo 1 |
+| 12 | Hanae | Árbol 1 |
+| 13 | Soraya | Abeja 3 |
+| 14 | Rogelio | *Por asignar* |
+| 15 | Chary | Lince 1 |
+| 16 | Estefanía | Lince 2 |
+| 17 | Isa | Árbol 2 |
+| 18 | Marta | Pingüino 2 |
+| 19 | Ana | Pingüino 3 |
+| 20 | Aitana | Pez 1 |
+| 21 | Sadaf | Pez 2 |
+
+---
+
+## 🎬 Estructura de la Obra
+
+### **ACTO 1 - Algo No Va Bien**
+Los diferentes ecosistemas (bosque, agua, hielo y flores) expresan sus problemas ambientales.
+
+**Zonas:**
+- 🌲 **Zona Bosque:** Árboles, lobos, linces y guacamayos
+- 🌊 **Zona Agua:** Peces y cocodrilos
+- ❄️🌼 **Hielo y Flores:** Oso polar, pingüinos y abejas
+
+### **ACTO 2 - La Gran Reunión**
+Todos los animales se reúnen buscando una solución. Descubren que el héroe es el Niño, quien con pequeñas acciones puede hacer grandes cambios. El Apicultor también se une a la causa.
+
+### **ACTO 3 - El Cambio**
+Los personajes muestran cómo las pequeñas acciones del Niño y el Apicultor generan grandes cambios positivos en el planeta. Todos celebran y llaman al público a ser Guardianes del Planeta.
+
+---
+
+## 🎵 Coreografías
+
+Cada zona tiene su propia coreografía:
+
+- **Bosque:** "Juguemos en el Bosque" de Luli Pampín
+- **Agua:** Coreografía acuática (Bajo del Mar - La Sirenita)
+- **Hielo y Flores:** Coreografía alegre
+- **Acto 2:** Coreografía de celebración
+- **Final:** Coreografía final con todos los personajes
+
+---
+
+## 📥 Descargas
+
+- 📄 **[Guion Completo (teatro.md)](teatro.md)** - Archivo markdown con el texto completo
+- 📄 **Guion PDF** - *Próximamente*
+- 🎵 **Música de las coreografías** - *Próximamente*
+- 📸 **Imágenes de la actuación** - *Próximamente*
+
+---
+
+## 🎯 Mensaje Educativo
+
+La obra enseña:
+- La importancia de cuidar el medio ambiente
+- Que pequeñas acciones tienen grandes efectos
+- El valor del trabajo en equipo
+- Respeto por la naturaleza y los animales
+- Que todos podemos ser "Guardianes del Planeta"
+
+---
+
+## 📅 Información de la Actuación
+
+- **Fecha:** *Por confirmar*
+- **Hora:** *Por confirmar*
+- **Lugar:** Salón de Actos del Colegio
+- **Participantes:** 21 familias (adultos)
+
+---
+
+**Nova-tro-s** - *Hacemos lo que podemos* 🎭💚

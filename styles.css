@@ -187,6 +187,11 @@ h2 {
     color: #2e7d32;
 }
 
+.status.current {
+    background: #e3f2fd;
+    color: #1976d2;
+}
+
 .trimester-info {
     color: #666;
     margin-bottom: 1rem;
@@ -225,6 +230,70 @@ h2 {
     left: 0.5rem;
     color: #667eea;
     font-weight: bold;
+}
+
+.trimester-materials a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.trimester-materials a:hover {
+    text-decoration: underline;
+    color: #764ba2;
+}
+
+/* Play specific styles */
+.play-title {
+    font-size: 1.3rem;
+    color: #667eea;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.play-details {
+    background: #f0f4ff;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    border-left: 4px solid #667eea;
+}
+
+.play-details p {
+    color: #555;
+    margin: 0.3rem 0;
+    font-size: 0.95rem;
+}
+
+.play-zones {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    border: 2px dashed #667eea;
+}
+
+.play-zones p {
+    color: #333;
+    font-weight: 600;
+    margin-bottom: 0.7rem;
+}
+
+.zones-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.zone-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: 600;
 }
 
 .course-note {
