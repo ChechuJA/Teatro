@@ -4,13 +4,14 @@
 
 ### 📖 Sobre la Obra
 
-**Los Guardianes del Planeta** es una obra de teatro infantil educativa que enseña a los más pequeños sobre el cuidado del medio ambiente de una forma divertida, colorida y participativa.
+**Los Guardianes del Planeta** es una obra de teatro educativa representada por **padres y madres (familias)** para enseñar a los más pequeños sobre el cuidado del medio ambiente de una forma divertida, colorida y participativa.
 
 - **Duración:** 20 minutos
 - **Formato:** 3 actos
 - **Temática:** Educación ambiental
 - **Estilo:** Didáctico, ágil y participativo
-- **Personajes:** 21 roles
+- **Actores:** 21 adultos (padres y madres)
+- **Público:** Niños de Educación Infantil
 
 ---
 
