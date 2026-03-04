@@ -94,7 +94,7 @@ La obra enseña:
 
 ## 📅 Información de la Actuación
 
-- **Fecha:** *Por confirmar*
+- **Fecha:** 25 de marzo de 2026
 - **Hora:** *Por confirmar*
 - **Lugar:** Salón de Actos del Colegio
 - **Participantes:** 21 familias (adultos)
