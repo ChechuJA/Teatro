@@ -1,37 +1,37 @@
-# Nova-tro-s - Teatro de Familias
+# 🎭 Nova-tro-s - Teatro de Familias
 
-🎭 **Hacemos lo que podemos**
+> **"Hacemos lo que podemos"**
 
-Website for Nova-tro-s, a family theater group performing for children in elementary education.
+Sitio web de **Nova-tro-s**, un grupo de teatro formado por familias que realizan actuaciones educativas para niños de Educación Infantil.
 
-## About Nova-tro-s
+## 📖 Sobre Nova-tro-s
 
-**Nova-tro-s** is a theater company formed by families who are "novatos" (beginners) in theater. The name combines "novatos" and "teatro" to represent our spirit: we may not be professionals, but we do what we can with heart and dedication to bring joy to children.
+**Nova-tro-s** es un proyecto teatral familiar donde padres y madres "novatos" en teatro crean obras educativas y divertidas para los más pequeños. El nombre combina "novatos" y "teatro" representando nuestro espíritu: no somos profesionales, pero ponemos todo nuestro corazón en cada actuación.
 
-## Description
+## ✨ Descripción
 
-This website organizes all our theater performances by school year and trimester. The site includes:
+Este sitio web organiza todas nuestras actuaciones por curso escolar y trimestre. Incluye:
 
-- **School Courses Section**: Organized by academic year (e.g., 2025-2026)
-- **Three Trimesters per Course**: Each year has three trimesters with their own performances
-- **Materials Storage**: Each trimester folder stores images, scripts (Word/PDF), and related materials
-- **Interactive chatbot**: An AI assistant that can answer questions about the performances
-- **Responsive design**: Works great on desktop and mobile devices
+- **📅 Cursos Escolares**: Organizados por año académico (ej: 2025-2026)
+- **🎬 Tres Trimestres por Curso**: Cada año tiene tres actuaciones trimestrales
+- **📁 Materiales**: Cada trimestre incluye guiones con emojis, PDFs, imágenes y recursos
+- **🤖 Chatbot interactivo**: Asistente virtual que responde preguntas sobre las obras
+- **📱 Diseño responsive**: Funciona perfectamente en móvil y escritorio
 
-## Features
+## 🎯 Características
 
-### Chatbot Queries
+### Chatbot de Consultas
 
-The chatbot can answer questions like:
-- "¿Cuándo es el teatro del primer trimestre?" (When is the first trimester theater?)
-- "¿Cuántos participantes hay?" (How many participants are there?)
-- "¿Cuál es el título de la obra?" (What is the title of the play?)
-- "¿Dónde se realiza?" (Where is it held?)
-- "¿A qué hora es?" (What time is it?)
+El chatbot puede responder preguntas como:
+- "¿Cuándo es el teatro del primer trimestre?"
+- "¿Cuántos participantes hay?"
+- "¿Cuál es el título de la obra del segundo trimestre?"
+- "¿Dónde se realiza?"
+- "¿A qué hora es?"
 
-## Folder Structure
+## 🗂️ Estructura de Carpetas
 
-The repository is organized by school years and trimesters:
+El repositorio está organizado por cursos escolares y trimestres:
 
 ```
 2025-2026/
@@ -39,57 +39,72 @@ The repository is organized by school years and trimesters:
 ├── Trimestre1/
 │   └── README.md
 ├── Trimestre2/
-│   └── README.md
+│   ├── index.html          # Página web de la obra
+│   ├── README.md           # Información y reparto
+│   ├── teatro.md           # Guion con emojis 🐧🐝🌳
+│   ├── teatro.pdf          # PDF para imprimir
+│   └── [imágenes]          # Fotos y recursos
 └── Trimestre3/
     └── README.md
 ```
 
-Each trimester folder will contain:
-- 📸 Images from the performances
-- 📄 Scripts and documents (Word/PDF)
-- 🎭 Additional theater materials
+Cada carpeta de trimestre contiene:
+- 📖 **Versión web** (index.html) - Visualización interactiva con emojis
+- 📋 **README.md** - Información completa, reparto y materiales
+- 📄 **teatro.md** - Guion en Markdown con emojis por personaje
+- 📄 **teatro.pdf** - Versión para imprimir (preferente)
+- 📸 **Imágenes** - Fotos de actuaciones y ensayos
+- 🎵 **Enlaces** - Música y coreografías
 
-### Current Course: 2025-2026
+### Curso Actual: 2025-2026
 
-- **Trimester 1** (Sep-Dec): Coming soon...
-- **Trimester 2** (Jan-Mar): Coming soon...
-- **Trimester 3** (Apr-Jun): Coming soon...
+- **Trimestre 1** (Sep-Dic): Próximamente...
+- **Trimestre 2** (Ene-Mar): **🌍 Los Guardianes del Planeta** ✅
+- **Trimestre 3** (Abr-Jun): Próximamente...
 
-## GitHub Pages Deployment
+## 🚀 Despliegue en GitHub Pages
 
-This site is configured to be deployed on GitHub Pages. To enable it:
+Este sitio está configurado para GitHub Pages:
 
-1. Go to your repository settings
-2. Navigate to "Pages" in the left sidebar
-3. Under "Source", select the branch you want to deploy (e.g., `main` or `copilot/create-web-for-parent-theater`)
-4. Click Save
+1. Ve a la configuración del repositorio
+2. Navega a "Pages" en la barra lateral
+3. En "Source", selecciona la rama `main`
+4. Haz clic en Save
 
-Your site will be available at: `https://[username].github.io/Teatro/`
+El sitio estará disponible en: `https://[usuario].github.io/Teatro/`
 
-## Local Development
+## 💻 Desarrollo Local
 
-To test the website locally:
+Para probar el sitio localmente:
 
-1. Clone the repository
-2. Open `index.html` in a web browser
-3. Or use a local server:
+1. Clona el repositorio
+2. Abre `index.html` en un navegador
+3. O usa un servidor local:
    ```bash
    python -m http.server 8000
    ```
-   Then open `http://localhost:8000` in your browser
+   Luego abre `http://localhost:8000`
 
-## Files
+## 📁 Archivos Principales
 
-- `index.html` - Main HTML structure
-- `styles.css` - Styling and responsive design
-- `chatbot.js` - Chatbot logic and theater data
+- `index.html` - Página principal
+- `styles.css` - Estilos y diseño responsive
+- `chatbot.js` - Lógica del chatbot y datos de obras
+- `.github/copilot-instructions.md` - Instrucciones para Copilot
 
-## Contact
+## 🎭 Filosofía
 
-For questions about participating in the theater group, contact: teatro.familias@colegio.es
+> "Hacemos lo que podemos"
+
+Este proyecto valora:
+- ❤️ La participación familiar
+- 🌟 El esfuerzo sobre la perfección
+- 📚 La educación en valores
+- 😊 La diversión y los recuerdos
+- 🤝 El trabajo en equipo
 
 ---
 
 **Nova-tro-s** - *Hacemos lo que podemos* 🎭
 
-Made with ❤️ by families for children
+Hecho con ❤️ por familias para niños
