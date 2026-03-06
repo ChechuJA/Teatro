@@ -76,7 +76,7 @@ Cada zona tiene su propia coreografía:
 ## 📥 Descargas
 
 - 📄 **[Guion Completo (teatro.md)](teatro.md)** - Archivo markdown con el texto completo
-- 📄 **Guion PDF** - *Próximamente*
+- 📄 **[Guion PDF](teatro.pdf)** - Versión en PDF lista para imprimir
 - 🎵 **Música de las coreografías** - *Próximamente*
 - 📸 **Imágenes de la actuación** - *Próximamente*
 
