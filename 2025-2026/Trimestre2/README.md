@@ -19,7 +19,7 @@
 
 | # | Participante | Personaje |
 |---|--------|-----------|
-| 1 | Soraya | Abeja 1 |
+| 1 | Espe | Abeja 1 |
 | 2 | Steph | Apicultor |
 | 3 | Ester | Cocodrilo 1 |
 | 4 | Vero | Madre Tierra (Narradora) |
@@ -27,17 +27,17 @@
 | 6 | Manuela | Abeja Reina |
 | 7 | Esme | Guacamayo 2 |
 | 8 | Chechu | Pingüino 1 |
-| 9 | Espe | Abeja 2 |
+| 9 | Soraya | Abeja 2 |
 | 10 | Rubén | Niño Protagonista |
 | 11 | Cristina | Lobo 1 |
 | 12 | Hanae | Árbol 1 |
-| 13 | Soraya | Abeja 3 |
-| 14 | Rogelio | *Por asignar* |
-| 15 | Chary | Lince 1 |
-| 16 | Estefanía | Lince 2 |
-| 17 | Isa | Árbol 2 |
-| 18 | Marta | Pingüino 2 |
-| 19 | Ana | Pingüino 3 |
+| 13 | Helena | Oso Polar 1 |
+| 14 | Ana | Oso Polar 2 |
+| 15 | Rogelio | *Por asignar* |
+| 16 | Chary | Lince 1 |
+| 17 | Estefanía | Lince 2 |
+| 18 | Isa | Árbol 2 |
+| 19 | Marta | Pingüino 2 |
 | 20 | Aitana | Pez 1 |
 | 21 | Sadaf | Pez 2 |
 
