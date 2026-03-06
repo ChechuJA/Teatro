@@ -73,10 +73,11 @@ Cada zona tiene su propia coreografía:
 
 ---
 
-## 📥 Descargas
+## 📥 Materiales Disponibles
 
-- 📄 **[Guion Completo (teatro.md)](teatro.md)** - Archivo markdown con el texto completo
-- 📄 **[Guion PDF](teatro.pdf)** - Versión en PDF lista para imprimir
+- 📄 **[Guion PDF](teatro.pdf)** - **Versión lista para imprimir** (recomendado)
+- 🌐 **[Ver en Web](index.html)** - Versión HTML con emojis para leer online
+- 📝 **[Guion Markdown (teatro.md)](teatro.md)** - Para editar o personalizar
 - 🎵 **Música de las coreografías** - *Próximamente*
 - 📸 **Imágenes de la actuación** - *Próximamente*
 
