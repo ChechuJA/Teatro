@@ -147,6 +147,25 @@
         .choreo strong { color: #e65100; }
         .choreo a { color: #e65100; }
 
+        /* ---- Reproductor de audio inline ---- */
+        .audio-player {
+            margin-top: 0.75rem;
+        }
+        .audio-player audio {
+            width: 100%;
+            height: 40px;
+            border-radius: 25px;
+            accent-color: #e65100;
+            display: block;
+        }
+        .audio-file-hint {
+            font-size: 0.75rem;
+            color: #b35900;
+            font-style: normal;
+            margin-top: 0.25rem;
+            display: block;
+        }
+
         /* ---- Botón PDF ---- */
         .pdf-bar {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -202,7 +221,10 @@
             <!-- Botón PDF -->
             <div class="pdf-bar">
                 <p>📄 ¿Prefieres leerlo en papel? Descarga el PDF listo para imprimir.</p>
-                <a href="teatro.pdf" download class="pdf-btn">📥 Descargar PDF</a>
+                <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
+                    <a href="teatro.pdf" download class="pdf-btn">📥 Descargar PDF</a>
+                    <a href="musica/canciones-guardianes-planeta.zip" download class="pdf-btn" style="background:#fff3e0;color:#e65100;">🎵 Descargar canciones (ZIP)</a>
+                </div>
             </div>
 
             <!-- Navegación rápida -->
@@ -214,6 +236,17 @@
                 <a href="#acto2">🎭 Acto 2</a>
                 <a href="#final">🏆 Final</a>
             </nav>
+
+            <!-- Música de fondo -->
+            <div class="choreo" style="background: linear-gradient(135deg, #e8eaff 0%, #d0d5f8 100%); border-left-color: #667eea;">
+                <strong style="color:#4a5ac7;">🎶 Música de fondo</strong> – Suena durante toda la obra.
+                <div class="audio-player">
+                    <audio controls preload="none" loop data-fondo>
+                        <source src="musica/00-fondo.mpeg" type="audio/mpeg">
+                    </audio>
+                    <span class="audio-file-hint" style="color:#4a5ac7;">📁 Archivo: musica/00-fondo.mpeg</span>
+                </div>
+            </div>
 
             <!-- ===================== ACTO 1 ===================== -->
             <div class="act-block" id="acto1">
@@ -322,6 +355,12 @@ Pero también… esperanza.</p>
                         <strong>🎵 Coreografía:</strong> Lobos, linces, guacamayos y árboles bailan
                         <em>«Juguemos en el Bosque»</em> de Luli Pampín.
                         <br><a href="https://www.youtube.com/watch?v=BKew9kctfAY" target="_blank">▶️ Ver en YouTube</a>
+                        <div class="audio-player">
+                            <audio controls preload="none">
+                                <source src="musica/01-bosque.mpeg" type="audio/mpeg">
+                            </audio>
+                            <span class="audio-file-hint">📁 Archivo: musica/01-bosque.mpeg</span>
+                        </div>
                     </div>
                 </div>
 
@@ -385,6 +424,12 @@ Necesitaba ayuda urgente.</p>
                     <div class="choreo">
                         <strong>🎵 Coreografía:</strong> Peces y cocodrilos bailan
                         <em>«Bajo del Mar»</em> – La Sirenita.
+                        <div class="audio-player">
+                            <audio controls preload="none">
+                                <source src="musica/02-agua.mpeg" type="audio/mpeg">
+                            </audio>
+                            <span class="audio-file-hint">📁 Archivo: musica/02-agua.mpeg</span>
+                        </div>
                     </div>
                 </div>
 
@@ -436,6 +481,12 @@ Antes era fuerte y sólido.</p>
                     <div class="choreo">
                         <strong>🎵 Coreografía:</strong> Los personajes del hielo bailan
                         <em>«Nanut el Esquimal»</em>.
+                        <div class="audio-player">
+                            <audio controls preload="none">
+                                <source src="musica/03-hielo.mpeg" type="audio/mpeg">
+                            </audio>
+                            <span class="audio-file-hint">📁 Archivo: musica/03-hielo.mpeg</span>
+                        </div>
                     </div>
 
                     <div class="dialogue">
@@ -482,6 +533,12 @@ Y todos estaban asustados.</p>
                     <div class="choreo">
                         <strong>🎵 Coreografía:</strong> Osos polares, pingüinos y abejas bailan
                         <em>«Abeja Maya»</em>.
+                        <div class="audio-player">
+                            <audio controls preload="none">
+                                <source src="musica/04-abejas.mpeg" type="audio/mpeg">
+                            </audio>
+                            <span class="audio-file-hint">📁 Archivo: musica/04-abejas.mpeg</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -690,13 +747,22 @@ Y el planeta sonríe.</p>
                 <div class="choreo">
                     <strong>🎵 Coreografía final:</strong> Todos bailan juntos.
                     <em>«Pequeño planeta, vuelve a sonreír»</em>.
+                    <div class="audio-player">
+                        <audio controls preload="none">
+                            <source src="musica/05-final.mpeg" type="audio/mpeg">
+                        </audio>
+                            <span class="audio-file-hint">📁 Archivo: musica/05-final.mpeg</span>
+                    </div>
                 </div>
             </div>
 
             <!-- Botón PDF al final -->
             <div class="pdf-bar" style="margin-top:2rem;">
                 <p>📄 ¿Quieres llevarte el guion? Descarga el PDF listo para imprimir.</p>
-                <a href="teatro.pdf" download class="pdf-btn">📥 Descargar PDF</a>
+                <div style="display:flex;gap:0.6rem;flex-wrap:wrap;">
+                    <a href="teatro.pdf" download class="pdf-btn">📥 Descargar PDF</a>
+                    <a href="musica/canciones-guardianes-planeta.zip" download class="pdf-btn" style="background:#fff3e0;color:#e65100;">🎵 Descargar canciones (ZIP)</a>
+                </div>
             </div>
 
             <a href="../../index.html" class="back-link">← Volver al inicio</a>
@@ -709,5 +775,19 @@ Y el planeta sonríe.</p>
             <p>&copy; 2025-2026 Nova-tro-s – Hacemos lo que podemos 🎭💚</p>
         </div>
     </footer>
+    <script>
+        // Al dar Play en una coreografía, pausa las demás (pero NO la música de fondo)
+        document.addEventListener('DOMContentLoaded', () => {
+            const fondo   = document.querySelector('audio[data-fondo]');
+            const audios  = document.querySelectorAll('audio');
+            const choreos = document.querySelectorAll('audio:not([data-fondo])');
+
+            choreos.forEach(audio => {
+                audio.addEventListener('play', () => {
+                    choreos.forEach(other => { if (other !== audio) other.pause(); });
+                });
+            });
+        });
+    </script>
 </body>
 </html>

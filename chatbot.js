@@ -43,11 +43,24 @@ const theaterData = {
             ],
             mensaje: "Pequeños gestos... ¡grandes cambios! ¿Queréis ser Guardianes del Planeta?",
             coreografias: [
+                "� Fondo → Música ambiental de fondo (suena durante toda la obra)",
                 "🌲 Bosque → «Juguemos en el Bosque» de Luli Pampín",
                 "🌊 Agua → «Bajo del Mar» de La Sirenita",
-                "❄️ Hielo y Flores → «¡Suéltalo!» de Frozen (Gisela)",
-                "🎉 Final → Coreografía de celebración con todos los personajes"
+                "❄️ Hielo → «Nanut el Esquimal»",
+                "🐝 Abejas → «Abeja Maya»",
+                "🎉 Final → «Pequeño planeta, vuelve a sonreír»"
             ],
+            musica: {
+                zip: "2025-2026/Trimestre2/musica/canciones-guardianes-planeta.zip",
+                archivos: [
+                    "00-fondo.mpeg – Música de fondo (toda la obra)",
+                    "01-bosque.mpeg – Juguemos en el Bosque",
+                    "02-agua.mpeg – Bajo del Mar",
+                    "03-hielo.mpeg – Nanut el Esquimal",
+                    "04-abejas.mpeg – Abeja Maya",
+                    "05-final.mpeg – Pequeño planeta, vuelve a sonreír"
+                ]
+            },
             reparto: [
                 { num: 1,  nombre: "Espe",      personaje: "Abeja 1",              emoji: "🐝" },
                 { num: 2,  nombre: "Steph",     personaje: "Apicultor",            emoji: "👨‍🌾" },
@@ -248,6 +261,16 @@ class TheaterChatbot {
             return this.getCoreografias();
         }
 
+        // Descarga canciones / ZIP
+        if (this.m(msg, ['descarga', 'descargar', 'zip', 'mp3', 'mpeg', 'canciones', 'archivo', 'archivos', 'fichero'])) {
+            const t2 = this.getT2();
+            let html = `🎵 <strong>Canciones de «${t2.title}»</strong><br><br>`;
+            html += `Puedes <a href="${t2.musica.zip}" download><strong>descargar el ZIP con todas las canciones</strong></a> (6 archivos):<br><br>`;
+            t2.musica.archivos.forEach(a => { html += `📄 ${a}<br>`; });
+            html += `<br>También puedes reproducirlas directamente desde el <a href="2025-2026/Trimestre2/teatro.html" target="_blank">guion interactivo</a>, con un botón Play en cada coreografía.`;
+            return html;
+        }
+
         // Fecha / cuándo
         if (this.m(msg, ['cuando', 'cuándo', 'fecha', 'dia de', 'día de', 'cuando es'])) {
             return this.getFecha(msg);
@@ -290,7 +313,7 @@ class TheaterChatbot {
         }
 
         // Respuesta por defecto
-        return `Hmmm… no he pillado bien esa pregunta 🤔<br>Pero puedo contarte sobre el <strong>guion</strong>, el <strong>reparto</strong>, las <strong>fechas</strong>, los <strong>ensayos</strong> o las <strong>coreografías</strong>.<br>¿Qué quieres saber? ¡Escríbeme sin miedo! 🎭`;
+        return `Hmmm… no he pillado bien esa pregunta 🤔<br>Pero puedo contarte sobre el <strong>guion</strong>, el <strong>reparto</strong>, las <strong>fechas</strong>, los <strong>ensayos</strong>, las <strong>coreografías</strong> o las <strong>canciones para descargar</strong>.<br>¿Qué quieres saber? ¡Escríbeme sin miedo! 🎭`;
     }
 
     // ---- Respuestas específicas ----
@@ -302,6 +325,7 @@ Puedes preguntarme cosas como:<br>
 🎭 <em>«¿Quién hace de Madre Tierra?»</em><br>
 📜 <em>«Cuéntame el guion»</em><br>
 🎵 <em>«¿Qué canciones bailan?»</em><br>
+📥 <em>«¿Cómo descargo las canciones?»</em><br>
 🏋️ <em>«¿Cuándo son los ensayos?»</em><br>
 🌍 <em>«¿De qué va la obra?»</em><br>
 📅 <em>«¿Qué hay en el tercer trimestre?»</em>`;
@@ -384,8 +408,9 @@ Puedes preguntarme cosas como:<br>
 
     getCoreografias() {
         const t2 = this.getT2();
-        let html = `🎵 <strong>Coreografías – «${t2.title}»</strong><br><br>`;
+        let html = `🎵 <strong>Coreografías y canciones – «${t2.title}»</strong><br><br>`;
         t2.coreografias.forEach(c => { html += `${c}<br>`; });
+        html += `<br>💾 <strong>¿Quieres las canciones?</strong> Puedes reproducirlas directamente desde el <a href="2025-2026/Trimestre2/teatro.html" target="_blank">guion interactivo</a> o <a href="${t2.musica.zip}" download>descargar el ZIP con todas</a>.`;
         return html;
     }
 
