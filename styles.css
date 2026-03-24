@@ -234,8 +234,8 @@ h2 {
 
 .trimester-materials a {
     color: #667eea;
-    text-decoration: none;
-    font-weight: 500;
+    text-decoration: underline;
+    font-weight: 600;
 }
 
 .trimester-materials a:hover {
