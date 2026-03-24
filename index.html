@@ -128,25 +128,37 @@
         </section>
 
         <section class="chatbot-section">
-            <h2>🤖 Asistente Virtual</h2>
-            <p>¿Tienes alguna pregunta sobre las actuaciones? ¡Pregúntame!</p>
+            <h2>🎭 Apuntabot</h2>
+            <p>Tu asistente teatral de Nova-tro-s. Pregúntale sobre el guion, el reparto, los ensayos, las fechas...</p>
             
             <div class="chat-container">
+                <div class="chat-header">
+                    <span class="chat-bot-icon">🎭</span>
+                    <div class="chat-bot-info">
+                        <strong>Apuntabot</strong>
+                        <span class="chat-bot-status">● En línea</span>
+                    </div>
+                </div>
                 <div id="chatMessages" class="chat-messages">
                     <div class="message bot-message">
-                        <p>¡Hola! Soy tu asistente virtual. Puedo ayudarte con información sobre nuestras obras de teatro. 
-                        Pregúntame cosas como:</p>
-                        <ul>
-                            <li>"¿Cuándo es el teatro del primer trimestre?"</li>
-                            <li>"¿Cuántos participantes hay?"</li>
-                            <li>"¿Cuál es el título de la obra del segundo trimestre?"</li>
-                            <li>"¿Dónde se realiza?"</li>
-                        </ul>
+                        <span class="bot-avatar">🎭</span>
+                        <div class="bot-bubble">
+                            <p>¡Hola! Soy <strong>Apuntabot</strong>, el apuntador digital de Nova-tro-s 🎭</p>
+                            <p>Me sé todos los textos, el reparto, los ensayos y mucho más. Pregúntame lo que quieras:</p>
+                            <ul>
+                                <li>💬 «¿Quién hace de Madre Tierra?»</li>
+                                <li>📅 «¿Cuándo es la obra?»</li>
+                                <li>👥 «¿Cuántos participantes somos?»</li>
+                                <li>📜 «Cuéntame el guion del Acto 2»</li>
+                                <li>🎵 «¿Qué bailan en la zona del bosque?»</li>
+                                <li>🏋️ «¿Cuándo son los ensayos?»</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="chat-input-container">
-                    <input type="text" id="chatInput" placeholder="Escribe tu pregunta aquí..." />
-                    <button id="sendButton">Enviar</button>
+                    <input type="text" id="chatInput" placeholder="Pregúntale algo a Apuntabot..." />
+                    <button id="sendButton" aria-label="Enviar">➤</button>
                 </div>
             </div>
         </section>
