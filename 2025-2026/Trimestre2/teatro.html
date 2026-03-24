@@ -1,608 +1,713 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<title>teatro.md</title>
-<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
-
-<style>
-/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
-/*---------------------------------------------------------------------------------------------
- *  Copyright (c) Microsoft Corporation. All rights reserved.
- *  Licensed under the MIT License. See License.txt in the project root for license information.
- *--------------------------------------------------------------------------------------------*/
-
-body {
-	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
-	font-size: var(--vscode-markdown-font-size, 14px);
-	padding: 0 26px;
-	line-height: var(--vscode-markdown-line-height, 22px);
-	word-wrap: break-word;
-}
-
-#code-csp-warning {
-	position: fixed;
-	top: 0;
-	right: 0;
-	color: white;
-	margin: 16px;
-	text-align: center;
-	font-size: 12px;
-	font-family: sans-serif;
-	background-color:#444444;
-	cursor: pointer;
-	padding: 6px;
-	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
-}
-
-#code-csp-warning:hover {
-	text-decoration: none;
-	background-color:#007acc;
-	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
-}
-
-body.scrollBeyondLastLine {
-	margin-bottom: calc(100vh - 22px);
-}
-
-body.showEditorSelection .code-line {
-	position: relative;
-}
-
-body.showEditorSelection .code-active-line:before,
-body.showEditorSelection .code-line:hover:before {
-	content: "";
-	display: block;
-	position: absolute;
-	top: 0;
-	left: -12px;
-	height: 100%;
-}
-
-body.showEditorSelection li.code-active-line:before,
-body.showEditorSelection li.code-line:hover:before {
-	left: -30px;
-}
-
-.vscode-light.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(0, 0, 0, 0.15);
-}
-
-.vscode-light.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(0, 0, 0, 0.40);
-}
-
-.vscode-light.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
-
-.vscode-dark.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(255, 255, 255, 0.4);
-}
-
-.vscode-dark.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(255, 255, 255, 0.60);
-}
-
-.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
-
-.vscode-high-contrast.showEditorSelection .code-active-line:before {
-	border-left: 3px solid rgba(255, 160, 0, 0.7);
-}
-
-.vscode-high-contrast.showEditorSelection .code-line:hover:before {
-	border-left: 3px solid rgba(255, 160, 0, 1);
-}
-
-.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
-	border-left: none;
-}
-
-img {
-	max-width: 100%;
-	max-height: 100%;
-}
-
-a {
-	text-decoration: none;
-}
-
-a:hover {
-	text-decoration: underline;
-}
-
-a:focus,
-input:focus,
-select:focus,
-textarea:focus {
-	outline: 1px solid -webkit-focus-ring-color;
-	outline-offset: -1px;
-}
-
-hr {
-	border: 0;
-	height: 2px;
-	border-bottom: 2px solid;
-}
-
-h1 {
-	padding-bottom: 0.3em;
-	line-height: 1.2;
-	border-bottom-width: 1px;
-	border-bottom-style: solid;
-}
-
-h1, h2, h3 {
-	font-weight: normal;
-}
-
-table {
-	border-collapse: collapse;
-}
-
-table > thead > tr > th {
-	text-align: left;
-	border-bottom: 1px solid;
-}
-
-table > thead > tr > th,
-table > thead > tr > td,
-table > tbody > tr > th,
-table > tbody > tr > td {
-	padding: 5px 10px;
-}
-
-table > tbody > tr + tr > td {
-	border-top: 1px solid;
-}
-
-blockquote {
-	margin: 0 7px 0 5px;
-	padding: 0 16px 0 10px;
-	border-left-width: 5px;
-	border-left-style: solid;
-}
-
-code {
-	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
-	font-size: 1em;
-	line-height: 1.357em;
-}
-
-body.wordWrap pre {
-	white-space: pre-wrap;
-}
-
-pre:not(.hljs),
-pre.hljs code > div {
-	padding: 16px;
-	border-radius: 3px;
-	overflow: auto;
-}
-
-pre code {
-	color: var(--vscode-editor-foreground);
-	tab-size: 4;
-}
-
-/** Theming */
-
-.vscode-light pre {
-	background-color: rgba(220, 220, 220, 0.4);
-}
-
-.vscode-dark pre {
-	background-color: rgba(10, 10, 10, 0.4);
-}
-
-.vscode-high-contrast pre {
-	background-color: rgb(0, 0, 0);
-}
-
-.vscode-high-contrast h1 {
-	border-color: rgb(0, 0, 0);
-}
-
-.vscode-light table > thead > tr > th {
-	border-color: rgba(0, 0, 0, 0.69);
-}
-
-.vscode-dark table > thead > tr > th {
-	border-color: rgba(255, 255, 255, 0.69);
-}
-
-.vscode-light h1,
-.vscode-light hr,
-.vscode-light table > tbody > tr + tr > td {
-	border-color: rgba(0, 0, 0, 0.18);
-}
-
-.vscode-dark h1,
-.vscode-dark hr,
-.vscode-dark table > tbody > tr + tr > td {
-	border-color: rgba(255, 255, 255, 0.18);
-}
-
-</style>
-
-<style>
-/* Tomorrow Theme */
-/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
-/* Original theme - https://github.com/chriskempson/tomorrow-theme */
-
-/* Tomorrow Comment */
-.hljs-comment,
-.hljs-quote {
-	color: #8e908c;
-}
-
-/* Tomorrow Red */
-.hljs-variable,
-.hljs-template-variable,
-.hljs-tag,
-.hljs-name,
-.hljs-selector-id,
-.hljs-selector-class,
-.hljs-regexp,
-.hljs-deletion {
-	color: #c82829;
-}
-
-/* Tomorrow Orange */
-.hljs-number,
-.hljs-built_in,
-.hljs-builtin-name,
-.hljs-literal,
-.hljs-type,
-.hljs-params,
-.hljs-meta,
-.hljs-link {
-	color: #f5871f;
-}
-
-/* Tomorrow Yellow */
-.hljs-attribute {
-	color: #eab700;
-}
-
-/* Tomorrow Green */
-.hljs-string,
-.hljs-symbol,
-.hljs-bullet,
-.hljs-addition {
-	color: #718c00;
-}
-
-/* Tomorrow Blue */
-.hljs-title,
-.hljs-section {
-	color: #4271ae;
-}
-
-/* Tomorrow Purple */
-.hljs-keyword,
-.hljs-selector-tag {
-	color: #8959a8;
-}
-
-.hljs {
-	display: block;
-	overflow-x: auto;
-	color: #4d4d4c;
-	padding: 0.5em;
-}
-
-.hljs-emphasis {
-	font-style: italic;
-}
-
-.hljs-strong {
-	font-weight: bold;
-}
-</style>
-
-<style>
-/*
- * Markdown PDF CSS
- */
-
- body {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
-	padding: 0 12px;
-}
-
-pre {
-	background-color: #f8f8f8;
-	border: 1px solid #cccccc;
-	border-radius: 3px;
-	overflow-x: auto;
-	white-space: pre-wrap;
-	overflow-wrap: break-word;
-}
-
-pre:not(.hljs) {
-	padding: 23px;
-	line-height: 19px;
-}
-
-blockquote {
-	background: rgba(127, 127, 127, 0.1);
-	border-color: rgba(0, 122, 204, 0.5);
-}
-
-.emoji {
-	height: 1.4em;
-}
-
-code {
-	font-size: 14px;
-	line-height: 19px;
-}
-
-/* for inline code */
-:not(pre):not(.hljs) > code {
-	color: #C9AE75; /* Change the old color so it seems less like an error */
-	font-size: inherit;
-}
-
-/* Page Break : use <div class="page"/> to insert page break
--------------------------------------------------------- */
-.page {
-	page-break-after: always;
-}
-
-</style>
-
-<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌍 Los Guardianes del Planeta – Guion completo</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        .play-content {
+            max-width: 820px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,.1);
+        }
+
+        /* ---- Navegación rápida ---- */
+        .back-link {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .back-link:hover { color: #764ba2; }
+
+        .nav-actos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 2rem;
+        }
+        .nav-actos a {
+            background: #f0f3ff;
+            border: 1.5px solid #b0bdf5;
+            border-radius: 20px;
+            color: #4a5ac7;
+            font-size: 0.85rem;
+            font-weight: 600;
+            padding: 0.35rem 0.9rem;
+            text-decoration: none;
+            transition: background .18s, color .18s;
+        }
+        .nav-actos a:hover {
+            background: #667eea;
+            border-color: #667eea;
+            color: white;
+        }
+
+        /* ---- Cabecera de la obra ---- */
+        .play-header {
+            text-align: center;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 12px;
+            color: white;
+            margin-bottom: 2rem;
+        }
+        .play-header h1 { font-size: 1.8rem; border: none; color: white; margin-bottom: 0.3rem; }
+        .play-header p  { opacity: .9; margin: 0; }
+
+        /* ---- Actos ---- */
+        .act-block {
+            margin-bottom: 2.5rem;
+            scroll-margin-top: 1rem;
+        }
+        .act-block h2 {
+            font-size: 1.4rem;
+            color: #667eea;
+            background: #f0f3ff;
+            border: none;
+            border-left: 5px solid #667eea;
+            border-radius: 0 10px 10px 0;
+            padding: 0.6rem 1rem;
+            margin-bottom: 1.2rem;
+        }
+
+        /* ---- Zonas ---- */
+        .zone-block {
+            margin-bottom: 1.5rem;
+            scroll-margin-top: 1rem;
+        }
+        .zone-block h3 {
+            font-size: 1.1rem;
+            color: #764ba2;
+            border-bottom: 2px dashed #c9bef5;
+            padding-bottom: 0.3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ---- Didascalias / acotaciones ---- */
+        .stage-dir {
+            font-style: italic;
+            color: #888;
+            margin: 0.6rem 0;
+            font-size: 0.9rem;
+        }
+
+        /* ---- Diálogos ---- */
+        .dialogue {
+            margin: 0.9rem 0;
+            padding: 0.6rem 1rem;
+            border-left: 3px solid #d0d8f8;
+            border-radius: 0 8px 8px 0;
+            background: #fafbff;
+        }
+        .character-name {
+            font-weight: bold;
+            color: #4a5ac7;
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+        .dialogue p {
+            margin: 0;
+            line-height: 1.55;
+            white-space: pre-line;
+        }
+
+        /* ---- Frases del público ---- */
+        .audience-line {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+            border-left: 3px solid #4caf50;
+            border-radius: 0 8px 8px 0;
+            padding: 0.6rem 1rem;
+            margin: 0.9rem 0;
+            font-weight: bold;
+            color: #2e7d32;
+        }
+        .audience-repeat {
+            font-size: 0.8rem;
+            font-weight: normal;
+            color: #555;
+            font-style: italic;
+            margin-top: 0.2rem;
+        }
+
+        /* ---- Coreografías ---- */
+        .choreo {
+            background: linear-gradient(135deg, #fff8e1 0%, #ffe0b2 100%);
+            border-left: 4px solid #ff9800;
+            border-radius: 0 8px 8px 0;
+            padding: 0.75rem 1rem;
+            margin: 1rem 0;
+            font-size: 0.9rem;
+        }
+        .choreo strong { color: #e65100; }
+        .choreo a { color: #e65100; }
+
+        /* ---- Botón PDF ---- */
+        .pdf-bar {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+        }
+        .pdf-bar p { margin: 0; font-size: 0.95rem; opacity: .9; }
+        .pdf-btn {
+            background: white;
+            color: #667eea;
+            font-weight: bold;
+            padding: 0.55rem 1.4rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: transform .2s, box-shadow .2s;
+            white-space: nowrap;
+        }
+        .pdf-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 12px rgba(0,0,0,.2); }
+
+        @media (max-width: 600px) {
+            .play-content { padding: 1rem; }
+            .play-header h1 { font-size: 1.4rem; }
+        }
+    </style>
 </head>
 <body>
-  <script>
-    mermaid.initialize({
-      startOnLoad: true,
-      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
-          ? 'dark'
-          : 'default'
-    });
-  </script>
-<h1 id="%F0%9F%8C%8D-los-guardianes-del-planeta">🌍 LOS GUARDIANES DEL PLANETA</h1>
-<h2 id="obra-infantil-%E2%80%93-3-actos-20-minutos">Obra Infantil – 3 Actos (20 minutos)</h2>
-<hr>
-<h1 id="%F0%9F%8E%AD-acto-1-%E2%80%93-algo-no-va-bien">🎭 ACTO 1 – ALGO NO VA BIEN</h1>
-<p><em>(Luz suave. Madre Tierra en escena.)</em></p>
-<p><strong>🌍 Madre Tierra - Vero:</strong>
+    <header>
+        <div class="container">
+            <h1>🎭 Nova-tro-s</h1>
+            <p class="subtitle">Hacemos lo que podemos</p>
+            <p class="tagline">Teatro de Familias – Educación Infantil</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="play-content">
+
+            <a href="../../index.html" class="back-link">← Volver al inicio</a>
+
+            <div class="play-header">
+                <h1>🌍 Los Guardianes del Planeta</h1>
+                <p>Obra Infantil · 3 Actos · 20 minutos · 25 de marzo de 2026</p>
+            </div>
+
+            <!-- Botón PDF -->
+            <div class="pdf-bar">
+                <p>📄 ¿Prefieres leerlo en papel? Descarga el PDF listo para imprimir.</p>
+                <a href="teatro.pdf" download class="pdf-btn">📥 Descargar PDF</a>
+            </div>
+
+            <!-- Navegación rápida -->
+            <nav class="nav-actos" aria-label="Ir a sección">
+                <a href="#acto1">🎭 Acto 1</a>
+                <a href="#bosque">🌲 Bosque</a>
+                <a href="#agua">🌊 Agua</a>
+                <a href="#hielo">❄️ Hielo y Flores</a>
+                <a href="#acto2">🎭 Acto 2</a>
+                <a href="#final">🏆 Final</a>
+            </nav>
+
+            <!-- ===================== ACTO 1 ===================== -->
+            <div class="act-block" id="acto1">
+                <h2>🎭 ACTO 1 – ALGO NO VA BIEN</h2>
+
+                <p class="stage-dir">*(Luz suave. Madre Tierra en escena.)*</p>
+
+                <div class="dialogue">
+                    <span class="character-name">🌍 Madre Tierra – Vero:</span>
+                    <p>Érase una vez, la Madre Tierra…
 Hace tiempo, el planeta era un lugar feliz.
 Los bosques cantaban.
 Los ríos brillaban.
 El hielo era fuerte.
-Las flores crecían.</p>
-<p>Pero un día…
-empecé a escuchar algo diferente.</p>
-<p>Primero escuché al bosque.</p>
-<hr>
-<h2 id="%F0%9F%8C%B2-zona-bosque">🌲 ZONA BOSQUE</h2>
-<p><em>(Música de bosque.)</em></p>
-<p><strong>🌳 Árbol 1 - Hanae:</strong>
-Buenos días chicos/as ¿qué tal estáis?
+Las flores crecían.
+
+Pero un día…
+empecé a escuchar algo diferente.
+
+Primero escuché al bosque.</p>
+                </div>
+
+                <!-- ZONA BOSQUE -->
+                <div class="zone-block" id="bosque">
+                    <h3>🌲 ZONA BOSQUE</h3>
+                    <p class="stage-dir">*(Música de bosque.)*</p>
+
+                    <div class="dialogue">
+                        <span class="character-name">🌳 Árbol 1 – Hanae:</span>
+                        <p>Buenos días chicos/as, ¿qué tal estáis?
 Como veis nosotros somos árboles y queremos que sepáis que antes,
 el aire era limpio y fresco.</p>
-<p><strong>🌳 Árbol 2 - Isa:</strong>
-Pero ahora… cof cof… no puedo respirar bien.</p>
-<p><strong>🌳 Árbol 1 - Hanae:</strong>
-Nuestras hojas están tristes.</p>
-<p><strong>🌳 Árbol 2 - Isa:</strong>
-Y sabéis que! nuestras raíces tienen sed.</p>
-<p><strong>🐺 Lobo 1 - Cristina:</strong>
-(entra aullando)
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🌳 Árbol 2 – Isa:</span>
+                        <p>Pero ahora… cof cof… no puedo respirar bien.</p>
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🌳 Árbol 1 – Hanae:</span>
+                        <p>Nuestras hojas están tristes.</p>
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🌳 Árbol 2 – Isa:</span>
+                        <p>¡Y sabéis qué! Nuestras raíces tienen sed.</p>
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🐺 Lobo 1 – Cristina:</span>
+                        <p>*(entra aullando)*
 El bosque está muy callado.
 Demasiado callado. No escucho a los pájaros. ¿Los oís vosotros?
 Ni a los ciervos corriendo.
 ¿Dónde están todos?</p>
-<p><strong>🐆 Lince 1 - Chary:</strong>
-Por aquí venimos una pareja de linces pero...solo hay 2 árboles,
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🐆 Lince 1 – Chary:</span>
+                        <p>Por aquí venimos una pareja de linces pero… solo hay 2 árboles,
 faltan árboles. Muchos árboles.
 Y sin árboles, no hay hogar.</p>
-<p><strong>🐆 Lince 2 - Estefanía:</strong>
-No podemos cazar, no tenemos comida.
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🐆 Lince 2 – Estefanía:</span>
+                        <p>No podemos cazar, no tenemos comida.
 Ni descansar a la sombra.</p>
-<p><strong>🦜 Guacamayo 1 - Virgi:</strong>
-uy, uy, uy
-Desde el cielo veo algo malo. ¿qué pasa aquí?</p>
-<p><strong>🦜 Guacamayo 2 - Esme:</strong>
-¡Hay humo! Mucho humo.</p>
-<p><strong>🦜 Guacamayo 1 - Virgi:</strong>
-¿Sabes lo que pasa aquí, amigo? Los árboles se caen.</p>
-<p><strong>🦜 Guacamayo 2 - Esme:</strong>
-Y nosotros perdemos nuestros nidos.</p>
-<p><strong>🌍 Madre Tierra - Vero:</strong>
-El bosque estaba preocupado.
-Todos tenían miedo.
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🦜 Guacamayo 1 – Virgi:</span>
+                        <p>Uy, uy, uy…
+Desde el cielo veo algo malo. ¿Qué pasa aquí?</p>
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🦜 Guacamayo 2 – Esme:</span>
+                        <p>¡Hay humo! Mucho humo.</p>
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🦜 Guacamayo 1 – Virgi:</span>
+                        <p>¿Sabes lo que pasa aquí, amigo? Los árboles se caen.</p>
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🦜 Guacamayo 2 – Esme:</span>
+                        <p>Y nosotros perdemos nuestros nidos.</p>
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🌍 Madre Tierra – Vero:</span>
+                        <p>El bosque estaba preocupado.
+Todos tenían miedo por lo que pasaba.
 Pero también… esperanza.</p>
-<p><strong>Todos (Bosque):</strong>
-¡Algo pasa en nuestra casa!</p>
-<p><em>(Se repite con el público.)</em></p>
-<p><strong>🎵 Coreografía:</strong>
-Los personajes del bosque (lobos, linces, guacamayos, árboles) bailan &quot;Juguemos en el Bosque&quot; de Luli Pampín.
-🎶 https://www.youtube.com/watch?v=BKew9kctfAY</p>
-<hr>
-<h2 id="%F0%9F%8C%8A-zona-agua">🌊 ZONA AGUA</h2>
-<p><em>(Cambio música.)</em></p>
-<p><strong>🌍 Madre Tierra - Vero:</strong>
-Después escuché al río.
-El río que antes cantaba...
+                    </div>
+
+                    <div class="audience-line">
+                        🗣️ Todos (Bosque): «¡Algo pasa en nuestra casa!»
+                        <div class="audience-repeat">*(El público lo repite)*</div>
+                    </div>
+
+                    <div class="choreo">
+                        <strong>🎵 Coreografía:</strong> Lobos, linces, guacamayos y árboles bailan
+                        <em>«Juguemos en el Bosque»</em> de Luli Pampín.
+                        <br><a href="https://www.youtube.com/watch?v=BKew9kctfAY" target="_blank">▶️ Ver en YouTube</a>
+                    </div>
+                </div>
+
+                <!-- ZONA AGUA -->
+                <div class="zone-block" id="agua">
+                    <h3>🌊 ZONA AGUA</h3>
+                    <p class="stage-dir">*(Cambio de música.)*</p>
+
+                    <div class="dialogue">
+                        <span class="character-name">🌍 Madre Tierra – Vero:</span>
+                        <p>Después de escuchar al bosque…
+Escuché al río.
+El río que antes cantaba…
 ahora lloraba.</p>
-<p><strong>🐟 Pez 1 - Aitana:</strong>
-¡Emergencia acuática!¡Emergencia acuática!¡Emergencia acuática!
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🐟 Pez 1 – Aitana:</span>
+                        <p>¡Emergencia acuática! ¡Emergencia acuática! ¡Emergencia acuática!
 ¡Hay basura flotando por todas partes!</p>
-<p><strong>🐟 Pez 2 - Sadaf:</strong>
-Bolsas de plástico, botellas...
-¡Esta no es mi casa! Ya os digo yo que no....</p>
-<p><strong>🐊 Cocodrilo 1 - Ester:</strong>
-El agua no está limpia como antes porque
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🐟 Pez 2 – Sadaf:</span>
+                        <p>Bolsas de plástico, botellas…
+¡Esta no es mi casa! Ya os digo yo que no…</p>
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🐊 Cocodrilo 1 – Ester:</span>
+                        <p>El agua no está limpia como antes,
 antes era cristalina y brillante.
 Ahora está oscura y sucia.
 ¡Yo quiero agua clara para nadar!</p>
-<p><strong>Pez 1 - Aitana:</strong>
-Yo estoy muy triste, tengo ganas de llorar porque mis amigos se han ido y no pueden vivir aquí</p>
-<p><strong>🐟 Pez 2 - Sadaf:</strong>
-Las plantas del río están muriendo y
-nosotros también estamos en peligro.</p>
-<p><strong>🌍 Madre Tierra - Vero:</strong>
-El agua, que siempre bailaba y cantaba,
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🐟 Pez 1 – Aitana:</span>
+                        <p>Yo estoy muy triste, tengo ganas de llorar
+porque mis amigos se han ido y no pueden vivir aquí.</p>
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🐟 Pez 2 – Sadaf:</span>
+                        <p>Las plantas del río están muriendo
+y nosotros también estamos en peligro.</p>
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🌍 Madre Tierra – Vero:</span>
+                        <p>El agua, que siempre bailaba y cantaba,
 ahora estaba triste y silenciosa.
 Necesitaba ayuda urgente.</p>
-<p><strong>TODOS (Agua):</strong>
-¡El agua está triste!</p>
-<p><em>(Se repite con el público.)</em></p>
-<p><strong>🎵 Coreografía:</strong>
-Los personajes del agua (peces, cocodrilos) bailan una coreografía acuática divertida. Bajo del Mar la Sirenita</p>
-<hr>
-<h2 id="%E2%9D%84%F0%9F%8C%BC-hielo-y-flores">❄🌼 HIELO Y FLORES</h2>
-<p><em>(Cambio música.)</em></p>
-<p><strong>🌍 Madre Tierra - Vero:</strong>
-Miré hacia el hielo del norte…
+                    </div>
+
+                    <div class="audience-line">
+                        🗣️ Todos (Agua): «¡URGENTE!»
+                        <div class="audience-repeat">*(El público lo repite)*</div>
+                    </div>
+
+                    <div class="choreo">
+                        <strong>🎵 Coreografía:</strong> Peces y cocodrilos bailan
+                        <em>«Bajo del Mar»</em> – La Sirenita.
+                    </div>
+                </div>
+
+                <!-- ZONA HIELO Y FLORES -->
+                <div class="zone-block" id="hielo">
+                    <h3>❄️🌼 ZONA HIELO Y FLORES</h3>
+                    <p class="stage-dir">*(Cambio de música.)*</p>
+
+                    <div class="dialogue">
+                        <span class="character-name">🌍 Madre Tierra – Vero:</span>
+                        <p>Miré hacia el hielo del norte…
 y hacia las flores del sur.
 Dos problemas muy diferentes.
 Pero igual de importantes.</p>
-<p><strong>🐻‍❄️ Oso Polar 1 - Helena:</strong>
-Hola, Yo...Ay que calor...PUF...¡Tengo mucho calor!</p>
-<p><strong>🐧 Pingüino 1 - Chechu:</strong>
-El hielo se rompe bajo mis patas.
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🐻‍❄️ Oso Polar 1 – Helena:</span>
+                        <p>Hola, Yo… ¡Ay qué calor! PUF… ¡Tengo mucho calor!</p>
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🐧 Pingüino 1 – Chechu:</span>
+                        <p>El hielo se rompe bajo mis patas.
 Antes era fuerte y sólido.</p>
-<p><strong>🐻‍❄️ Oso Polar 2 - Ana:</strong>
-Ahora cruje y se derrite.</p>
-<p><strong>🐻‍❄️ Oso Polar 1 - Helena:</strong>
-Mi casa de hielo se está derritiendo.</p>
-<p><strong>🐧 Pingüino 2 - Marta:</strong>
-¿Dónde viviremos?
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🐻‍❄️ Oso Polar 2 – Ana:</span>
+                        <p>Ahora cruje y se derrite.</p>
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🐻‍❄️ Oso Polar 1 – Helena:</span>
+                        <p>Mi casa de hielo se está derritiendo.</p>
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🐧 Pingüino 2 – Marta:</span>
+                        <p>¿Dónde viviremos?
 ¿Cómo cuidaremos nuestros huevos sin hielo firme?</p>
-<p><strong>🐻‍❄️ Oso Polar 2 - Ana:</strong>
-¡Necesitamos el hielo!</p>
-<p><strong>🌍 Madre Tierra - Vero:</strong>
-Mientras en el NORTE el hielo se derretía...
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🐻‍❄️ Oso Polar 2 – Ana:</span>
+                        <p>¡Necesitamos el hielo!</p>
+                    </div>
+
+                    <div class="choreo">
+                        <strong>🎵 Coreografía:</strong> Los personajes del hielo bailan
+                        <em>«Nanut el Esquimal»</em>.
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🌍 Madre Tierra – Vero:</span>
+                        <p>Mientras en el NORTE el hielo se derretía…
 en el SUR también había un problema grave.</p>
-<p><strong>🐝 Abeja 1 - Espe:</strong>
-Holaaaa, que pena tan grande, Sí, aquí en el SUR, las flores están desapareciendo.
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🐝 Abeja 1 – Espe:</span>
+                        <p>Holaaaa, ¡qué pena tan grande!
+Sí, aquí en el SUR, las flores están desapareciendo.
 Hay menos cada día.
 Sin flores, no hay néctar.
 Y sin néctar, no hay miel.</p>
-<p><strong>🐝 Abeja 2 - Soraya:</strong>
-Nos quedamos sin comida. Las abejas
-Y las personas también. ¿qué podemos hacer?</p>
-<p><strong>👑 Abeja Reina - Manuela:</strong>
-Como sabéis, las abejas somos muy importantes.
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🐝 Abeja 2 – Soraya:</span>
+                        <p>Nos quedamos sin comida. Las abejas…
+Y las personas también. ¿Qué podemos hacer?</p>
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">👑 Abeja Reina – Manuela:</span>
+                        <p>Como sabéis, las abejas somos muy importantes.
 Llevamos el polen de flor en flor.
 Sin flores no hay frutas.
 Sin abejas no hay vida.</p>
-<p><strong>🌍 Madre Tierra - Vero:</strong>
-El problema era muy grande.
+                    </div>
+
+                    <div class="dialogue">
+                        <span class="character-name">🌍 Madre Tierra – Vero:</span>
+                        <p>El problema era muy grande.
 El hielo se derretía.
 Las flores desaparecían.
 Y todos estaban asustados.</p>
-<p><strong>TODOS:</strong>
-¡Necesitamos ayuda!</p>
-<p><strong>🎵 Coreografía:</strong>
-Los personajes del hielo y las flores (oso polar, pingüinos, abejas) bailan una coreografía alegre. Gisela - ¡Suéltalo! (De &quot;Frozen: El Reino del Hielo&quot;)</p>
-<hr>
-<h1 id="%F0%9F%8E%AD-acto-2-%E2%80%93-la-gran-reuni%C3%B3n">🎭 ACTO 2 – LA GRAN REUNIÓN</h1>
-<p><em>(Luz más intensa.)</em></p>
-<p><strong>🌍 Madre Tierra - Vero:</strong>
-Todos me miraron esperando una solución mágica.
+                    </div>
+
+                    <div class="audience-line">
+                        🗣️ Todos: «¡Necesitamos ayuda!»
+                    </div>
+
+                    <div class="choreo">
+                        <strong>🎵 Coreografía:</strong> Osos polares, pingüinos y abejas bailan
+                        <em>«Abeja Maya»</em>.
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===================== ACTO 2 ===================== -->
+            <div class="act-block" id="acto2">
+                <h2>🎭 ACTO 2 – LA GRAN REUNIÓN</h2>
+                <p class="stage-dir">*(Luz más intensa.)*</p>
+
+                <div class="dialogue">
+                    <span class="character-name">🌍 Madre Tierra – Vero:</span>
+                    <p>Todos me miraron esperando una solución mágica.
 Pero el planeta no funciona con magia.
 Funciona con acciones.</p>
-<p><strong>🐺 Lobo 1 - Cristina:</strong>
-Que os parece si probamos con un superhéroe. ¡Si, Un superhéroe!</p>
-<p><strong>🐊 Cocodrilo 1 - Ester:</strong>
-O quizá, ¡Un gigante fuerte!</p>
-<p><strong>🐧 Pingüino - Chechu:</strong>
-¿Un mago?, No estaría mal un mago.</p>
-<p><strong>🌍 Madre Tierra - Vero (sonríe):</strong>
-No.
-Alguien pequeño.</p>
-<p><em>(Entra el Niño/a.)</em></p>
-<p><strong>🧒 Niño/a - Rubén:</strong>
-¿Yo?</p>
-<p><strong>🌍 Madre Tierra - Vero:</strong>
-Sí. Tú.</p>
-<p><strong>🧒 Niño/a - Rubén:</strong>
-Pero soy pequeño.</p>
-<p><strong>🐆 Lince 1 - Chary:</strong>
-Pequeño… pero muy valiente.</p>
-<p><strong>🐟 Pez 1 - Aitana:</strong>
-¿Puedes recoger basura?</p>
-<p><strong>🧒 Niño/a - Rubén:</strong>
-Sí. Claro que puedo.</p>
-<p><strong>Árbol 1 - Hanae:</strong>
-¿Puedes cuidar los árboles?</p>
-<p><strong>🧒 Niño/a - Rubén:</strong>
-Sí. Por supuesto.</p>
-<p><strong>Oso Polar 1 - Helena:</strong>
-¿Puedes apagar luces?</p>
-<p><strong>🧒 Niño/a - Rubén:</strong>
-Sí. Mira como lo hago.</p>
-<p><strong>Abeja 1 - Espe:</strong>
-¿Puedes plantar flores?</p>
-<p><strong>🧒 Niño/a - Rubén:</strong>
-Sí. Lo hago fenomenal</p>
-<p><em>(Entra el Apicultor.)</em></p>
-<p><strong>👨‍🌾 Apicultor - Steph:</strong>
-Y yo puedo ayudar a cuidar a las abejas.
+                </div>
+
+                <div class="dialogue">
+                    <span class="character-name">🐺 Lobo 1 – Cristina:</span>
+                    <p>¿Qué os parece si probamos con un superhéroe? ¡Sí, un superhéroe!</p>
+                </div>
+
+                <div class="dialogue">
+                    <span class="character-name">🐊 Cocodrilo 1 – Ester:</span>
+                    <p>O quizá… ¡un gigante fuerte!</p>
+                </div>
+
+                <div class="dialogue">
+                    <span class="character-name">🐧 Pingüino – Chechu:</span>
+                    <p>¿Un mago? No estaría mal un mago.</p>
+                </div>
+
+                <div class="dialogue">
+                    <span class="character-name">🌍 Madre Tierra – Vero:</span>
+                    <p>No.
+Alguien pequeño. Alguien como vosotros/as…
+por ejemplo, ¡tú! *(apuntando al actor Rubén, sentado con los niños)*</p>
+                </div>
+
+                <div class="dialogue">
+                    <span class="character-name">🧒 Niño/a – Rubén:</span>
+                    <p>¿Yo?</p>
+                </div>
+
+                <div class="dialogue">
+                    <span class="character-name">🌍 Madre Tierra – Vero:</span>
+                    <p>Sí. Tú.</p>
+                </div>
+
+                <div class="dialogue">
+                    <span class="character-name">🧒 Niño/a – Rubén:</span>
+                    <p>Pero soy pequeño.</p>
+                </div>
+
+                <div class="dialogue">
+                    <span class="character-name">🐆 Lince 1 – Chary:</span>
+                    <p>Pequeño… pero muy valiente.</p>
+                </div>
+
+                <div class="dialogue">
+                    <span class="character-name">🐟 Pez 1 – Aitana:</span>
+                    <p>¿Puedes recoger basura?</p>
+                </div>
+                <div class="dialogue">
+                    <span class="character-name">🧒 Niño/a – Rubén:</span>
+                    <p>Sí. Claro que puedo.</p>
+                </div>
+
+                <div class="dialogue">
+                    <span class="character-name">🌳 Árbol 1 – Hanae:</span>
+                    <p>¿Puedes cuidar los árboles?</p>
+                </div>
+                <div class="dialogue">
+                    <span class="character-name">🧒 Niño/a – Rubén:</span>
+                    <p>Sí. Por supuesto.</p>
+                </div>
+
+                <div class="dialogue">
+                    <span class="character-name">🐻‍❄️ Oso Polar 1 – Helena:</span>
+                    <p>¿Puedes apagar luces?</p>
+                </div>
+                <div class="dialogue">
+                    <span class="character-name">🧒 Niño/a – Rubén:</span>
+                    <p>Sí. Mira cómo lo hago.</p>
+                </div>
+
+                <div class="dialogue">
+                    <span class="character-name">🐝 Abeja 1 – Espe:</span>
+                    <p>¿Puedes plantar flores?</p>
+                </div>
+                <div class="dialogue">
+                    <span class="character-name">🧒 Niño/a – Rubén:</span>
+                    <p>Sí. ¡Lo hago fenomenal!</p>
+                </div>
+
+                <p class="stage-dir">*(Entra el Apicultor.)*</p>
+
+                <div class="dialogue">
+                    <span class="character-name">👨‍🌾 Apicultor – Steph:</span>
+                    <p>Y yo puedo ayudar a cuidar a las abejas.
 Sin ellas no tendríamos muchas frutas.</p>
-<p><strong>👑 Abeja Reina - Manuela:</strong>
-Es un humano que entendió.</p>
-<p><strong>🌍 Madre Tierra - Vero:</strong>
-Pequeños gestos…</p>
-<p><strong>TODOS:</strong>
-¡Grandes cambios!</p>
-<p><em>(Se repite con el público.)</em></p>
-<p><strong>🎵 Coreografía:</strong>
-Todos los personajes presentes (niño/a, apicultor, animales) bailan juntos celebrando los pequeños gestos.</p>
-<hr>
-<h1 id="%F0%9F%8E%AD-acto-3-%E2%80%93-el-cambio">🎭 ACTO 3 – EL CAMBIO</h1>
-<p><em>(Música alegre.)</em></p>
-<p><strong>🌍 Madre Tierra - Vero:</strong>
-Y entonces… empezó el cambio.</p>
-<p><strong>🧒 Niño/a - Rubén (recogiendo basura):</strong>
-Empiezo yo.</p>
-<p><strong>👨‍🌾 Apicultor - Steph (haciendo gesto de cuidar colmena):</strong>
-Yo cuido a las abejas.</p>
-<p><strong>Guacamayo 1 - Virgi:</strong>
-¡Hay flores!
-El agua brilla.</p>
-<p><strong>Guacamayo 2 - Esme:</strong>
-Ya no hay basura y
-respiro mejor.</p>
-<p><strong>Lobo 2:</strong>
-El bosque canta.</p>
-<p><strong>🐆 Lince 2 - Estefanía:</strong>
-Volvemos a correr.</p>
-<p><strong>🐧 Pingüino - Chechu:</strong>
-Estoy fresquito.</p>
-<p><strong>🐻‍❄️ Oso Polar 1 - Helena:</strong>
-El hielo es fuerte otra vez.</p>
-<p><strong>🌍 Madre Tierra - Vero:</strong>
-Cuando uno ayuda…
+                </div>
+
+                <div class="dialogue">
+                    <span class="character-name">👑 Abeja Reina – Manuela:</span>
+                    <p>¡Por fin alguien que me entiende!</p>
+                </div>
+
+                <div class="dialogue">
+                    <span class="character-name">🌍 Madre Tierra – Vero:</span>
+                    <p>Pequeños gestos…</p>
+                </div>
+
+                <div class="audience-line">
+                    🗣️ Todos: «¡Grandes cambios!»
+                    <div class="audience-repeat">*(El público lo repite)*</div>
+                </div>
+
+                <div class="dialogue">
+                    <span class="character-name">🌍 Madre Tierra – Vero:</span>
+                    <p>Y entonces… empezó el cambio de verdad.</p>
+                </div>
+
+                <div class="dialogue">
+                    <span class="character-name">🧒 Niño/a – Rubén:</span>
+                    <p>*(recogiendo basura)* Empiezo yo.</p>
+                </div>
+
+                <div class="dialogue">
+                    <span class="character-name">👨‍🌾 Apicultor – Steph:</span>
+                    <p>*(cuidando la colmena)* Yo cuido a las abejas.</p>
+                </div>
+
+                <div class="dialogue">
+                    <span class="character-name">🦜 Guacamayo 1 – Virgi:</span>
+                    <p>¡Hay flores! El agua brilla.</p>
+                </div>
+
+                <div class="dialogue">
+                    <span class="character-name">🦜 Guacamayo 2 – Esme:</span>
+                    <p>Ya no hay basura y respiro mejor.</p>
+                </div>
+
+                <div class="dialogue">
+                    <span class="character-name">🐺 Lobo 2:</span>
+                    <p>El bosque canta.</p>
+                </div>
+
+                <div class="dialogue">
+                    <span class="character-name">🐆 Lince 2 – Estefanía:</span>
+                    <p>Volvemos a correr.</p>
+                </div>
+
+                <div class="dialogue">
+                    <span class="character-name">🐧 Pingüino – Chechu:</span>
+                    <p>Estoy fresquito.</p>
+                </div>
+
+                <div class="dialogue">
+                    <span class="character-name">🐻‍❄️ Oso Polar 1 – Helena:</span>
+                    <p>El hielo es fuerte otra vez.</p>
+                </div>
+
+                <div class="dialogue">
+                    <span class="character-name">🌍 Madre Tierra – Vero:</span>
+                    <p>Cuando uno ayuda…
 otros siguen.
 Y el planeta sonríe.</p>
-<p><strong>🧒 Niño/a - Rubén (al público):</strong>
-¿Nos ayudáis?</p>
-<p><strong>🎵 Coreografía Final:</strong>
-Todos los personajes bailan juntos una coreografía alegre y colorida celebrando el cambio positivo del planeta.</p>
-<hr>
-<h1 id="%F0%9F%8E%AD-final">🎭 FINAL</h1>
-<p><strong>🌍 Madre Tierra - Vero:</strong>
-El planeta no necesita magia.</p>
-<p><strong>TODOS:</strong>
-¡Necesita ayuda!</p>
-<p><strong>🌍 Madre Tierra - Vero:</strong>
-Cuando cuidamos la Tierra…</p>
-<p><strong>TODOS:</strong>
-¡La Tierra nos cuida!</p>
-<p><strong>🌍 Madre Tierra - Vero:</strong>
-¿Queréis ser Guardianes del Planeta?</p>
-<p><em>(Público responde.)</em></p>
-<p><strong>Todos levantando brazos:</strong>
-¡SOMOS LOS GUARDIANES DEL PLANETA!</p>
+                </div>
 
+                <div class="dialogue">
+                    <span class="character-name">🧒 Niño/a – Rubén:</span>
+                    <p>*(al público)* ¿Nos ayudáis?</p>
+                </div>
+            </div>
+
+            <!-- ===================== FINAL ===================== -->
+            <div class="act-block" id="final">
+                <h2>🏆 FINAL</h2>
+
+                <div class="dialogue">
+                    <span class="character-name">🌍 Madre Tierra – Vero:</span>
+                    <p>El planeta no necesita magia.</p>
+                </div>
+
+                <div class="audience-line">🗣️ Todos: «¡Necesita ayuda!»</div>
+
+                <div class="dialogue">
+                    <span class="character-name">🌍 Madre Tierra – Vero:</span>
+                    <p>Cuando cuidamos la Tierra…</p>
+                </div>
+
+                <div class="audience-line">🗣️ Todos: «¡La Tierra nos cuida!»</div>
+
+                <div class="dialogue">
+                    <span class="character-name">🌍 Madre Tierra – Vero:</span>
+                    <p>¿Queréis ser Guardianes del Planeta?</p>
+                </div>
+
+                <p class="stage-dir">*(El público responde.)*</p>
+
+                <div class="audience-line" style="font-size:1.1rem; text-align:center; padding: 1rem;">
+                    🌍 Todos levantando brazos:<br>
+                    <span style="font-size:1.3rem;">«¡SOMOS LOS GUARDIANES DEL PLANETA!»</span>
+                </div>
+
+                <div class="choreo">
+                    <strong>🎵 Coreografía final:</strong> Todos bailan juntos.
+                    <em>«Pequeño planeta, vuelve a sonreír»</em>.
+                </div>
+            </div>
+
+            <!-- Botón PDF al final -->
+            <div class="pdf-bar" style="margin-top:2rem;">
+                <p>📄 ¿Quieres llevarte el guion? Descarga el PDF listo para imprimir.</p>
+                <a href="teatro.pdf" download class="pdf-btn">📥 Descargar PDF</a>
+            </div>
+
+            <a href="../../index.html" class="back-link">← Volver al inicio</a>
+
+        </div>
+    </main>
+
+    <footer style="background:rgba(255,255,255,.95); padding:2rem 0; text-align:center; margin-top:2rem;">
+        <div class="container">
+            <p>&copy; 2025-2026 Nova-tro-s – Hacemos lo que podemos 🎭💚</p>
+        </div>
+    </footer>
 </body>
 </html>

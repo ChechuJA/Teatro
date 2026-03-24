@@ -9,7 +9,7 @@
 *(Luz suave. Madre Tierra en escena.)*
 
 **🌍 Madre Tierra - Vero:**
-Hace tiempo, el planeta era un lugar feliz.
+Erase una vez, la madre Tierra, hace tiempo, el planeta era un lugar feliz.
 Los bosques cantaban.
 Los ríos brillaban.
 El hielo era fuerte.
@@ -71,7 +71,7 @@ Y nosotros perdemos nuestros nidos.
 
 **🌍 Madre Tierra - Vero:**
 El bosque estaba preocupado.
-Todos tenían miedo.
+Todos tenían miedo por lo que pasaba.
 Pero también… esperanza.
 
 **Todos (Bosque):**
@@ -90,7 +90,8 @@ Los personajes del bosque (lobos, linces, guacamayos, árboles) bailan "Juguemos
 *(Cambio música.)*
 
 **🌍 Madre Tierra - Vero:**
-Después escuché al río.
+Después escuchar al bosque...
+Escuché al río.
 El río que antes cantaba...
 ahora lloraba.
 
@@ -121,7 +122,7 @@ ahora estaba triste y silenciosa.
 Necesitaba ayuda urgente.
 
 **TODOS (Agua):**
-¡El agua está triste!
+¡URGENTE!
 
 *(Se repite con el público.)*
 
@@ -160,6 +161,10 @@ Mi casa de hielo se está derritiendo.
 **🐻‍❄️ Oso Polar 2 - Ana:**
 ¡Necesitamos el hielo!
 
+**🎵 Coreografía:**
+Los personajes del hielo bailan. Nanut el esquimal.
+
+
 **🌍 Madre Tierra - Vero:**
 Mientras en el NORTE el hielo se derretía...
 en el SUR también había un problema grave.
@@ -190,7 +195,7 @@ Y todos estaban asustados.
 ¡Necesitamos ayuda!
 
 **🎵 Coreografía:**
-Los personajes del hielo y las flores (oso polar, pingüinos, abejas) bailan una coreografía alegre. Gisela - ¡Suéltalo! (De "Frozen: El Reino del Hielo")
+Los personajes del hielo y las flores (oso polar, pingüinos, abejas) bailan una coreografía alegre. Abeja maya.
 
 ---
 
@@ -214,9 +219,9 @@ O quizá, ¡Un gigante fuerte!
 
 **🌍 Madre Tierra - Vero (sonríe):**
 No.
-Alguien pequeño.
+Alguien pequeño, alguien como vosotr@s, por ejemplo, Tú (apuntando al actor)
 
-*(Entra el Niño/a.)*
+*(El Niño/a esta sentado con los niños)*
 
 **🧒 Niño/a - Rubén:**
 ¿Yo?
@@ -261,7 +266,7 @@ Y yo puedo ayudar a cuidar a las abejas.
 Sin ellas no tendríamos muchas frutas.
 
 **👑 Abeja Reina - Manuela:**
-Es un humano que entendió.
+Por fin alguien que me entiende.
 
 **🌍 Madre Tierra - Vero:**
 Pequeños gestos…
@@ -271,17 +276,8 @@ Pequeños gestos…
 
 *(Se repite con el público.)*
 
-**🎵 Coreografía:**
-Todos los personajes presentes (niño/a, apicultor, animales) bailan juntos celebrando los pequeños gestos.
-
----
-
-# 🎭 ACTO 3 – EL CAMBIO
-
-*(Música alegre.)*
-
 **🌍 Madre Tierra - Vero:**
-Y entonces… empezó el cambio.
+Y entonces… empezó el cambio de verdad.
 
 **🧒 Niño/a - Rubén (recogiendo basura):**
 Empiezo yo.
@@ -317,9 +313,6 @@ Y el planeta sonríe.
 **🧒 Niño/a - Rubén (al público):**
 ¿Nos ayudáis?
 
-**🎵 Coreografía Final:**
-Todos los personajes bailan juntos una coreografía alegre y colorida celebrando el cambio positivo del planeta.
-
 ---
 
 # 🎭 FINAL
@@ -343,3 +336,6 @@ Cuando cuidamos la Tierra…
 
 **Todos levantando brazos:**
 ¡SOMOS LOS GUARDIANES DEL PLANETA!
+
+**🎵 Coreografía:**
+Todos bailan. Pequeño planeta vuelve a sonreir.

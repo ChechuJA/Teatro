@@ -468,9 +468,55 @@ ${t2.description}<br><br>
 
 // Initialize chatbot when page loads
 document.addEventListener('DOMContentLoaded', () => {
-    new TheaterChatbot();
+    const chatbot = new TheaterChatbot();
     initContactForm();
+    initApuntabotToggle();
+    initQuickReplies(chatbot);
 });
+
+// Lógica del widget flotante (abrir / cerrar)
+function initApuntabotToggle() {
+    const panel  = document.getElementById('apuntabot-panel');
+    const toggle = document.getElementById('apuntabot-toggle');
+    const close  = document.getElementById('apuntabot-close');
+    const input  = document.getElementById('chatInput');
+
+    if (!panel || !toggle) return;
+
+    toggle.addEventListener('click', () => {
+        const isHidden = panel.getAttribute('aria-hidden') === 'true';
+        panel.setAttribute('aria-hidden', isHidden ? 'false' : 'true');
+        if (isHidden && input) setTimeout(() => input.focus(), 250);
+    });
+
+    if (close) {
+        close.addEventListener('click', () => {
+            panel.setAttribute('aria-hidden', 'true');
+        });
+    }
+}
+
+// Botones de pregunta rápida (quick-reply)
+function initQuickReplies(chatbot) {
+    document.addEventListener('click', (e) => {
+        const btn = e.target.closest('.qr-btn');
+        if (!btn) return;
+        const question = btn.dataset.q;
+        if (!question) return;
+        // Enviar como si fuera escrito por el usuario
+        chatbot.addMessage(question, 'user');
+        setTimeout(() => {
+            const response = chatbot.processMessage(question);
+            chatbot.addMessage(response, 'bot');
+        }, 350);
+        // Abrir panel si estaba cerrado
+        const panel = document.getElementById('apuntabot-panel');
+        if (panel) panel.setAttribute('aria-hidden', 'false');
+        // Scroll al fondo
+        const msgs = document.getElementById('chatMessages');
+        if (msgs) setTimeout(() => { msgs.scrollTop = msgs.scrollHeight; }, 400);
+    });
+}
 
 // Contact form functionality
 function initContactForm() {

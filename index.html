@@ -79,8 +79,8 @@
                             <div class="trimester-materials">
                                 <p><strong>📁 Materiales disponibles:</strong></p>
                                 <ul>
-                                    <li><a href="2025-2026/Trimestre2/index.html" target="_blank">📖 Ver obra completa</a></li>
-                                    <li><a href="2025-2026/Trimestre2/README.md" target="_blank">📋 Información y reparto</a></li>
+                                    <li><a href="2025-2026/Trimestre2/teatro.html" target="_blank">📖 Leer guion completo</a></li>
+                                    <li><a href="2025-2026/Trimestre2/index.html" target="_blank">ℹ️ Información y reparto</a></li>
                                     <li><a href="2025-2026/Trimestre2/teatro.pdf" download>📄 Descargar guion (PDF)</a></li>
                                     <li>📸 Imágenes (próximamente)</li>
                                     <li>🎵 Música y coreografías (próximamente)</li>
@@ -127,41 +127,7 @@
             </div>
         </section>
 
-        <section class="chatbot-section">
-            <h2>🎭 Apuntabot</h2>
-            <p>Tu asistente teatral de Nova-tro-s. Pregúntale sobre el guion, el reparto, los ensayos, las fechas...</p>
-            
-            <div class="chat-container">
-                <div class="chat-header">
-                    <span class="chat-bot-icon">🎭</span>
-                    <div class="chat-bot-info">
-                        <strong>Apuntabot</strong>
-                        <span class="chat-bot-status">● En línea</span>
-                    </div>
-                </div>
-                <div id="chatMessages" class="chat-messages">
-                    <div class="message bot-message">
-                        <span class="bot-avatar">🎭</span>
-                        <div class="bot-bubble">
-                            <p>¡Hola! Soy <strong>Apuntabot</strong>, el apuntador digital de Nova-tro-s 🎭</p>
-                            <p>Me sé todos los textos, el reparto, los ensayos y mucho más. Pregúntame lo que quieras:</p>
-                            <ul>
-                                <li>💬 «¿Quién hace de Madre Tierra?»</li>
-                                <li>📅 «¿Cuándo es la obra?»</li>
-                                <li>👥 «¿Cuántos participantes somos?»</li>
-                                <li>📜 «Cuéntame el guion del Acto 2»</li>
-                                <li>🎵 «¿Qué bailan en la zona del bosque?»</li>
-                                <li>🏋️ «¿Cuándo son los ensayos?»</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="chat-input-container">
-                    <input type="text" id="chatInput" placeholder="Pregúntale algo a Apuntabot..." />
-                    <button id="sendButton" aria-label="Enviar">➤</button>
-                </div>
-            </div>
-        </section>
+
 
         <section class="news">
             <h2>📰 Noticias y Anuncios</h2>
@@ -252,6 +218,63 @@
             <p>&copy; 2025-2026 Nova-tro-s - Hacemos lo que podemos 🎭</p>
         </div>
     </footer>
+
+    <!-- Apuntabot – widget flotante –––––––––––––––––––––– -->
+    <div id="apuntabot-widget" class="apuntabot-widget">
+
+        <!-- Panel del chat (oculto por defecto) -->
+        <div id="apuntabot-panel" class="apuntabot-panel" aria-hidden="true">
+            <div class="chat-header">
+                <span class="chat-bot-icon">🎭</span>
+                <div class="chat-bot-info">
+                    <strong>Apuntabot</strong>
+                    <span class="chat-bot-status">● En línea</span>
+                </div>
+                <button id="apuntabot-close" class="apuntabot-close" aria-label="Cerrar chat">✕</button>
+            </div>
+            <div id="chatMessages" class="chat-messages">
+                <div class="message bot-message">
+                    <span class="bot-avatar">🎭</span>
+                    <div class="bot-bubble">
+                        <p>¡Hola! Soy <strong>Apuntabot</strong>, el apuntador digital de Nova-tro-s 🎭</p>
+                            <p>Me sé todos los textos, el reparto y mucho más. Pulsa una pregunta o escribe la tuya:</p>
+                        <div class="quick-replies">
+                            <button class="qr-btn" data-q="¿Cuándo es la obra del segundo trimestre?">📅 ¿Cuándo es la obra?</button>
+                            <button class="qr-btn" data-q="¿Cuántos participantes somos en el segundo trimestre?">👥 ¿Cuántos somos?</button>
+                            <button class="qr-btn" data-q="¿Quién hace de Madre Tierra?">🌍 ¿Quién es Madre Tierra?</button>
+                            <button class="qr-btn" data-q="Dame el reparto completo">🎭 Reparto completo</button>
+                            <button class="qr-btn" data-q="De qué va la obra del segundo trimestre?">🌍 De qué va la obra</button>
+                            <button class="qr-btn" data-q="Cuéntame el guion del Acto 1">📜 Guion Acto 1</button>
+                            <button class="qr-btn" data-q="Cuéntame el guion del Acto 2">📜 Guion Acto 2</button>
+                            <button class="qr-btn" data-q="Cuéntame el guion del Acto 3">📜 Guion Acto 3</button>
+                            <button class="qr-btn" data-q="¿Qué bailan en la zona del bosque?">🎵 Coreografías</button>
+                            <button class="qr-btn" data-q="¿Cuándo son los ensayos?">🏋️ Ensayos</button>
+                            <button class="qr-btn" data-q="Programación completa del curso">📅 Todos los trimestres</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="quick-replies-bar">
+                <button class="qr-btn qr-small" data-q="¿Cuándo es la obra del segundo trimestre?">📅 Fecha</button>
+                <button class="qr-btn qr-small" data-q="Dame el reparto completo">🎭 Reparto</button>
+                <button class="qr-btn qr-small" data-q="¿Cuántos participantes somos en el segundo trimestre?">👥 Participantes</button>
+                <button class="qr-btn qr-small" data-q="Cuéntame el guion del Acto 2">📜 Acto 2</button>
+                <button class="qr-btn qr-small" data-q="¿Cuándo son los ensayos?">🏋️ Ensayos</button>
+                <button class="qr-btn qr-small" data-q="¿Qué bailan en la zona del bosque?">🎵 Baile</button>
+            </div>
+            <div class="chat-input-container">
+                <input type="text" id="chatInput" placeholder="Pregúntale algo a Apuntabot..." />
+                <button id="sendButton" aria-label="Enviar">➤</button>
+            </div>
+        </div>
+
+        <!-- Botón flotante –– siempre visible –– -->
+        <button id="apuntabot-toggle" class="apuntabot-toggle" aria-label="Abrir Apuntabot">
+            <span class="apuntabot-toggle-icon">🎭</span>
+            <span class="apuntabot-toggle-label">Apuntabot</span>
+        </button>
+
+    </div>
 
     <script src="chatbot.js"></script>
 </body>
