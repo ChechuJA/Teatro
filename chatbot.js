@@ -20,7 +20,7 @@ const theaterData = {
             date: null,
             time: null,
             participants: null,
-            location: "Salón de Actos del Colegio",
+            location: "Hall de infantil",
             status: "pendiente",
             description: "La obra del primer trimestre está pendiente. ¡Pronto habrá novedades!"
         },
@@ -32,7 +32,7 @@ const theaterData = {
             date: "25 de marzo de 2026",
             time: "10:00h",
             participants: 21,
-            location: "Salón de Actos del Colegio",
+            location: "Hall de infantil",
             status: "activa",
             description: "Obra educativa sobre el cuidado del medio ambiente. Los peques aprenderán que pequeñas acciones generan grandes cambios. 3 actos de 20 minutos con coreografías por zonas: 🌲 Bosque, 🌊 Agua, ❄️ Hielo y 🌼 Flores.",
             zonas: ["🌲 Bosque (Árboles, Lobos, Linces, Guacamayos)", "🌊 Agua (Peces, Cocodrilos)", "❄️ Hielo (Osos Polares, Pingüinos)", "🌼 Flores (Abejas)"],
@@ -133,9 +133,56 @@ const theaterData = {
             date: "10 de junio de 2026",
             time: "Por confirmar",
             participants: 14,
-            location: "Salón de Actos del Colegio",
+            location: "Hall de infantil",
             status: "activa",
-            description: "Adaptación teatral del cuento clásico para Educación Infantil, con humor, participación del público y mensajes de amistad y ayuda mutua."
+            description: "Adaptación teatral del cuento clásico para Educación Infantil, con humor, participación del público y mensajes de amistad y ayuda mutua.",
+            mensaje: "Amistad, ayuda mutua y cooperación."
+            ,actos: [
+                "🎭 Acto 1 – El espejo y la huida: La madrastra descubre que Blancanieves es la más bella y la manda al bosque.",
+                "🎭 Acto 2 – La casa de los enanitos: Los enanitos encuentran a Blancanieves y deciden ayudarla.",
+                "🎭 Acto 3 – La manzana y el despertar: La anciana engaña a Blancanieves y el príncipe la despierta."
+            ],
+            reparto: [
+                { num: 1, nombre: "Chary", personaje: "Narrador", emoji: "🌍" },
+                { num: 2, nombre: "Por asignar", personaje: "Blancanieves", emoji: "👧" },
+                { num: 3, nombre: "Vero", personaje: "Madrastra", emoji: "👑" },
+                { num: 4, nombre: "Por asignar", personaje: "Anciana", emoji: "👵" },
+                { num: 5, nombre: "Ana", personaje: "Espejo Mágico", emoji: "🪞" },
+                { num: 6, nombre: "Virginia", personaje: "Cazador", emoji: "🏹" },
+                { num: 7, nombre: "Por asignar", personaje: "Príncipe Florián", emoji: "🤴" },
+                { num: 8, nombre: "Aitana", personaje: "Enanito Tartamudo", emoji: "⛏️" },
+                { num: 9, nombre: "Manuela", personaje: "Enanito Gruñón", emoji: "⛏️" },
+                { num: 10, nombre: "Estefanía", personaje: "Enanito Comilón", emoji: "⛏️" },
+                { num: 11, nombre: "Ester", personaje: "Enanito Miedoso", emoji: "⛏️" },
+                { num: 12, nombre: "Isa", personaje: "Enanito Ciego", emoji: "⛏️" },
+                { num: 13, nombre: "Sadaf", personaje: "Enanito Llorón", emoji: "⛏️" },
+                { num: 14, nombre: "Marta", personaje: "Enanito Dormilón", emoji: "⛏️" }
+            ],
+            pendientes: ["Blancanieves", "Anciana", "Príncipe Florián"],
+            guionResumen: {
+                acto1: [
+                    "🌍 Narrador: «Érase una vez un reino muy lejano donde vivía Blancanieves.»",
+                    "👑 Madrastra: «Espejo, espejito, ¿quién es la más bella de este reino?»",
+                    "🪞 Espejo Mágico: «Ahora la más bella es Blancanieves.»",
+                    "🏹 Cazador: «Huye lejos y busca un lugar seguro.»"
+                ],
+                acto2: [
+                    "⛏️ Enanito Tartamudo: «¿Quién ha entrado en nuestra casa?»",
+                    "⛏️ Enanito Gruñón: «¡Está todo desordenado!»",
+                    "👧 Blancanieves: «No tengo dónde ir. Mi madrastra me quiere matar.»",
+                    "⛏️ Enanitos: «¡Te quedas con nosotros!»"
+                ],
+                acto3: [
+                    "👵 Anciana: «¡Manzanas ricas! Toma, pruébala.»",
+                    "🌍 Narrador: «Blancanieves muerde la manzana y cae al suelo.»",
+                    "🤴 Príncipe Florián: «¿Qué ha pasado? ¿Quién es esta bella princesa?»",
+                    "🤴 Príncipe Florián: «Soy el príncipe Florián.»"
+                ],
+                principe: [
+                    "🤴 Príncipe Florián: «¿Qué ha pasado? ¿Quién es esta bella princesa?»",
+                    "🤴 Príncipe Florián: «Soy el príncipe Florián.»"
+                ]
+            }
         }
     ]
 };
@@ -207,6 +254,22 @@ class TheaterChatbot {
 
     getT2() {
         return theaterData.performances[1]; // segundo trimestre (activa)
+    }
+
+    getT3() {
+        return theaterData.performances[2];
+    }
+
+    getCurrentPerformance() {
+        return this.getT3();
+    }
+
+    getPerformanceForMessage(msg) {
+        const ti = this.detectTrimester(msg);
+        if (ti !== null) return theaterData.performances[ti];
+        if (this.m(msg, ['blancanieves', 'enanito', 'enanitos', 'madrastra', 'espejo', 'principe', 'príncipe', 'cazador', 'anciana'])) return this.getT3();
+        if (this.m(msg, ['guardianes', 'planeta', 'madre tierra', 'apicultor', 'abeja', 'bosque', 'agua', 'hielo', 'flores'])) return this.getT2();
+        return this.getCurrentPerformance();
     }
 
     detectTrimester(msg) {
@@ -309,7 +372,7 @@ class TheaterChatbot {
         // Pregunta por nombre específico de participante
         const persona = this.detectNombreParticipante(msg);
         if (persona) {
-            return `${persona.emoji} <strong>${persona.nombre}</strong> interpreta a <strong>${persona.personaje}</strong> en «Los Guardianes del Planeta» (2º trimestre). ¡Un papel genial! 👏`;
+            return `${persona.emoji} <strong>${persona.nombre}</strong> interpreta a <strong>${persona.personaje}</strong> en «${persona.obra}». ¡Un papel genial! 👏`;
         }
 
         // Respuesta por defecto
@@ -322,18 +385,18 @@ class TheaterChatbot {
 Puedes preguntarme cosas como:<br>
 🗓️ <em>«¿Cuándo es la obra?»</em><br>
 👥 <em>«¿Cuántos participantes somos?»</em><br>
-🎭 <em>«¿Quién hace de Madre Tierra?»</em><br>
+🎭 <em>«¿Quién hace de Madrastra?»</em><br>
 📜 <em>«Cuéntame el guion»</em><br>
-🎵 <em>«¿Qué canciones bailan?»</em><br>
-📥 <em>«¿Cómo descargo las canciones?»</em><br>
+🎭 <em>«¿Qué personajes faltan por asignar?»</em><br>
 🏋️ <em>«¿Cuándo son los ensayos?»</em><br>
-🌍 <em>«¿De qué va la obra?»</em><br>
+👑 <em>«¿De qué va Blancanieves?»</em><br>
 📅 <em>«¿Qué hay en el tercer trimestre?»</em>`;
     }
 
     getEnsayos() {
         const e = theaterData.ensayos;
-        return `🏋️ <strong>Ensayos del 2º Trimestre:</strong><br><br>
+        const current = this.getCurrentPerformance();
+        return `🏋️ <strong>Ensayos de la obra actual: «${current.title}»</strong><br><br>
 📅 Todos los <strong>${e.dia}</strong><br>
 ⏰ A las <strong>${e.hora}</strong><br>
 📍 En el <strong>${e.lugar}</strong><br><br>
@@ -341,7 +404,55 @@ Puedes preguntarme cosas como:<br>
     }
 
     getReparto(msg) {
-        const t2 = this.getT2();
+        const perf = this.getPerformanceForMessage(msg);
+        if (!perf.reparto) return `🎭 Aún no tengo el reparto cargado de <strong>${perf.title}</strong>.`;
+
+        if (perf.num === 3) {
+            if (this.m(msg, ['faltan', 'pendientes', 'por asignar', 'vacantes'])) {
+                let html = `🚨 <strong>Personajes pendientes en «${perf.title}»</strong><br><br>`;
+                perf.pendientes.forEach(p => { html += `🔴 ${p}<br>`; });
+                return html;
+            }
+
+            const personajesBuscar = {
+                'narrador': 1,
+                'blancanieves': 2,
+                'madrastra': 3,
+                'anciana': 4,
+                'espejo': 5, 'espejo magico': 5, 'espejo mágico': 5,
+                'cazador': 6,
+                'principe': 7, 'príncipe': 7, 'florian': 7, 'florián': 7,
+                'tartamudo': 8,
+                'grunon': 9, 'gruñon': 9, 'gruñón': 9,
+                'comilon': 10, 'comilón': 10,
+                'miedoso': 11,
+                'ciego': 12,
+                'lloron': 13, 'llorón': 13,
+                'dormilon': 14, 'dormilón': 14
+            };
+
+            for (const [clave, idx] of Object.entries(personajesBuscar)) {
+                if (msg.includes(clave)) {
+                    const p = perf.reparto[idx - 1];
+                    if (p.nombre.toLowerCase() === 'por asignar') {
+                        return `${p.emoji} <strong>${p.personaje}</strong> → <span style="color:#d32f2f;"><strong>Por asignar</strong></span>`;
+                    }
+                    return `${p.emoji} <strong>${p.personaje}</strong> → lo hace <strong>${p.nombre}</strong> 👏`;
+                }
+            }
+
+            let html = `🎭 <strong>Reparto completo «${perf.title}»</strong><br>${perf.trimester.charAt(0).toUpperCase() + perf.trimester.slice(1)} · ${perf.participants} participantes<br><br>`;
+            perf.reparto.forEach(p => {
+                const nombre = p.nombre.toLowerCase() === 'por asignar'
+                    ? `<span style="color:#d32f2f;"><strong>Por asignar</strong></span>`
+                    : `<strong>${p.nombre}</strong>`;
+                html += `${p.emoji} ${nombre} → ${p.personaje}<br>`;
+            });
+            html += `<br>🚨 Pendientes: ${perf.pendientes.join(', ')}`;
+            return html;
+        }
+
+        const t2 = perf;
         // ¿Busca personaje concreto?
         const personajesBuscar = {
             'madre tierra': 4, 'narradora': 4, 'narradora': 4,
@@ -375,7 +486,29 @@ Puedes preguntarme cosas como:<br>
     }
 
     getGuion(msg) {
-        const g = this.getT2().guionResumen;
+        const perf = this.getPerformanceForMessage(msg);
+        if (perf.num === 3) {
+            const g = perf.guionResumen;
+            if (this.m(msg, ['principe', 'príncipe', 'florian', 'florián'])) {
+                return `<strong>🤴 Texto del Príncipe Florián</strong><br><br>${g.principe.join('<br>')}<br><br>En el guion actual tiene <strong>2 intervenciones</strong>.`;
+            }
+            if (this.m(msg, ['acto 1', 'acto1', 'primero', 'primer acto'])) {
+                return `<strong>🎭 Acto 1 – El espejo y la huida</strong><br><br>${g.acto1.join('<br>')}`;
+            }
+            if (this.m(msg, ['acto 2', 'acto2', 'segundo acto'])) {
+                return `<strong>🎭 Acto 2 – La casa de los enanitos</strong><br><br>${g.acto2.join('<br>')}`;
+            }
+            if (this.m(msg, ['acto 3', 'acto3', 'tercer acto', 'final', 'manzana'])) {
+                return `<strong>🎭 Acto 3 – La manzana y el despertar</strong><br><br>${g.acto3.join('<br>')}`;
+            }
+
+            let html = `📜 <strong>Guion resumido – «${perf.title}»</strong><br><br>`;
+            perf.actos.forEach(a => { html += `${a}<br><br>`; });
+            html += `Puedes preguntarme por <em>«Acto 1»</em>, <em>«Acto 2»</em>, <em>«Acto 3»</em> o <em>«texto del príncipe»</em>.`;
+            return html;
+        }
+
+        const g = perf.guionResumen;
         if (this.m(msg, ['acto 1', 'acto1', 'primero', 'primer acto', 'bosque'])) {
             return `<strong>🌲 Acto 1 – Zona Bosque</strong><br><br>${g.acto1_bosque.join('<br>')}`;
         }
@@ -392,22 +525,27 @@ Puedes preguntarme cosas como:<br>
             return `<strong>🎭 Acto 3 – El Cambio</strong><br><br>${g.acto3.join('<br>')}`;
         }
         // Resumen de los 3 actos
-        const t2 = this.getT2();
-        let html = `📜 <strong>Guion resumido – «${t2.title}»</strong><br><br>`;
-        t2.actos.forEach(a => { html += `${a}<br><br>`; });
+        let html = `📜 <strong>Guion resumido – «${perf.title}»</strong><br><br>`;
+        perf.actos.forEach(a => { html += `${a}<br><br>`; });
         html += `Puedes preguntarme por una parte concreta: <em>«dime el Acto 1»</em>, <em>«zona agua»</em>, <em>«Acto 3»</em>… 😉`;
         return html;
     }
 
     getZonas() {
-        const t2 = this.getT2();
+        const t2 = this.getCurrentPerformance();
+        if (!t2.zonas) {
+            return `🎬 <strong>«${t2.title}»</strong> no está organizada por zonas como la obra del segundo trimestre. Aquí la obra va por <strong>3 actos</strong>.`;
+        }
         let html = `🎬 <strong>Zonas de actuación – «${t2.title}»</strong><br><br>`;
         t2.zonas.forEach(z => { html += `${z}<br>`; });
         return html;
     }
 
     getCoreografias() {
-        const t2 = this.getT2();
+        const t2 = this.getCurrentPerformance();
+        if (!t2.coreografias) {
+            return `🎵 En <strong>«${t2.title}»</strong> no tengo coreografías específicas cargadas. Si queréis, puedo contaros el reparto, el resumen por actos o qué personajes faltan por asignar.`;
+        }
         let html = `🎵 <strong>Coreografías y canciones – «${t2.title}»</strong><br><br>`;
         t2.coreografias.forEach(c => { html += `${c}<br>`; });
         html += `<br>💾 <strong>¿Quieres las canciones?</strong> Puedes reproducirlas directamente desde el <a href="2025-2026/Trimestre2/teatro.html" target="_blank">guion interactivo</a> o <a href="${t2.musica.zip}" download>descargar el ZIP con todas</a>.`;
@@ -421,8 +559,8 @@ Puedes preguntarme cosas como:<br>
             if (perf.status === 'pendiente') return `📅 Aún no hay fecha confirmada para el <strong>${perf.trimester}</strong>. ¡Estate atento a las novedades! ${perf.emoji}`;
             return `📅 <strong>${perf.emoji} ${perf.title}</strong><br>Fecha: <strong>${perf.date}</strong> a las <strong>${perf.time}</strong>`;
         }
-        const t2 = this.getT2();
-        return `📅 La obra actual es <strong>«${t2.title}»</strong> y se representa el <strong>${t2.date}</strong> a las <strong>${t2.time}</strong> en el ${t2.location}.`;
+        const current = this.getCurrentPerformance();
+        return `📅 La obra actual es <strong>«${current.title}»</strong> y se representa el <strong>${current.date}</strong> a las <strong>${current.time}</strong> en el ${current.location}.`;
     }
 
     getHora(msg) {
@@ -432,7 +570,8 @@ Puedes preguntarme cosas como:<br>
             if (perf.status === 'pendiente') return `⏰ Todavía no hay hora confirmada para el <strong>${perf.trimester}</strong>.`;
             return `⏰ La actuación del <strong>${perf.trimester}</strong> es a las <strong>${perf.time}</strong>.`;
         }
-        return `⏰ Normalmente las actuaciones empiezan a las <strong>10:00h</strong> de la mañana. La del 2º trimestre (${this.getT2().date}) también es a las <strong>${this.getT2().time}</strong>.`;
+        const current = this.getCurrentPerformance();
+        return `⏰ La hora de <strong>«${current.title}»</strong> todavía está <strong>por confirmar</strong>.`;
     }
 
     getParticipantes(msg) {
@@ -442,13 +581,13 @@ Puedes preguntarme cosas como:<br>
             if (perf.status === 'pendiente') return `👥 Todavía no se conoce el número de participantes del <strong>${perf.trimester}</strong>.`;
             return `👥 En el <strong>${perf.trimester}</strong> participan <strong>${perf.participants} familias (adultos)</strong>.`;
         }
-        const t2 = this.getT2();
-        return `👥 En el <strong>2º trimestre</strong> somos <strong>${t2.participants} participantes</strong> (todos adultos, padres y madres).<br>El 1º y 3º trimestre están pendientes de confirmación.`;
+        const current = this.getCurrentPerformance();
+        return `👥 En la obra actual, <strong>«${current.title}»</strong>, participan <strong>${current.participants} familias (adultos)</strong>.`;
     }
 
     getLugar() {
-        const t2 = this.getT2();
-        return `📍 Las actuaciones se realizan en el <strong>${t2.location}</strong>.<br>Los ensayos son en el <strong>${theaterData.ensayos.lugar}</strong>, los ${theaterData.ensayos.dia} a las ${theaterData.ensayos.hora}.`;
+        const current = this.getCurrentPerformance();
+        return `📍 La actuación de <strong>«${current.title}»</strong> será en el <strong>${current.location}</strong>.<br>Los ensayos son en el <strong>${theaterData.ensayos.lugar}</strong>, los ${theaterData.ensayos.dia} a las ${theaterData.ensayos.hora}.`;
     }
 
     getTitulo(msg) {
@@ -458,18 +597,15 @@ Puedes preguntarme cosas como:<br>
             if (perf.status === 'pendiente') return `${perf.emoji} El título del <strong>${perf.trimester}</strong> aún no está anunciado. ¡Pronto lo sabremos!`;
             return `${perf.emoji} El <strong>${perf.trimester}</strong> se llama <strong>«${perf.title}»</strong>.`;
         }
-        let html = `🎭 <strong>Obras del curso ${theaterData.curso}:</strong><br><br>`;
-        theaterData.performances.forEach(p => {
-            html += `${p.emoji} <strong>${p.trimester.charAt(0).toUpperCase() + p.trimester.slice(1)}:</strong> ${p.title ? `«${p.title}»` : 'Pendiente'}<br>`;
-        });
-        return html;
+        const current = this.getCurrentPerformance();
+        return `${current.emoji} La obra actual es <strong>«${current.title}»</strong>.`;
     }
 
     getResumen() {
-        const t2 = this.getT2();
-        return `🌍 <strong>«${t2.title}»</strong><br><br>
+        const t2 = this.getCurrentPerformance();
+        return `${t2.emoji} <strong>«${t2.title}»</strong><br><br>
 ${t2.description}<br><br>
-💬 Mensaje de la obra: <em>«${t2.mensaje}»</em><br><br>
+💬 Mensaje de la obra: <em>«${t2.mensaje || 'Amistad y cooperación.'}»</em><br><br>
 📅 ${t2.date} · ⏰ ${t2.time} · 📍 ${t2.location}`;
     }
 
@@ -486,8 +622,10 @@ ${t2.description}<br><br>
     }
 
     detectNombreParticipante(msg) {
-        const t2 = this.getT2();
-        return t2.reparto.find(p => msg.includes(p.nombre.toLowerCase())) || null;
+        const perf = this.getCurrentPerformance();
+        const p = perf.reparto ? perf.reparto.find(persona => msg.includes(persona.nombre.toLowerCase()) && persona.nombre.toLowerCase() !== 'por asignar') : null;
+        if (!p) return null;
+        return { ...p, obra: perf.title };
     }
 }
 

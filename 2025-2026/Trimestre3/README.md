@@ -79,7 +79,7 @@ La obra enseña:
 
 - **Fecha:** 10 de junio de 2026
 - **Hora:** *Por confirmar*
-- **Lugar:** Salón de Actos del Colegio
+- **Lugar:** Hall de infantil
 - **Participantes:** 14 familias (adultos)
 
 ---
