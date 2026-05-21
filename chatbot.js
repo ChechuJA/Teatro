@@ -274,8 +274,20 @@ class TheaterChatbot {
         return this.getPerformanceByIndex(this.selectedTrimester);
     }
 
+    getActivePerformance() {
+        return this.getSelectedPerformance() || this.getCurrentPerformance();
+    }
+
     setSelectedTrimester(index) {
         this.selectedTrimester = index;
+    }
+
+    isTrimesterSelectionMessage(msg) {
+        const clean = msg.trim();
+        return [
+            'segundo trimestre', 'segundo', 'segunda', '2º', 'trimestre 2',
+            'tercer trimestre', 'tercero', 'tercer', '3º', 'trimestre 3'
+        ].includes(clean);
     }
 
     getTrimesterChooser() {
@@ -338,7 +350,9 @@ Puedo enseñarte esto:<br><br>
         const trimesterIdx = this.detectTrimester(msg);
         if (trimesterIdx !== null && trimesterIdx > 0) {
             this.setSelectedTrimester(trimesterIdx);
-            return this.getTrimesterMenu(this.getPerformanceByIndex(trimesterIdx));
+            if (this.isTrimesterSelectionMessage(msg)) {
+                return this.getTrimesterMenu(this.getPerformanceByIndex(trimesterIdx));
+            }
         }
 
         // Saludos
@@ -378,16 +392,16 @@ Puedo enseñarte esto:<br><br>
 
         // Zonas / partes de la obra
         if (this.m(msg, ['zona', 'zonas', 'bosque', 'agua', 'hielo', 'flores', 'partes'])) {
-            return this.getZonas();
+            return this.getZonas(msg);
         }
 
         // Coreografias
         if (this.m(msg, ['coreografia', 'coreografía', 'baile', 'bailan', 'cancion', 'canción', 'musica', 'música', 'cantan'])) {
-            return this.getCoreografias();
+            return this.getCoreografias(msg);
         }
 
         // Descarga canciones / ZIP
-        if (this.m(msg, ['descarga', 'descargar', 'zip', 'mp3', 'mpeg', 'canciones', 'archivo', 'archivos', 'fichero'])) {
+        if (this.m(msg, ['zip', 'mp3', 'mpeg', 'canciones', 'archivo', 'archivos', 'fichero']) || (this.m(msg, ['descarga', 'descargar']) && this.m(msg, ['canciones', 'musica', 'música']))) {
             const perf = this.getPerformanceForMessage(msg);
             if (perf.num === 3) {
                 return `📄 <strong>Materiales de «${perf.title}»</strong><br><br>
@@ -425,7 +439,7 @@ Puedes abrir el <a href="2025-2026/Trimestre3/teatro.html" target="_blank"><stro
 
         // Dónde es / lugar
         if (this.m(msg, ['donde', 'dónde', 'lugar', 'ubicacion', 'ubicación', 'sitio', 'colegio', 'salon', 'salón'])) {
-            return this.getLugar();
+            return this.getLugar(msg);
         }
 
         // Hora
@@ -440,7 +454,7 @@ Puedes abrir el <a href="2025-2026/Trimestre3/teatro.html" target="_blank"><stro
 
         // Resumen / de qué va
         if (this.m(msg, ['resume', 'resumen', 'de que va', 'de qué va', 'sobre que', 'sobre qué', 'que cuenta', 'qué cuenta', 'mensaje'])) {
-            return this.getResumen();
+            return this.getResumen(msg);
         }
 
         // Programación general / todos los trimestres
@@ -467,8 +481,8 @@ Puedes abrir el <a href="2025-2026/Trimestre3/teatro.html" target="_blank"><stro
 
     getEnsayos() {
         const e = theaterData.ensayos;
-        const current = this.getCurrentPerformance();
-        return `🏋️ <strong>Ensayos de la obra actual: «${current.title}»</strong><br><br>
+        const current = this.getActivePerformance();
+        return `🏋️ <strong>Ensayos de «${current.title}»</strong><br><br>
 📅 Todos los <strong>${e.dia}</strong><br>
 ⏰ A las <strong>${e.hora}</strong><br>
 📍 En el <strong>${e.lugar}</strong><br><br>
@@ -603,24 +617,24 @@ Puedes abrir el <a href="2025-2026/Trimestre3/teatro.html" target="_blank"><stro
         return html;
     }
 
-    getZonas() {
-        const t2 = this.getCurrentPerformance();
-        if (!t2.zonas) {
-            return `🎬 <strong>«${t2.title}»</strong> no está organizada por zonas como la obra del segundo trimestre. Aquí la obra va por <strong>3 actos</strong>.`;
+    getZonas(msg = '') {
+        const perf = this.getPerformanceForMessage(msg);
+        if (!perf.zonas) {
+            return `🎬 <strong>«${perf.title}»</strong> no está organizada por zonas como la obra del segundo trimestre. Aquí la obra va por <strong>3 actos</strong>.`;
         }
-        let html = `🎬 <strong>Zonas de actuación – «${t2.title}»</strong><br><br>`;
-        t2.zonas.forEach(z => { html += `${z}<br>`; });
+        let html = `🎬 <strong>Zonas de actuación – «${perf.title}»</strong><br><br>`;
+        perf.zonas.forEach(z => { html += `${z}<br>`; });
         return html;
     }
 
-    getCoreografias() {
-        const t2 = this.getCurrentPerformance();
-        if (!t2.coreografias) {
-            return `🎵 En <strong>«${t2.title}»</strong> no tengo coreografías específicas cargadas. Si queréis, puedo contaros el reparto, el resumen por actos o qué personajes faltan por asignar.`;
+    getCoreografias(msg = '') {
+        const perf = this.getPerformanceForMessage(msg);
+        if (!perf.coreografias) {
+            return `🎵 En <strong>«${perf.title}»</strong> no tengo coreografías específicas cargadas. Si queréis, puedo contaros el reparto, el resumen por actos o qué personajes faltan por asignar.`;
         }
-        let html = `🎵 <strong>Coreografías y canciones – «${t2.title}»</strong><br><br>`;
-        t2.coreografias.forEach(c => { html += `${c}<br>`; });
-        html += `<br>💾 <strong>¿Quieres las canciones?</strong> Puedes reproducirlas directamente desde el <a href="2025-2026/Trimestre2/teatro.html" target="_blank">guion interactivo</a> o <a href="${t2.musica.zip}" download>descargar el ZIP con todas</a>.`;
+        let html = `🎵 <strong>Coreografías y canciones – «${perf.title}»</strong><br><br>`;
+        perf.coreografias.forEach(c => { html += `${c}<br>`; });
+        html += `<br>💾 <strong>¿Quieres las canciones?</strong> Puedes reproducirlas directamente desde el <a href="2025-2026/Trimestre2/teatro.html" target="_blank">guion interactivo</a> o <a href="${perf.musica.zip}" download>descargar el ZIP con todas</a>.`;
         return html;
     }
 
@@ -631,8 +645,8 @@ Puedes abrir el <a href="2025-2026/Trimestre3/teatro.html" target="_blank"><stro
             if (perf.status === 'pendiente') return `📅 Aún no hay fecha confirmada para el <strong>${perf.trimester}</strong>. ¡Estate atento a las novedades! ${perf.emoji}`;
             return `📅 <strong>${perf.emoji} ${perf.title}</strong><br>Fecha: <strong>${perf.date}</strong> a las <strong>${perf.time}</strong>`;
         }
-        const current = this.getCurrentPerformance();
-        return `📅 La obra actual es <strong>«${current.title}»</strong> y se representa el <strong>${current.date}</strong> a las <strong>${current.time}</strong> en el ${current.location}.`;
+        const current = this.getActivePerformance();
+        return `📅 La obra seleccionada es <strong>«${current.title}»</strong> y se representa el <strong>${current.date}</strong> a las <strong>${current.time}</strong> en el ${current.location}.`;
     }
 
     getHora(msg) {
@@ -642,8 +656,8 @@ Puedes abrir el <a href="2025-2026/Trimestre3/teatro.html" target="_blank"><stro
             if (perf.status === 'pendiente') return `⏰ Todavía no hay hora confirmada para el <strong>${perf.trimester}</strong>.`;
             return `⏰ La actuación del <strong>${perf.trimester}</strong> es a las <strong>${perf.time}</strong>.`;
         }
-        const current = this.getCurrentPerformance();
-        return `⏰ La hora de <strong>«${current.title}»</strong> todavía está <strong>por confirmar</strong>.`;
+        const current = this.getActivePerformance();
+        return `⏰ La hora de <strong>«${current.title}»</strong> es <strong>${current.time}</strong>.`;
     }
 
     getParticipantes(msg) {
@@ -653,12 +667,13 @@ Puedes abrir el <a href="2025-2026/Trimestre3/teatro.html" target="_blank"><stro
             if (perf.status === 'pendiente') return `👥 Todavía no se conoce el número de participantes del <strong>${perf.trimester}</strong>.`;
             return `👥 En el <strong>${perf.trimester}</strong> participan <strong>${perf.participants} familias (adultos)</strong>.`;
         }
-        const current = this.getCurrentPerformance();
-        return `👥 En la obra actual, <strong>«${current.title}»</strong>, participan <strong>${current.participants} familias (adultos)</strong>.`;
+        const current = this.getActivePerformance();
+        return `👥 En <strong>«${current.title}»</strong> participan <strong>${current.participants} familias (adultos)</strong>.`;
     }
 
-    getLugar() {
-        const current = this.getCurrentPerformance();
+    getLugar(msg) {
+        const ti = this.detectTrimester(msg);
+        const current = ti !== null ? theaterData.performances[ti] : this.getActivePerformance();
         return `📍 La actuación de <strong>«${current.title}»</strong> será en el <strong>${current.location}</strong>.<br>Los ensayos son en el <strong>${theaterData.ensayos.lugar}</strong>, los ${theaterData.ensayos.dia} a las ${theaterData.ensayos.hora}.`;
     }
 
@@ -669,7 +684,10 @@ Puedes abrir el <a href="2025-2026/Trimestre3/teatro.html" target="_blank"><stro
             if (perf.status === 'pendiente') return `${perf.emoji} El título del <strong>${perf.trimester}</strong> aún no está anunciado. ¡Pronto lo sabremos!`;
             return `${perf.emoji} El <strong>${perf.trimester}</strong> se llama <strong>«${perf.title}»</strong>.`;
         }
-        const current = this.getCurrentPerformance();
+        const current = this.getActivePerformance();
+        if (this.getSelectedPerformance()) {
+            return `${current.emoji} La obra del <strong>${current.trimester}</strong> es <strong>«${current.title}»</strong>.`;
+        }
         let html = `📅 <strong>Programación ${theaterData.curso}:</strong><br><br>`;
         theaterData.performances.forEach(p => {
             if (p.status === 'pendiente') {
@@ -682,12 +700,12 @@ Puedes abrir el <a href="2025-2026/Trimestre3/teatro.html" target="_blank"><stro
         return html;
     }
 
-    getResumen() {
-        const t2 = this.getCurrentPerformance();
-        return `${t2.emoji} <strong>«${t2.title}»</strong><br><br>
-${t2.description}<br><br>
-💬 Mensaje de la obra: <em>«${t2.mensaje || 'Amistad y cooperación.'}»</em><br><br>
-📅 ${t2.date} · ⏰ ${t2.time} · 📍 ${t2.location}`;
+    getResumen(msg) {
+        const perf = this.getPerformanceForMessage(msg);
+        return `${perf.emoji} <strong>«${perf.title}»</strong><br><br>
+${perf.description}<br><br>
+💬 Mensaje de la obra: <em>«${perf.mensaje || 'Amistad y cooperación.'}»</em><br><br>
+📅 ${perf.date} · ⏰ ${perf.time} · 📍 ${perf.location}`;
     }
 
     getProgramacion() {
@@ -703,10 +721,22 @@ ${t2.description}<br><br>
     }
 
     detectNombreParticipante(msg) {
-        const perf = this.getCurrentPerformance();
-        const p = perf.reparto ? perf.reparto.find(persona => msg.includes(persona.nombre.toLowerCase()) && persona.nombre.toLowerCase() !== 'por asignar') : null;
-        if (!p) return null;
-        return { ...p, obra: perf.title };
+        const performances = [];
+        const selected = this.getSelectedPerformance();
+        const current = this.getCurrentPerformance();
+
+        if (selected) performances.push(selected);
+        if (!performances.includes(current)) performances.push(current);
+        theaterData.performances.forEach(perf => {
+            if (perf?.reparto && !performances.includes(perf)) performances.push(perf);
+        });
+
+        for (const perf of performances) {
+            const p = perf.reparto ? perf.reparto.find(persona => msg.includes(persona.nombre.toLowerCase()) && persona.nombre.toLowerCase() !== 'por asignar') : null;
+            if (p) return { ...p, obra: perf.title };
+        }
+
+        return null;
     }
 }
 
