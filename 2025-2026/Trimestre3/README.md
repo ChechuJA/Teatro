@@ -20,12 +20,12 @@
 | # | Participante | Personaje |
 |---|--------|-----------|
 | 1 | Chary | Narrador |
-| 2 | Por asignar | Blancanieves |
+| 2 | <span style="color:#d32f2f;"><strong>Por asignar</strong></span> | Blancanieves |
 | 3 | Vero | Madrastra |
-| 4 | Por asignar | Anciana |
+| 4 | <span style="color:#d32f2f;"><strong>Por asignar</strong></span> | Anciana |
 | 5 | Ana | Espejo Mágico |
 | 6 | Virginia | Cazador |
-| 7 | Por asignar | Príncipe Florián |
+| 7 | <span style="color:#d32f2f;"><strong>Por asignar</strong></span> | Príncipe Florián |
 | 8 | Aitana | Enanito Tartamudo |
 | 9 | Manuela | Enanito Gruñón |
 | 10 | Estefanía | Enanito Comilón |
@@ -36,9 +36,9 @@
 
 ### ✅ Pendientes por asignar
 
-- 👧 Blancanieves
-- 👵 Anciana
-- 🤴 Príncipe Florián
+- 👧 Blancanieves — <span style="color:#d32f2f;"><strong>Por asignar</strong></span>
+- 👵 Anciana — <span style="color:#d32f2f;"><strong>Por asignar</strong></span>
+- 🤴 Príncipe Florián — <span style="color:#d32f2f;"><strong>Por asignar</strong></span>
 
 ---
 
