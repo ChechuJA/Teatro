@@ -34,6 +34,12 @@
 | 13 | Sadaf | Enanito Llorón |
 | 14 | Marta | Enanito Dormilón |
 
+### ✅ Pendientes por asignar
+
+- 👧 Blancanieves
+- 👵 Anciana
+- 🤴 Príncipe Florián
+
 ---
 
 ## 🎬 Estructura de la Obra
