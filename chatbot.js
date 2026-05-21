@@ -195,6 +195,7 @@ class TheaterChatbot {
         this.chatMessages = document.getElementById('chatMessages');
         this.chatInput    = document.getElementById('chatInput');
         this.sendButton   = document.getElementById('sendButton');
+        this.selectedTrimester = null;
         this.initEventListeners();
     }
 
@@ -260,13 +261,63 @@ class TheaterChatbot {
         return theaterData.performances[2];
     }
 
+    getPerformanceByIndex(index) {
+        return theaterData.performances[index] || null;
+    }
+
     getCurrentPerformance() {
         return this.getT3();
+    }
+
+    getSelectedPerformance() {
+        if (this.selectedTrimester === null) return null;
+        return this.getPerformanceByIndex(this.selectedTrimester);
+    }
+
+    setSelectedTrimester(index) {
+        this.selectedTrimester = index;
+    }
+
+    getTrimesterChooser() {
+        return `Antes de nada, dime sobre qué trimestre quieres información 👇<br><br>
+<div class="quick-replies">
+    <button class="qr-btn" data-q="Segundo trimestre">❄️ Segundo trimestre</button>
+    <button class="qr-btn" data-q="Tercer trimestre">🌸 Tercer trimestre</button>
+</div>`;
+    }
+
+    getTrimesterMenu(perf) {
+        if (!perf) return this.getTrimesterChooser();
+
+        if (perf.num === 2) {
+            return `${perf.emoji} <strong>Has elegido ${perf.trimester}</strong>: <strong>«${perf.title}»</strong><br><br>
+Puedo enseñarte esto:<br><br>
+<div class="quick-replies">
+    <button class="qr-btn" data-q="¿Cuándo es la obra del segundo trimestre?">📅 Día del teatro</button>
+    <button class="qr-btn" data-q="Dame el reparto completo del segundo trimestre">🎭 Personajes y personas</button>
+    <button class="qr-btn" data-q="Cuéntame el guion del Acto 1 del segundo trimestre">📜 Ver guion resumido</button>
+    <button class="qr-btn" data-q="Ver guion online del segundo trimestre">📖 Ver guion online</button>
+    <button class="qr-btn" data-q="Descargar guion PDF del segundo trimestre">📄 Descargar guion</button>
+    <button class="qr-btn" data-q="Descargar canciones del segundo trimestre">🎵 Canciones</button>
+</div>`;
+        }
+
+        return `${perf.emoji} <strong>Has elegido ${perf.trimester}</strong>: <strong>«${perf.title}»</strong><br><br>
+Puedo enseñarte esto:<br><br>
+<div class="quick-replies">
+    <button class="qr-btn" data-q="¿Cuándo es la obra del tercer trimestre?">📅 Día del teatro</button>
+    <button class="qr-btn" data-q="Dame el reparto completo del tercer trimestre">🎭 Personajes y personas</button>
+    <button class="qr-btn" data-q="¿Qué personajes faltan por asignar en el tercer trimestre?">🚨 Pendientes por asignar</button>
+    <button class="qr-btn" data-q="Cuéntame el guion del Acto 1 de Blancanieves">📜 Ver guion resumido</button>
+    <button class="qr-btn" data-q="Ver guion online del tercer trimestre">📖 Ver guion online</button>
+    <button class="qr-btn" data-q="Descargar guion PDF del tercer trimestre">📄 Descargar guion</button>
+</div>`;
     }
 
     getPerformanceForMessage(msg) {
         const ti = this.detectTrimester(msg);
         if (ti !== null) return theaterData.performances[ti];
+        if (this.getSelectedPerformance()) return this.getSelectedPerformance();
         if (this.m(msg, ['blancanieves', 'enanito', 'enanitos', 'madrastra', 'espejo', 'principe', 'príncipe', 'cazador', 'anciana'])) return this.getT3();
         if (this.m(msg, ['guardianes', 'planeta', 'madre tierra', 'apicultor', 'abeja', 'bosque', 'agua', 'hielo', 'flores'])) return this.getT2();
         return this.getCurrentPerformance();
@@ -284,9 +335,15 @@ class TheaterChatbot {
         const msg = rawMessage.toLowerCase()
             .normalize('NFD').replace(/[\u0300-\u036f]/g, ''); // quitar tildes para comparar
 
+        const trimesterIdx = this.detectTrimester(msg);
+        if (trimesterIdx !== null && trimesterIdx > 0) {
+            this.setSelectedTrimester(trimesterIdx);
+            return this.getTrimesterMenu(this.getPerformanceByIndex(trimesterIdx));
+        }
+
         // Saludos
         if (this.m(msg, ['hola', 'buenas', 'hey', 'saludos', 'ey', 'hi'])) {
-            return `¡Hola! Soy <strong>${BOT_NAME}</strong>, el apuntador digital de Nova-tro-s 🎭<br>Estoy aquí para contarte todo sobre nuestras obras. Puedes preguntarme sobre el guion, el reparto, los ensayos, las fechas... ¡lo que quieras!`;
+            return `¡Hola! Soy <strong>${BOT_NAME}</strong>, el apuntador digital de Nova-tro-s 🎭<br>Te ayudo con reparto, fechas, guion y materiales.<br><br>${this.getTrimesterChooser()}`;
         }
 
         // Quién eres
@@ -296,7 +353,12 @@ class TheaterChatbot {
 
         // Ayuda
         if (this.m(msg, ['ayuda', 'help', 'que puedes', 'qué puedes', 'que sabes', 'opciones', 'menu', 'menú'])) {
-            return this.getHelp();
+            const selected = this.getSelectedPerformance();
+            return selected ? this.getTrimesterMenu(selected) : this.getHelp();
+        }
+
+        if (!this.getSelectedPerformance() && this.m(msg, ['fecha', 'reparto', 'guion', 'texto', 'acto', 'obra', 'personajes', 'pdf', 'descargar', 'ver guion', 'online', 'lugar', 'hora', 'de que va', 'de qué va', 'participantes'])) {
+            return this.getTrimesterChooser();
         }
 
         // Ensayos
@@ -326,12 +388,29 @@ class TheaterChatbot {
 
         // Descarga canciones / ZIP
         if (this.m(msg, ['descarga', 'descargar', 'zip', 'mp3', 'mpeg', 'canciones', 'archivo', 'archivos', 'fichero'])) {
+            const perf = this.getPerformanceForMessage(msg);
+            if (perf.num === 3) {
+                return `📄 <strong>Materiales de «${perf.title}»</strong><br><br>
+Puedes abrir el <a href="2025-2026/Trimestre3/teatro.html" target="_blank"><strong>guion online</strong></a> o <a href="2025-2026/Trimestre3/teatro.pdf" download><strong>descargar el PDF</strong></a>.`;
+            }
             const t2 = this.getT2();
             let html = `🎵 <strong>Canciones de «${t2.title}»</strong><br><br>`;
             html += `Puedes <a href="${t2.musica.zip}" download><strong>descargar el ZIP con todas las canciones</strong></a> (6 archivos):<br><br>`;
             t2.musica.archivos.forEach(a => { html += `📄 ${a}<br>`; });
             html += `<br>También puedes reproducirlas directamente desde el <a href="2025-2026/Trimestre2/teatro.html" target="_blank">guion interactivo</a>, con un botón Play en cada coreografía.`;
             return html;
+        }
+
+        if (this.m(msg, ['ver guion online', 'guion online', 'leer guion', 'leer online'])) {
+            const perf = this.getPerformanceForMessage(msg);
+            const path = perf.num === 3 ? '2025-2026/Trimestre3/teatro.html' : '2025-2026/Trimestre2/teatro.html';
+            return `📖 Puedes ver el guion online de <strong>«${perf.title}»</strong> aquí:<br><br><a href="${path}" target="_blank"><strong>Abrir guion online</strong></a>`;
+        }
+
+        if (this.m(msg, ['pdf', 'descargar guion', 'guion pdf'])) {
+            const perf = this.getPerformanceForMessage(msg);
+            const path = perf.num === 3 ? '2025-2026/Trimestre3/teatro.pdf' : '2025-2026/Trimestre2/teatro.pdf';
+            return `📄 Puedes descargar el PDF de <strong>«${perf.title}»</strong> aquí:<br><br><a href="${path}" download><strong>Descargar guion en PDF</strong></a>`;
         }
 
         // Fecha / cuándo
@@ -376,21 +455,14 @@ class TheaterChatbot {
         }
 
         // Respuesta por defecto
-        return `Hmmm… no he pillado bien esa pregunta 🤔<br>Pero puedo contarte sobre el <strong>guion</strong>, el <strong>reparto</strong>, las <strong>fechas</strong>, los <strong>ensayos</strong>, las <strong>coreografías</strong> o las <strong>canciones para descargar</strong>.<br>¿Qué quieres saber? ¡Escríbeme sin miedo! 🎭`;
+        const selected = this.getSelectedPerformance();
+        if (selected) return this.getTrimesterMenu(selected);
+        return this.getTrimesterChooser();
     }
 
     // ---- Respuestas específicas ----
     getHelp() {
-        return `Soy <strong>${BOT_NAME}</strong>, el apuntador de Nova-tro-s 🎭<br><br>
-Puedes preguntarme cosas como:<br>
-🗓️ <em>«¿Cuándo es la obra?»</em><br>
-👥 <em>«¿Cuántos participantes somos?»</em><br>
-🎭 <em>«¿Quién hace de Madrastra?»</em><br>
-📜 <em>«Cuéntame el guion»</em><br>
-🎭 <em>«¿Qué personajes faltan por asignar?»</em><br>
-🏋️ <em>«¿Cuándo son los ensayos?»</em><br>
-👑 <em>«¿De qué va Blancanieves?»</em><br>
-📅 <em>«¿Qué hay en el tercer trimestre?»</em>`;
+        return `Soy <strong>${BOT_NAME}</strong>, el apuntador de Nova-tro-s 🎭<br><br>${this.getTrimesterChooser()}`;
     }
 
     getEnsayos() {
@@ -598,7 +670,16 @@ Puedes preguntarme cosas como:<br>
             return `${perf.emoji} El <strong>${perf.trimester}</strong> se llama <strong>«${perf.title}»</strong>.`;
         }
         const current = this.getCurrentPerformance();
-        return `${current.emoji} La obra actual es <strong>«${current.title}»</strong>.`;
+        let html = `📅 <strong>Programación ${theaterData.curso}:</strong><br><br>`;
+        theaterData.performances.forEach(p => {
+            if (p.status === 'pendiente') {
+                html += `${p.emoji} <strong>${p.trimester.charAt(0).toUpperCase() + p.trimester.slice(1)}:</strong> Pendiente<br>`;
+            } else {
+                html += `${p.emoji} <strong>${p.trimester.charAt(0).toUpperCase() + p.trimester.slice(1)}:</strong> «${p.title}» — ${p.date}<br>`;
+            }
+        });
+        html += `<br>${this.getTrimesterChooser()}`;
+        return html;
     }
 
     getResumen() {
