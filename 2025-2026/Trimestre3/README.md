@@ -19,19 +19,20 @@
 
 | # | Participante | Personaje |
 |---|--------|-----------|
-| 1 | Por asignar | Narrador |
+| 1 | Chary | Narrador |
 | 2 | Por asignar | Blancanieves |
-| 3 | Por asignar | Madrastra / Anciana |
-| 4 | Por asignar | Espejo Mágico |
-| 5 | Por asignar | Cazador |
-| 6 | Por asignar | Príncipe Florián |
-| 7 | Por asignar | Enanito Tartamudo |
-| 8 | Por asignar | Enanito Gruñón |
-| 9 | Por asignar | Enanito Comilón |
-| 10 | Por asignar | Enanito Miedoso |
-| 11 | Por asignar | Enanito Ciego |
-| 12 | Por asignar | Enanito Llorón |
-| 13 | Por asignar | Enanito Dormilón |
+| 3 | Vero | Madrastra |
+| 4 | Por asignar | Anciana |
+| 5 | Ana | Espejo Mágico |
+| 6 | Virginia | Cazador |
+| 7 | Por asignar | Príncipe Florián |
+| 8 | Aitana | Enanito Tartamudo |
+| 9 | Manuela | Enanito Gruñón |
+| 10 | Estefanía | Enanito Comilón |
+| 11 | Ester | Enanito Miedoso |
+| 12 | Isa | Enanito Ciego |
+| 13 | Sadaf | Enanito Llorón |
+| 14 | Marta | Enanito Dormilón |
 
 ---
 
@@ -70,10 +71,10 @@ La obra enseña:
 
 ## 📅 Información de la Actuación
 
-- **Fecha:** *Por confirmar*
+- **Fecha:** 10 de junio de 2026
 - **Hora:** *Por confirmar*
 - **Lugar:** Salón de Actos del Colegio
-- **Participantes:** Familias (adultos)
+- **Participantes:** 14 familias (adultos)
 
 ---
 

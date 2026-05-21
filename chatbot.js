@@ -130,9 +130,9 @@ const theaterData = {
             num: 3,
             emoji: "🌸",
             title: "Blancanieves y los 7 Enanitos",
-            date: "Por confirmar",
+            date: "10 de junio de 2026",
             time: "Por confirmar",
-            participants: 13,
+            participants: 14,
             location: "Salón de Actos del Colegio",
             status: "activa",
             description: "Adaptación teatral del cuento clásico para Educación Infantil, con humor, participación del público y mensajes de amistad y ayuda mutua."
