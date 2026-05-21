@@ -129,13 +129,13 @@ const theaterData = {
             trimester: "tercer trimestre",
             num: 3,
             emoji: "🌸",
-            title: null,
-            date: null,
-            time: null,
-            participants: null,
+            title: "Blancanieves y los 7 Enanitos",
+            date: "Por confirmar",
+            time: "Por confirmar",
+            participants: 13,
             location: "Salón de Actos del Colegio",
-            status: "pendiente",
-            description: "La obra del tercer trimestre está pendiente. ¡Pronto habrá novedades!"
+            status: "activa",
+            description: "Adaptación teatral del cuento clásico para Educación Infantil, con humor, participación del público y mensajes de amistad y ayuda mutua."
         }
     ]
 };

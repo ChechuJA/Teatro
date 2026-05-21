@@ -5,15 +5,18 @@ Este directorio contiene los teatros realizados durante el curso escolar 2025-20
 ## Trimestres
 
 - **Trimestre 1**: Obras del primer trimestre (Septiembre - Diciembre)
-- **Trimestre 2**: Obras del segundo trimestre (Enero - Marzo)
-- **Trimestre 3**: Obras del tercer trimestre (Abril - Junio)
+- **Trimestre 2**: 🌍 Los Guardianes del Planeta (Enero - Marzo)
+- **Trimestre 3**: 👑 Blancanieves y los 7 Enanitos (Abril - Junio)
 
 ## Estructura
 
 Cada trimestre contiene:
-- Imágenes de las actuaciones
-- Documentos con los guiones (formato Word o PDF)
-- Material relacionado con cada obra
+- Página web de la obra (`index.html`)
+- Información completa y reparto (`README.md`)
+- Guion en Markdown con emojis (`teatro.md`)
+- Guion web (`teatro.html`)
+- PDF para imprimir (`teatro.pdf`)
+- Imágenes y material relacionado
 
 ---
 

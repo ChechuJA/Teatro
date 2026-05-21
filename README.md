@@ -45,7 +45,12 @@ El repositorio está organizado por cursos escolares y trimestres:
 │   ├── teatro.pdf          # PDF para imprimir
 │   └── [imágenes]          # Fotos y recursos
 └── Trimestre3/
-    └── README.md
+    ├── index.html          # Página web de la obra
+    ├── README.md           # Información y reparto
+    ├── teatro.md           # Guion con emojis 👑🍎⛏️
+    ├── teatro.html         # Guion web completo
+    ├── teatro.pdf          # PDF para imprimir
+    └── [imágenes]          # Fotos y recursos
 ```
 
 Cada carpeta de trimestre contiene:
@@ -60,7 +65,7 @@ Cada carpeta de trimestre contiene:
 
 - **Trimestre 1** (Sep-Dic): Próximamente...
 - **Trimestre 2** (Ene-Mar): **🌍 Los Guardianes del Planeta** ✅
-- **Trimestre 3** (Abr-Jun): Próximamente...
+- **Trimestre 3** (Abr-Jun): **👑 Blancanieves y los 7 Enanitos** ✅
 
 ## 🚀 Despliegue en GitHub Pages
 
