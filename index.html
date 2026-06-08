@@ -159,32 +159,24 @@
         </section>
 
         <section class="acknowledgments">
-            <h2>❤️ Agradecimientos</h2>
-            <p class="ack-intro">Queremos agradecer a todas las personas que hacen posible este proyecto:</p>
+            <h2>📌 Compromiso con los ensayos</h2>
+            <p class="ack-intro">
+                Este proyecto es un trabajo en equipo. En la medida de lo posible, pedimos a todas las familias participantes
+                ser constantes con los ensayos y avisar con tiempo cuando no puedan asistir.
+            </p>
             <div class="ack-grid">
                 <div class="ack-category">
-                    <h3>👨‍👩‍👧‍👦 Familias Actoras</h3>
-                    <p>A todas las familias que dedican su tiempo y energía para actuar y hacer felices a los peques.</p>
+                    <h3>🤝 Responsabilidad compartida</h3>
+                    <p>
+                        Cada ensayo cuenta para que la obra salga bien y para no perjudicar al resto de participantes.
+                    </p>
                 </div>
                 <div class="ack-category">
-                    <h3>🏫 El Colegio</h3>
-                    <p>Por proporcionarnos el espacio, recursos y apoyo constante para nuestras actuaciones.</p>
-                </div>
-                <div class="ack-category">
-                    <h3>✂️ Equipo de Vestuario</h3>
-                    <p>A las familias que cosen, diseñan y mantienen todos los disfraces con tanto cariño.</p>
-                </div>
-                <div class="ack-category">
-                    <h3>🎨 Equipo de Decorados</h3>
-                    <p>Por crear escenografías mágicas que transportan a los peques a otros mundos.</p>
-                </div>
-                <div class="ack-category">
-                    <h3>📸 Fotógrafos</h3>
-                    <p>Por capturar los mejores momentos y crear recuerdos inolvidables de cada actuación.</p>
-                </div>
-                <div class="ack-category">
-                    <h3>👨‍👩‍👧‍👦 Todas las Familias</h3>
-                    <p>Por vuestro apoyo, entusiasmo y por hacer que cada función sea especial con vuestra presencia.</p>
+                    <h3>🎨 Respeto al trabajo del grupo</h3>
+                    <p>
+                        Muchas familias también se encargan de decorados y otras tareas, además de sus responsabilidades diarias,
+                        y hacen un gran esfuerzo para cumplir con el compromiso.
+                    </p>
                 </div>
             </div>
         </section>
@@ -195,6 +187,35 @@
             <p>&copy; 2025-2026 Nova-tro-s - Hacemos lo que podemos 🎭</p>
         </div>
     </footer>
+
+    <div id="commitment-popup" class="commitment-popup" role="dialog" aria-modal="true" aria-labelledby="commitment-title">
+        <div class="commitment-popup-content">
+            <h2 id="commitment-title">📌 Compromiso con los ensayos</h2>
+            <p>
+                Para que la obra salga bien y no perjudicar al resto del grupo, pedimos a todas las familias participantes
+                completar este compromiso de forma responsable.
+            </p>
+
+            <h3>✅ Normas breves de participación</h3>
+            <ul class="commitment-rules">
+                <li><strong>Presentación:</strong> indicar nombre y quién participa de la familia.</li>
+                <li><strong>Responsabilidad:</strong> confirmar qué compromiso puedes asumir con el teatro.</li>
+                <li><strong>Papel:</strong> indicar si prefieres papel principal o papel de apoyo.</li>
+                <li><strong>Ensayos:</strong> indicar disponibilidad de mañana, tarde o ambas.</li>
+                <li><strong>Avisos:</strong> comunicar ausencias con antelación para no afectar al resto del equipo.</li>
+            </ul>
+
+            <div class="whatsapp-example">
+                <p><strong>💬 Ejemplo de mensaje para WhatsApp</strong></p>
+                <p>
+                    "Hola, soy Laura (mamá de Nico). Me presento para participar en la obra. Puedo asumir compromiso de ensayo
+                    semanal y apoyo puntual en decorado. Prefiero papel de apoyo, pero también puedo valorar papel principal.
+                    Disponibilidad: tardes (y alguna mañana con aviso). Si falto algún día, avisaré con tiempo."
+                </p>
+            </div>
+            <button id="accept-commitment" class="commitment-accept-btn" type="button">Aceptar compromiso</button>
+        </div>
+    </div>
 
     <!-- Apuntabot – widget flotante –––––––––––––––––––––– -->
     <div id="apuntabot-widget" class="apuntabot-widget">
@@ -243,6 +264,23 @@
 
     </div>
 
+    <script>
+        (function () {
+            const popup = document.getElementById('commitment-popup');
+            const acceptButton = document.getElementById('accept-commitment');
+
+            if (!popup || !acceptButton) {
+                return;
+            }
+
+            document.body.style.overflow = 'hidden';
+
+            acceptButton.addEventListener('click', function () {
+                popup.style.display = 'none';
+                document.body.style.overflow = '';
+            });
+        })();
+    </script>
     <script src="chatbot.js"></script>
 </body>
 </html>
