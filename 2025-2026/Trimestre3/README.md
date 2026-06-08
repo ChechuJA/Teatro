@@ -61,7 +61,7 @@ La madrastra, disfrazada de anciana, engaña a Blancanieves con la manzana. Fina
 - 📋 **Información y reparto** - Disponible en este documento
 - 📄 **[Descargar guion (PDF)](teatro.pdf)** - **PREFERENTE para imprimir**
 - 📸 **Imágenes** - *Próximamente*
-- 🎵 **Música y coreografías** - *Próximamente*
+- 🎵 **[Descargar música (ZIP)](musica.zip)** - Audios de la obra
 
 ---
 
