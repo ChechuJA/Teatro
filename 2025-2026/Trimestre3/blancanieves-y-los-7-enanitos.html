@@ -42,6 +42,36 @@
             font-weight: bold;
             color: #667eea;
         }
+
+        /* ---- Reproductor de audio inline ---- */
+        .music-cue {
+            margin: 0.7rem 0;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            background: #fff8e1;
+            border-left: 4px solid #ffc107;
+        }
+        .music-cue-title {
+            font-weight: 700;
+            color: #e65100;
+            font-size: 0.9rem;
+            margin-bottom: 0.5rem;
+            display: block;
+        }
+        .music-cue audio {
+            width: 100%;
+            height: 40px;
+            border-radius: 25px;
+            accent-color: #e65100;
+            display: block;
+        }
+        .audio-file-hint {
+            font-size: 0.75rem;
+            color: #b35900;
+            font-style: italic;
+            margin-top: 0.25rem;
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -62,44 +92,174 @@
 
             <div class="act">
                 <h3>🎭 ACTO 1 - El espejo y la huida</h3>
-                <p class="line"><span class="speaker">🌍 Narrador:</span> Buenos días, chicos y chicas, padres y madres, maestros y maestras.</p>
-                <p class="line"><span class="speaker">⛏️ Enanito Ciego:</span> ¿Qué es lo que estás contando, que no te veo?</p>
-                <p class="line"><span class="speaker">👑 Madrastra:</span> Espejo, espejito, ¿quién es la más bella de este reino?</p>
-                <p class="line"><span class="speaker">🪞 Espejo Mágico:</span> Ahora la más bella es Blancanieves.</p>
-                <p class="line"><span class="speaker">👑 Madrastra:</span> ¡Eso es imposible! Cazador, llévatela al bosque.</p>
-                <p class="line"><span class="speaker">👨‍🌾 Cazador:</span> Blancanieves, huye lejos y busca un lugar seguro.</p>
-                <p class="line"><span class="speaker">👧 Blancanieves:</span> ¿Y ahora qué hago?</p>
-                <p class="line"><span class="speaker">🌍 Narrador:</span> Blancanieves encuentra una cabaña pequeña y se queda dormida.</p>
+                <div class="music-cue">
+                    <span class="music-cue-title">🎵 Canción 1 – Overture from Snow White (fondo de inicio, en bucle)</span>
+                    <audio controls preload="none" loop>
+                        <source src="musica/1-Overture from Snow White.mp3" type="audio/mpeg">
+                    </audio>
+                    <span class="audio-file-hint">📁 musica/1-Overture from Snow White.mp3</span>
+                </div>
+                <p class="line"><span class="speaker">🌍 Narrador:</span> Buenos días, chicos y chicas, padres y madres, maestros y maestras y enanito</p>
+                <p class="line"><em>(Sale el enanito ciego dando palos de ciego)</em></p>
+                <p class="line"><span class="speaker">⛏️ Enanito Ciego:</span> ¿Qué es lo q estás contando, q no te veo?</p>
+                <p class="line"><span class="speaker">🌍 Narrador:</span> Venga venga, vete para dentro enanito</p>
+                <p class="line"><span class="speaker">⛏️ Enanito Ciego:</span> Adiós</p>
+                <p class="line"><span class="speaker">🌍 Narrador:</span> Érase una vez que se era, un reino en el que vivía una bella princesa llamada Blancanieves, que vivía en un reino muy muy lejano con su padre y su madrastra. Su madrastra, la reina era muy hermosa y se pasaba todo el día mirándose al espejo. El espejo era mágico y cuando se paraba frente a él le preguntaba:</p>
+                <div class="music-cue">
+                    <span class="music-cue-title">🎵 Canción 2 – Magic Mirror (escena del espejo)</span>
+                    <audio controls preload="none">
+                        <source src="musica/2-Magic Mirror.mp3" type="audio/mpeg">
+                    </audio>
+                    <span class="audio-file-hint">📁 musica/2-Magic Mirror.mp3</span>
+                </div>
+                <p class="line"><span class="speaker">👑 Madrastra:</span> Espejo, espejito, ¿Quién es la más bella de este reino?</p>
+                <p class="line"><span class="speaker">🪞 Espejo Mágico:</span> Tu eres la más hermosa de todas las mujeres, majestad. Ay no, no, perdón perdón, ahora hay una chica más bella q tu.</p>
+                <p class="line"><span class="speaker">👑 Madrastra:</span> ¿Cómo que hay otra más bella q yo? No puede ser, imposible.</p>
+                <p class="line"><span class="speaker">🪞 Espejo Mágico:</span> Si, si muchísimo más bella que tú, se llama Blancanieves</p>
+                <p class="line"><span class="speaker">👑 Madrastra:</span> Jajaja eso es imposible no puede ser</p>
+                <p class="line"><span class="speaker">🪞 Espejo Mágico:</span> Ah se siente, Majestad, parece que no te quieres enterar, ahora la más bella es Blancanieves</p>
+                <p class="line"><em>(La madrastra se pone a patalear)</em></p>
+                <p class="line"><span class="speaker">👑 Madrastra:</span> Ya lo tengo Blancanieves tiene que desaparecer. Mauricio, Mauricio, ¿dónde está ese cazador que cuando lo llamo…?</p>
+                <p class="line"><span class="speaker">👨‍🌾 Cazador:</span> Si mi señora, ¿para qué me necesita?</p>
+                <p class="line"><span class="speaker">👑 Madrastra:</span> Llévate a Blancanieves al bosque y asegúrate de que los osos y los leones se la coman</p>
+                <p class="line"><span class="speaker">👨‍🌾 Cazador:</span> ¿Pero que se la coman enterita, enterita o solo un trozo?</p>
+                <p class="line"><span class="speaker">👑 Madrastra:</span> Lo dejo en tus manos, caso resuelto</p>
+                <p class="line"><span class="speaker">🌍 Narrador:</span> Con engaños, el cazador se llevó a Blancanieves al bosque, amenazándola con la escopeta</p>
+                <p class="line"><span class="speaker">👨‍🌾 Cazador:</span> Te tengo que matar, te tengo que matar</p>
+                <p class="line"><span class="speaker">👧 Blancanieves:</span> ¿Por qué me tienes que matar?</p>
+                <p class="line"><span class="speaker">👨‍🌾 Cazador:</span> Es que eres la más guapa del reino y tu madrastra… Mira vete lejos pobre muchacha, muy lejos y busca un lugar seguro donde vivir. A ver qué le digo yo ahora a la madrastra <em>(dirigiéndose a los niños)</em></p>
+                <p class="line"><span class="speaker">👧 Blancanieves:</span> No puedo creer lo que me ha dicho el cazador. ¿Y ahora qué hago?</p>
+                <p class="line"><span class="speaker">🌍 Narrador:</span> Blancanieves se va contenta y saltando al bosque silbando como un pajarillo. Encontrándose sola en el gran bosque, Blancanieves corrió tan lejos como pudo hasta la llegada del anochecer. Entonces divisó una pequeña cabaña y entró en ella para dormir. Todo lo que había en la cabaña era pequeño. Había una mesa con un mantel blanco y siete platos pequeños, y con cada plato una cucharita. También, había siete pequeños cuchillos y tenedores, y siete jarritas llenas de agua. Blancanieves estaba tan hambrienta y sedienta que comió un poquito de vegetales y pan de cada platito y bebió una gota de cada jarrita. Contra la pared se hallaban siete pequeñas camas, una junto a la otra, cubiertas con colchas tan blancas como la nieve. Luego, quiso acostarse en una de las camas, pero ninguna era de su medida, hasta que finalmente pudo acomodarse en la séptima.</p>
+                <p class="line"><span class="speaker">👧 Blancanieves:</span> Oh, ¡qué camas más pequeñas! Me echaré solo un momento y…</p>
+                <p class="line"><span class="speaker">🌍 Narrador:</span> Cuando ya había oscurecido, regresaron los dueños de la cabaña. Eran siete enanos que cavaban y extraían oro y piedras preciosas en las montañas.</p>
+                <div class="music-cue">
+                    <span class="music-cue-title">🎵 Canción 3 – Heigh-Ho (los enanitos llegan a casa)</span>
+                    <audio controls preload="none">
+                        <source src="musica/3-Heigh Ho Blancanieves y los 7 Enanos.mp3" type="audio/mpeg">
+                    </audio>
+                    <span class="audio-file-hint">📁 musica/3-Heigh Ho Blancanieves y los 7 Enanos.mp3</span>
+                </div>
+                <div class="music-cue" style="margin-top:0.3rem;">
+                    <span class="music-cue-title">🎵 Canción 3 (alternativa) – Ay Ho, cavar cavar</span>
+                    <audio controls preload="none">
+                        <source src="musica/3-PONERESTA-Ay ho cavar, cavar - Profesores OT.mp3" type="audio/mpeg">
+                    </audio>
+                    <span class="audio-file-hint">📁 musica/3-PONERESTA-Ay ho cavar, cavar - Profesores OT.mp3</span>
+                </div>
+                <p class="line"><em>(Van andando y se apelotonan chocando unos con otros al distraerse mirando que hay desorden)</em></p>
+                <p class="line"><span class="speaker">🌍 Narrador:</span> Observaron que alguien había estado en la cabaña, pues las cosas no se encontraban en el mismo lugar.</p>
             </div>
 
             <div class="act">
                 <h3>🎭 ACTO 2 - La casa de los enanitos</h3>
-                <p class="line"><span class="speaker">⛏️ Enanito Tartamudo:</span> ¿Quién ha entrado en nuestra casa?</p>
-                <p class="line"><span class="speaker">⛏️ Enanito Gruñón:</span> ¡Está todo desordenado!</p>
-                <p class="line"><span class="speaker">⛏️ Enanito Comilón:</span> ¡Y mi plato está vacío!</p>
-                <p class="line"><span class="speaker">🌍 Narrador:</span> Los enanitos descubren a Blancanieves durmiendo.</p>
-                <p class="line"><span class="speaker">👧 Blancanieves:</span> No tengo dónde ir, mi madrastra me quiere matar.</p>
-                <p class="line"><span class="speaker">⛏️ Enanito Miedoso:</span> ¿Y si se queda con nosotros?</p>
-                <p class="line"><span class="speaker">👧 Blancanieves:</span> Yo puedo limpiar, lavar... ¡y cocinar!</p>
-                <p class="line"><span class="speaker">⛏️ Enanitos (todos):</span> ¡Siiiiii! ¡Te quedas con nosotros!</p>
+                <p class="line"><span class="speaker">⛏️ Enanito 1 (Tartamudo):</span> ¿Pe pe pero qué está pasado aquí? Qui qui qui, ¿quién ha entrado en nuestra ca ca casa?</p>
+                <p class="line"><span class="speaker">⛏️ Enanito 2 (Gruñón):</span> Cuando salimos de casa, estaba todo ordenado, y después de estar trabajando todo el día ahora nos encontramos todo manga por hombro. ¡Vaya desastre!</p>
+                <p class="line"><span class="speaker">⛏️ Enanito 3 (Comilón):</span> ¿Qué hambre tengo? Y con el hambre que tengo y mi plato vacío</p>
+                <p class="line"><span class="speaker">⛏️ Enanito 4 (Miedoso):</span> ¡Ay ay! ¿Qué yo creo que aquí ha entrado alguien, seguro que nos están espiando?</p>
+                <p class="line"><span class="speaker">⛏️ Enanito 5 (Ciego):</span> ¿Qué está pasando? También han usado mi cuchara que no la toco</p>
+                <p class="line"><span class="speaker">⛏️ Enanito 6 (Llorón):</span> Y también se han bebido mi agua</p>
+                <p class="line"><span class="speaker">⛏️ Enanito 7 (Dormilón):</span> A mí me da igual quien haya entrado, yo lo que quiero es irme a la cama, que tengo mucho sueño… Vamos</p>
+                <p class="line"><em>(Todos siguen al dormilón y le acompañan hasta las camas)</em></p>
+                <p class="line"><span class="speaker">🌍 Narrador:</span> Cuando descubrieron a Blancanieves se dieron un gran susto y hubo un gran revuelo</p>
+                <p class="line"><span class="speaker">⛏️ Todos los enanitos:</span> ¡Una joven! ¿Y que guapa es!</p>
+                <p class="line"><span class="speaker">⛏️ Enanito Gruñón:</span> ¡Hey! ¡Tu! ¡Despierta!</p>
+                <p class="line"><span class="speaker">⛏️ Enanito Dormilón:</span> ¡Que estás en mi cama!</p>
+                <p class="line"><span class="speaker">🌍 Narrador:</span> El ruido despertó a Blancanieves viéndose rodeada de 7 enanitos mirándola con los ojos muy abiertos</p>
+                <p class="line"><span class="speaker">👧 Blancanieves:</span> Pero qué ven mis ojos <em>(frotándose los ojos)</em>, estoy rodeada de un montón de enanitos</p>
+                <p class="line"><span class="speaker">⛏️ Enanito Tartamudo:</span> ¿Y tu tu tu quién quién eres?</p>
+                <p class="line"><span class="speaker">👧 Blancanieves:</span> Me llamo Blancanieves ¿y vosotros quiénes sois?</p>
+                <p class="line"><span class="speaker">⛏️ Enanito Comilón:</span> ¡Pues los dueños de esta casa! Yo soy comilón</p>
+                <p class="line"><span class="speaker">⛏️ Enanito Miedoso:</span> Y yo soy miedoso y me he llevado un gran susto</p>
+                <p class="line"><span class="speaker">⛏️ Enanito Gruñón:</span> Pues yo soy gruñón y no me ha gustado nada que hayas entrado en nuestra casa <em>(se cruza de brazos y mira a Blancanieves enfadado)</em></p>
+                <p class="line"><span class="speaker">👧 Blancanieves:</span> ¡Oh! Lo siento mucho. Yo no tengo dónde ir… pues la madrastra me quiere matar</p>
+                <p class="line"><span class="speaker">🌍 Narrador:</span> Todos los enanitos se miran entre sí. Hablan entre sí.</p>
+                <p class="line"><span class="speaker">⛏️ Enanito Miedoso:</span> ¿Y si se queda con nosotros? Es tan guapa… <em>(tocándole la cara)</em></p>
+                <p class="line"><span class="speaker">⛏️ Enanito Llorón y Dormilón:</span> ¡Sí! Ella es muy guapa.</p>
+                <p class="line"><em>(Todos empiezan a discutir, unos porque se quede y otros porque se vaya. Gruñón, miedoso y comilón quieren que se vaya y el resto que se quede)</em></p>
+                <p class="line"><span class="speaker">👧 Blancanieves:</span> Yo puedo limpiar, lavar… ¡Y sé cocinar!</p>
+                <p class="line"><span class="speaker">⛏️ Enanitos:</span> ¡COCINAR!</p>
+                <p class="line"><em>(Todos los enanitos se meten en la sala mientras van contentos y alegres, porque se nos va a cocinar Blancanieves)</em></p>
+                <p class="line"><span class="speaker">👧 Blancanieves:</span> ¿Entonces me puedo quedar con vosotros a vivir?</p>
+                <p class="line"><span class="speaker">⛏️ Todos los enanitos:</span> ¡Siiiiiiiiiiii, que se quede, que se quede! ¡Te quedas con nosotros!</p>
+                <div class="music-cue">
+                    <span class="music-cue-title">🎵 Canción 4 – Sonreír y Cantar Instrumental (Blancanieves feliz con los enanitos)</span>
+                    <audio controls preload="none">
+                        <source src="musica/4-Blancanieves, Sonreír y cantar Instrumental.mp3" type="audio/mpeg">
+                    </audio>
+                    <span class="audio-file-hint">📁 musica/4-Blancanieves, Sonreír y cantar Instrumental.mp3</span>
+                </div>
             </div>
 
             <div class="act">
                 <h3>🎭 ACTO 3 - La manzana y el despertar</h3>
-                <p class="line"><span class="speaker">👑 Madrastra:</span> Espejo, espejito mágico, ¿quién es la más bella?</p>
-                <p class="line"><span class="speaker">🪞 Espejo Mágico:</span> Blancanieves sigue siendo la más bella.</p>
-                <p class="line"><span class="speaker">👑 Anciana (Madrastra):</span> ¡Manzanas ricas! Toma, pruébala.</p>
-                <p class="line"><span class="speaker">🌍 Narrador:</span> Blancanieves muerde la manzana y cae al suelo.</p>
-                <p class="line"><span class="speaker">🤴 Príncipe Florián:</span> ¿Qué ha pasado? Parece dormida.</p>
-                <p class="line"><span class="speaker">🌍 Narrador:</span> El príncipe la besa y Blancanieves despierta.</p>
-                <p class="line"><span class="speaker">⛏️ Enanitos (todos):</span> ¡Blancanieves está salvada!</p>
+                <p class="line"><span class="speaker">🌍 Narrador:</span> Pasó el tiempo y un día, la reina decidió consultar a su espejo.</p>
+                <p class="line"><span class="speaker">👑 Madrastra:</span> Hoy me siento más bella que nunca jajaja, pero se lo voy a preguntar a mi espejo para que me lo diga, que hace mucho tiempo que no le pregunto. "Espejo, espejito mágico, ¿quién es la más bella del reino?"</p>
+                <p class="line"><span class="speaker">🪞 Espejo Mágico:</span> Oh, oh, se siente majestad, Blancanieves que en el bosque está, sigue siendo la más bella del lugar.</p>
+                <p class="line"><span class="speaker">👑 Madrastra:</span> No, no y no, no la soporto. Mauricio no ha cumplido con mis órdenes, no ha acabado con ella, tengo un plan <em>(se va furiosa)</em></p>
+                <p class="line"><span class="speaker">🌍 Narrador:</span> La madrastra disfrazada busca en el bosque hasta dar con Blancanieves, se acerca a la casa y la ve barriendo</p>
+                <p class="line"><span class="speaker">👵 Anciana (Madrastra):</span> ¡Manzana, manzanas vendo, ricas manzanas, quién quiere una apetitosa manzana!</p>
+                <p class="line"><span class="speaker">👧 Blancanieves:</span> Hola, señora, ¿me haría buen precio por esa manzana? Quiero hacer una rica tarta</p>
+                <p class="line"><span class="speaker">👵 Anciana (Madrastra):</span> Claro que si preciosísima, toma prueba una y ya verás qué buenas, pruébala venga…. <em>(Al hacerlo Blancanieves cae al suelo)</em></p>
+                <p class="line"><span class="speaker">👵 Anciana (Madrastra):</span> ¡Ja, ja, ja! ¡Ahora yo seré la más bella!</p>
+                <p class="line"><span class="speaker">🌍 Narrador:</span> En el momento en que Blancanieves mordió la manzana, cayó desplomada. Los enanitos, alertados por el cazador del bosque, llegaron a la cabaña mientras la reina huía.</p>
+                <p class="line"><span class="speaker">👨‍🌾 Cazador:</span> Venir venir</p>
+                <p class="line"><span class="speaker">🌍 Narrador:</span> Con gran tristeza, colocaron a Blancanieves en una cama. Todos tenían la esperanza de que la hermosa joven despertase un día.</p>
+                <p class="line"><span class="speaker">👨‍🌾 Cazador:</span> Esto debe de haber sido obra de la madrastra</p>
+                <p class="line"><span class="speaker">⛏️ Enanito Tartamudo:</span> Blan Blan Blancanieves, Blancanieves</p>
+                <p class="line"><span class="speaker">⛏️ Enanito Comilón:</span> ¿Qué te ocurre?</p>
+                <p class="line"><span class="speaker">⛏️ Enanito Dormilón:</span> ¡Por favor despierta, te dejaré mi cama, pero despierta!</p>
+                <p class="line"><span class="speaker">⛏️ Enanito Miedoso:</span> Te dije que no le abrieras la puerta a nadie…</p>
+                <p class="line"><span class="speaker">⛏️ Enanito Dormilón:</span> Pobre Blancanieves.</p>
+                <p class="line"><span class="speaker">⛏️ Enanito Llorón:</span> Me estoy poniendo muy triste</p>
+                <p class="line"><span class="speaker">⛏️ Enanito Gruñón:</span> Si esto es una broma no me está gustando</p>
+                <p class="line"><span class="speaker">⛏️ Enanito Ciego:</span> Yo creo que la han envenenado, con lo buena que era</p>
+                <p class="line"><em>(Los llantos de los enanitos alertan a un príncipe que pasa por allí y se acerca a ellos.)</em></p>
+                <p class="line"><span class="speaker">🌍 Narrador:</span> Y el día llegó cuando un apuesto príncipe que cruzaba el bosque en su caballo vio a la hermosa joven</p>
+                <p class="line"><span class="speaker">🤴 Príncipe Florián:</span> ¿Qué ha pasado? ¿Quién es esta bella princesa? Parece como si estuviera dormida. <em>(Se acerca a ella y le da un beso. De pronto, Blancanieves despierta.)</em></p>
+                <p class="line"><span class="speaker">👧 Blancanieves:</span> ¿Quién eres?</p>
+                <p class="line"><span class="speaker">🤴 Príncipe Florián:</span> Soy el príncipe Florián</p>
+                <p class="line"><em>(Los enanitos empiezan a saltar y gritar.)</em></p>
+                <p class="line"><span class="speaker">⛏️ Enanitos:</span> ¡Blancanieves está salvada!</p>
+                <div class="music-cue">
+                    <span class="music-cue-title">🎵 Canción 5 – La Escena más bonita de Blancanieves</span>
+                    <audio controls preload="none">
+                        <source src="musica/5-La Escena más bonita de Blancanieves.mp3" type="audio/mpeg">
+                    </audio>
+                    <span class="audio-file-hint">📁 musica/5-La Escena más bonita de Blancanieves.mp3</span>
+                </div>
+                <div class="music-cue">
+                    <span class="music-cue-title">🎵 Canción 6 – Some Day My Prince Will Come (fondo)</span>
+                    <audio controls preload="none">
+                        <source src="musica/6-FONDO-Disney Instrumental ǀ Neverland Orchestra - Some Day My Prince Will Come.mp3" type="audio/mpeg">
+                    </audio>
+                    <span class="audio-file-hint">📁 musica/6-FONDO-Disney Instrumental ǀ Neverland Orchestra - Some Day My Prince Will Come.mp3</span>
+                </div>
+                <div class="music-cue">
+                    <span class="music-cue-title">🎵 Canción 7 – Eres Tú el Príncipe Azul (La Bella Durmiente)</span>
+                    <audio controls preload="none">
+                        <source src="musica/7-Eres Tú el Príncipe Azul _ La Bella Durmiente.mp3" type="audio/mpeg">
+                    </audio>
+                    <span class="audio-file-hint">📁 musica/7-Eres Tú el Príncipe Azul _ La Bella Durmiente.mp3</span>
+                </div>
+                <div class="music-cue">
+                    <span class="music-cue-title">🎵 Canción 8 – Busca lo más vital (El Libro de la Selva)</span>
+                    <audio controls preload="none">
+                        <source src="musica/8-Busca lo más vital  - El Libro de la Selva.mp3" type="audio/mpeg">
+                    </audio>
+                    <span class="audio-file-hint">📁 musica/8-Busca lo más vital  - El Libro de la Selva.mp3</span>
+                </div>
+                <div class="music-cue">
+                    <span class="music-cue-title">🎵 Canción 9 – Mejores Canciones de Disney 2022 (cierre y créditos)</span>
+                    <audio controls preload="none">
+                        <source src="musica/9-Mejores Canciones de Disney 2022.mp3" type="audio/mpeg">
+                    </audio>
+                    <span class="audio-file-hint">📁 musica/9-Mejores Canciones de Disney 2022.mp3</span>
+                </div>
             </div>
 
             <div class="act">
-                <h3>🎉 Final participativo</h3>
-                <p class="line"><span class="speaker">🌍 Narrador:</span> ¿Nos ayudáis a celebrar?</p>
-                <p class="line"><span class="speaker">👨‍👩‍👧‍👦 Público:</span> ¡Síiiii!</p>
-                <p class="line"><span class="speaker">🌍 Narrador:</span> Y colorín colorado... esta historia se ha acabado.</p>
+                <h3>🎉 Final</h3>
+                <p class="line"><span class="speaker">🌍 Narrador:</span> Y colorín colorado… esta historia se ha acabado. ¡Gracias por acompañarnos en esta aventura!</p>
             </div>
 
             <p>
