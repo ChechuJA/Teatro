@@ -20,8 +20,8 @@ Teatro/
     └── Trimestre[N]/      # Ej: Trimestre1/, Trimestre2/, Trimestre3/
         ├── index.html     # Página web de la obra (con emojis visuales)
         ├── README.md      # Información, reparto y materiales
-        ├── teatro.md      # Guion en Markdown con emojis 🐧🐝🌳
-        ├── teatro.pdf     # PDF generado desde teatro.md (PREFERENTE)
+        ├── [nombre-obra].md      # Guion en Markdown con emojis 🐧🐝🌳
+        ├── [nombre-obra].pdf     # PDF generado desde [nombre-obra].md (PREFERENTE)
         └── [imágenes]     # Fotos y recursos visuales
 ```
 
@@ -32,10 +32,10 @@ Teatro/
 Cada trimestre tiene su propia carpeta con:
 - **index.html**: Versión web interactiva con emojis
 - **README.md**: Información completa (reparto, fechas, materiales)
-- **teatro.md**: Guion con emojis para identificar personajes
-- **teatro.pdf**: Versión para imprimir (generada con extensión "Markdown PDF")
+- **[nombre-obra].md**: Guion con emojis para identificar personajes
+- **[nombre-obra].pdf**: Versión para imprimir (generada con extensión "Markdown PDF")
 
-### 2. **Formato del Guion (teatro.md)**
+### 2. **Formato del Guion ([nombre-obra].md)**
 
 ✅ **Usar emojis** al inicio de cada personaje para facilitar identificación:
 ```markdown
@@ -69,9 +69,9 @@ En README.md y páginas web, listar en este orden:
 ```markdown
 ## 📁 Materiales disponibles
 
-- 📖 **[Ver obra completa](index.html)** - Versión web con emojis
+- 📖 **Ver obra completa** (`[nombre-obra].html`) - Versión web con emojis
 - 📋 **Información y reparto** - Disponible en este documento
-- 📄 **[Descargar guion (PDF)](teatro.pdf)** - **PREFERENTE para imprimir**
+- 📄 **Descargar guion (PDF)** (`[nombre-obra].pdf`) - **PREFERENTE para imprimir**
 - 📸 **Imágenes** - *Próximamente*
 - 🎵 **Música y coreografías** - *Próximamente*
 ```
@@ -103,10 +103,10 @@ Las obras típicamente tienen:
 
 ### 6. **Generación de PDF**
 
-Cuando se actualice `teatro.md`:
+Cuando se actualice `[nombre-obra].md`:
 1. Usar la extensión "Markdown PDF" de VS Code
 2. Clic derecho → "Markdown PDF: Export (pdf)"
-3. Esto genera `teatro.pdf` con los emojis incluidos
+3. Esto genera `[nombre-obra].pdf` con los emojis incluidos
 
 ### 7. **Correcciones Ortográficas**
 
@@ -128,8 +128,8 @@ Cuando se actualice `teatro.md`:
 
 1. Copiar estructura de un trimestre existente
 2. Actualizar fechas, título, reparto
-3. Escribir guion en `teatro.md` con emojis
-4. Generar `teatro.pdf`
+3. Escribir guion en `[nombre-obra].md` con emojis
+4. Generar `[nombre-obra].pdf`
 5. Actualizar `README.md` con información
 6. Crear `index.html` si se desea versión web
 7. Actualizar página principal (`/index.html`) con nueva obra
@@ -137,9 +137,9 @@ Cuando se actualice `teatro.md`:
 ### Actualizar Reparto
 
 1. Editar tabla de reparto en `README.md`
-2. Buscar y reemplazar nombres en `teatro.md`
+2. Buscar y reemplazar nombres en `[nombre-obra].md`
 3. Verificar consistencia en `index.html`
-4. Regenerar `teatro.pdf`
+4. Regenerar `[nombre-obra].pdf`
 
 ### Añadir Materiales
 
@@ -151,7 +151,7 @@ Cuando se actualice `teatro.md`:
 
 - Los actores son **adultos (familias)**, no niños
 - El público son **niños de infantil**
-- Mantener coherencia entre todos los archivos (README, teatro.md, index.html)
+- Mantener coherencia entre todos los archivos (README, [nombre-obra].md, index.html)
 - El PDF es la versión preferente para distribución
 - La web (index.html) es para lectura online con emojis visuales
 - El .md es para edición, pero no para distribución pública

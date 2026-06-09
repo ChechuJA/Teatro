@@ -57,11 +57,11 @@ La madrastra, disfrazada de anciana, engaña a Blancanieves con la manzana. Fina
 
 ## 📁 Materiales disponibles
 
-- 📖 **[Ver obra completa](teatro.html)** - Versión web con emojis
+- 📖 **[Ver obra completa](blancanieves-y-los-7-enanitos.html)** - Versión web con emojis
 - 📋 **Información y reparto** - Disponible en este documento
-- 📄 **[Descargar guion (PDF)](teatro.pdf)** - **PREFERENTE para imprimir**
+- 📄 **[Descargar guion (PDF)](blancanieves-y-los-7-enanitos.pdf)** - **PREFERENTE para imprimir**
 - 📸 **Imágenes** - *Próximamente*
-- 🎵 **[Descargar música (ZIP)](musica.zip)** - Audios de la obra
+- 🎵 **[Descargar música (ZIP)](musica-blancanieves-y-los-7-enanitos.zip)** - Audios de la obra
 
 ---
 

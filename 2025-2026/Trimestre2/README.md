@@ -75,10 +75,10 @@ Cada zona tiene su propia coreografía:
 
 ## � Materiales disponibles
 
-- 📖 **[Ver obra completa](teatro.html)** - Versión web con emojis
+- 📖 **[Ver obra completa](los-guardianes-del-planeta.html)** - Versión web con emojis
 - 📋 **Información y reparto** - Disponible arriba en este documento
-- 📄 **[Descargar guion (PDF)](teatro.pdf)** - Listo para imprimir
-- 🎵 **[Reproducir canciones](teatro.html)** - Reproductores integrados en el guion
+- 📄 **[Descargar guion (PDF)](los-guardianes-del-planeta.pdf)** - Listo para imprimir
+- 🎵 **[Reproducir canciones](los-guardianes-del-planeta.html)** - Reproductores integrados en el guion
 - 📥 **[Descargar canciones (ZIP)](musica/canciones-guardianes-planeta.zip)** - Las 6 canciones de la obra
 - 📸 **Imágenes** - *Próximamente*
 

@@ -13,9 +13,9 @@ Este directorio contiene los teatros realizados durante el curso escolar 2025-20
 Cada trimestre contiene:
 - Página web de la obra (`index.html`)
 - Información completa y reparto (`README.md`)
-- Guion en Markdown con emojis (`teatro.md`)
-- Guion web (`teatro.html`)
-- PDF para imprimir (`teatro.pdf`)
+- Guion en Markdown con emojis (`[nombre-de-la-obra].md`)
+- Guion web (`[nombre-de-la-obra].html`)
+- PDF para imprimir (`[nombre-de-la-obra].pdf`)
 - Imágenes y material relacionado
 
 ---

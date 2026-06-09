@@ -41,23 +41,24 @@ El repositorio está organizado por cursos escolares y trimestres:
 ├── Trimestre2/
 │   ├── index.html          # Página web de la obra
 │   ├── README.md           # Información y reparto
-│   ├── teatro.md           # Guion con emojis 🐧🐝🌳
-│   ├── teatro.pdf          # PDF para imprimir
+│   ├── los-guardianes-del-planeta.md    # Guion con emojis 🐧🐝🌳
+│   ├── los-guardianes-del-planeta.html  # Guion web completo
+│   ├── los-guardianes-del-planeta.pdf   # PDF para imprimir
 │   └── [imágenes]          # Fotos y recursos
 └── Trimestre3/
     ├── index.html          # Página web de la obra
     ├── README.md           # Información y reparto
-    ├── teatro.md           # Guion con emojis 👑🍎⛏️
-    ├── teatro.html         # Guion web completo
-    ├── teatro.pdf          # PDF para imprimir
+    ├── blancanieves-y-los-7-enanitos.md    # Guion con emojis 👑🍎⛏️
+    ├── blancanieves-y-los-7-enanitos.html  # Guion web completo
+    ├── blancanieves-y-los-7-enanitos.pdf   # PDF para imprimir
     └── [imágenes]          # Fotos y recursos
 ```
 
 Cada carpeta de trimestre contiene:
 - 📖 **Versión web** (index.html) - Visualización interactiva con emojis
 - 📋 **README.md** - Información completa, reparto y materiales
-- 📄 **teatro.md** - Guion en Markdown con emojis por personaje
-- 📄 **teatro.pdf** - Versión para imprimir (preferente)
+- 📄 **[nombre-de-la-obra].md** - Guion en Markdown con emojis por personaje
+- 📄 **[nombre-de-la-obra].pdf** - Versión para imprimir (preferente)
 - 📸 **Imágenes** - Fotos de actuaciones y ensayos
 - 🎵 **Enlaces** - Música y coreografías
 

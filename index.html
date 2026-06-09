@@ -79,10 +79,10 @@
                             <div class="trimester-materials">
                                 <p><strong>📁 Materiales disponibles:</strong></p>
                                 <ul>
-                                    <li><a href="2025-2026/Trimestre2/teatro.html" target="_blank">📖 Leer guion completo</a></li>
+                                    <li><a href="2025-2026/Trimestre2/los-guardianes-del-planeta.html" target="_blank">📖 Leer guion completo</a></li>
                                     <li><a href="2025-2026/Trimestre2/index.html" target="_blank">ℹ️ Información y reparto</a></li>
-                                    <li><a href="2025-2026/Trimestre2/teatro.pdf" download>📄 Descargar guion (PDF)</a></li>
-                                    <li><a href="2025-2026/Trimestre2/teatro.html" target="_blank">🎵 Reproducir canciones</a></li>
+                                    <li><a href="2025-2026/Trimestre2/los-guardianes-del-planeta.pdf" download>📄 Descargar guion (PDF)</a></li>
+                                    <li><a href="2025-2026/Trimestre2/los-guardianes-del-planeta.html" target="_blank">🎵 Reproducir canciones</a></li>
                                     <li><a href="2025-2026/Trimestre2/musica/canciones-guardianes-planeta.zip" download>📥 Descargar canciones (ZIP)</a></li>
                                     <li>📸 Imágenes (próximamente)</li>
                                 </ul>
@@ -122,11 +122,11 @@
                             <div class="trimester-materials">
                                 <p><strong>📁 Materiales disponibles:</strong></p>
                                 <ul>
-                                    <li><a href="2025-2026/Trimestre3/teatro.html" target="_blank">📖 Leer guion completo</a></li>
+                                    <li><a href="2025-2026/Trimestre3/blancanieves-y-los-7-enanitos.html" target="_blank">📖 Leer guion completo</a></li>
                                     <li><a href="2025-2026/Trimestre3/index.html" target="_blank">ℹ️ Información y reparto</a></li>
-                                    <li><a href="2025-2026/Trimestre3/teatro.pdf" download>📄 Descargar guion (PDF)</a></li>
+                                    <li><a href="2025-2026/Trimestre3/blancanieves-y-los-7-enanitos.pdf" download>📄 Descargar guion (PDF)</a></li>
                                     <li>📸 Imágenes (próximamente)</li>
-                                    <li><a href="2025-2026/Trimestre3/musica.zip" download>🎵 Descargar música (ZIP)</a></li>
+                                    <li><a href="2025-2026/Trimestre3/musica-blancanieves-y-los-7-enanitos.zip" download>🎵 Descargar música (ZIP)</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -179,22 +179,6 @@
                     </p>
                 </div>
             </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025-2026 Nova-tro-s - Hacemos lo que podemos 🎭</p>
-        </div>
-    </footer>
-
-    <div id="commitment-popup" class="commitment-popup" role="dialog" aria-modal="true" aria-labelledby="commitment-title">
-        <div class="commitment-popup-content">
-            <h2 id="commitment-title">📌 Compromiso con los ensayos</h2>
-            <p>
-                Para que la obra salga bien y no perjudicar al resto del grupo, pedimos a todas las familias participantes
-                completar este compromiso de forma responsable.
-            </p>
 
             <h3>✅ Normas breves de participación</h3>
             <ul class="commitment-rules">
@@ -213,9 +197,14 @@
                     Disponibilidad: tardes (y alguna mañana con aviso). Si falto algún día, avisaré con tiempo."
                 </p>
             </div>
-            <button id="accept-commitment" class="commitment-accept-btn" type="button">Aceptar compromiso</button>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025-2026 Nova-tro-s - Hacemos lo que podemos 🎭</p>
         </div>
-    </div>
+    </footer>
 
     <!-- Apuntabot – widget flotante –––––––––––––––––––––– -->
     <div id="apuntabot-widget" class="apuntabot-widget">
@@ -239,6 +228,7 @@
                         <div class="quick-replies">
                             <button class="qr-btn" data-q="Segundo trimestre">❄️ Segundo trimestre</button>
                             <button class="qr-btn" data-q="Tercer trimestre">🌸 Tercer trimestre</button>
+                            <button class="qr-btn" data-q="Descargar canciones del tercer trimestre">🎵 Música 3º trimestre</button>
                             <button class="qr-btn" data-q="Programación completa del curso">📅 Todos los trimestres</button>
                         </div>
                     </div>
@@ -247,6 +237,7 @@
             <div class="quick-replies-bar">
                 <button class="qr-btn qr-small" data-q="Segundo trimestre">❄️ Segundo</button>
                 <button class="qr-btn qr-small" data-q="Tercer trimestre">🌸 Tercero</button>
+                <button class="qr-btn qr-small" data-q="Descargar canciones del tercer trimestre">🎵 Música 3º</button>
                 <button class="qr-btn qr-small" data-q="¿Cuándo son los ensayos?">🏋️ Ensayos</button>
                 <button class="qr-btn qr-small" data-q="Programación completa del curso">📅 Curso</button>
             </div>
@@ -264,23 +255,6 @@
 
     </div>
 
-    <script>
-        (function () {
-            const popup = document.getElementById('commitment-popup');
-            const acceptButton = document.getElementById('accept-commitment');
-
-            if (!popup || !acceptButton) {
-                return;
-            }
-
-            document.body.style.overflow = 'hidden';
-
-            acceptButton.addEventListener('click', function () {
-                popup.style.display = 'none';
-                document.body.style.overflow = '';
-            });
-        })();
-    </script>
     <script src="chatbot.js"></script>
 </body>
 </html>

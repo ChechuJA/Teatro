@@ -142,6 +142,16 @@ const theaterData = {
                 "🎭 Acto 2 – La casa de los enanitos: Los enanitos encuentran a Blancanieves y deciden ayudarla.",
                 "🎭 Acto 3 – La manzana y el despertar: La anciana engaña a Blancanieves y el príncipe la despierta."
             ],
+            musica: {
+                zip: "2025-2026/Trimestre3/musica-blancanieves-y-los-7-enanitos.zip",
+                archivos: [
+                    "Ay ho cavar, cavar - Profesores OT.mp3",
+                    "Some Day My Prince Will Come.mp3",
+                    "Hi-Ho De Blanca Nieves.mp3",
+                    "Magic Mirror.mp3",
+                    "Overture from Snow White and the Seven Dwarfs.mp3"
+                ]
+            },
             reparto: [
                 { num: 1, nombre: "Chary", personaje: "Narrador", emoji: "🌍" },
                 { num: 2, nombre: "Por asignar", personaje: "Blancanieves", emoji: "👧" },
@@ -323,6 +333,7 @@ Puedo enseñarte esto:<br><br>
     <button class="qr-btn" data-q="Cuéntame el guion del Acto 1 de Blancanieves">📜 Ver guion resumido</button>
     <button class="qr-btn" data-q="Ver guion online del tercer trimestre">📖 Ver guion online</button>
     <button class="qr-btn" data-q="Descargar guion PDF del tercer trimestre">📄 Descargar guion</button>
+    <button class="qr-btn" data-q="Descargar canciones del tercer trimestre">🎵 Canciones</button>
 </div>`;
     }
 
@@ -404,26 +415,29 @@ Puedo enseñarte esto:<br><br>
         if (this.m(msg, ['zip', 'mp3', 'mpeg', 'canciones', 'archivo', 'archivos', 'fichero']) || (this.m(msg, ['descarga', 'descargar']) && this.m(msg, ['canciones', 'musica', 'música']))) {
             const perf = this.getPerformanceForMessage(msg);
             if (perf.num === 3) {
-                return `📄 <strong>Materiales de «${perf.title}»</strong><br><br>
-Puedes abrir el <a href="2025-2026/Trimestre3/teatro.html" target="_blank"><strong>guion online</strong></a> o <a href="2025-2026/Trimestre3/teatro.pdf" download><strong>descargar el PDF</strong></a>.`;
+                let html = `🎵 <strong>Música de «${perf.title}»</strong><br><br>`;
+                html += `Puedes <a href="${perf.musica.zip}" download><strong>descargar el ZIP de música</strong></a> con estos audios:<br><br>`;
+                perf.musica.archivos.forEach(a => { html += `📄 ${a}<br>`; });
+                html += `<br>También tienes el <a href="2025-2026/Trimestre3/blancanieves-y-los-7-enanitos.html" target="_blank"><strong>guion online</strong></a> y el <a href="2025-2026/Trimestre3/blancanieves-y-los-7-enanitos.pdf" download><strong>PDF</strong></a>.`;
+                return html;
             }
             const t2 = this.getT2();
             let html = `🎵 <strong>Canciones de «${t2.title}»</strong><br><br>`;
             html += `Puedes <a href="${t2.musica.zip}" download><strong>descargar el ZIP con todas las canciones</strong></a> (6 archivos):<br><br>`;
             t2.musica.archivos.forEach(a => { html += `📄 ${a}<br>`; });
-            html += `<br>También puedes reproducirlas directamente desde el <a href="2025-2026/Trimestre2/teatro.html" target="_blank">guion interactivo</a>, con un botón Play en cada coreografía.`;
+            html += `<br>También puedes reproducirlas directamente desde el <a href="2025-2026/Trimestre2/los-guardianes-del-planeta.html" target="_blank">guion interactivo</a>, con un botón Play en cada coreografía.`;
             return html;
         }
 
         if (this.m(msg, ['ver guion online', 'guion online', 'leer guion', 'leer online'])) {
             const perf = this.getPerformanceForMessage(msg);
-            const path = perf.num === 3 ? '2025-2026/Trimestre3/teatro.html' : '2025-2026/Trimestre2/teatro.html';
+            const path = perf.num === 3 ? '2025-2026/Trimestre3/blancanieves-y-los-7-enanitos.html' : '2025-2026/Trimestre2/los-guardianes-del-planeta.html';
             return `📖 Puedes ver el guion online de <strong>«${perf.title}»</strong> aquí:<br><br><a href="${path}" target="_blank"><strong>Abrir guion online</strong></a>`;
         }
 
         if (this.m(msg, ['pdf', 'descargar guion', 'guion pdf'])) {
             const perf = this.getPerformanceForMessage(msg);
-            const path = perf.num === 3 ? '2025-2026/Trimestre3/teatro.pdf' : '2025-2026/Trimestre2/teatro.pdf';
+            const path = perf.num === 3 ? '2025-2026/Trimestre3/blancanieves-y-los-7-enanitos.pdf' : '2025-2026/Trimestre2/los-guardianes-del-planeta.pdf';
             return `📄 Puedes descargar el PDF de <strong>«${perf.title}»</strong> aquí:<br><br><a href="${path}" download><strong>Descargar guion en PDF</strong></a>`;
         }
 
@@ -630,11 +644,20 @@ Puedes abrir el <a href="2025-2026/Trimestre3/teatro.html" target="_blank"><stro
     getCoreografias(msg = '') {
         const perf = this.getPerformanceForMessage(msg);
         if (!perf.coreografias) {
+            if (perf.musica?.zip) {
+                let html = `🎵 En <strong>«${perf.title}»</strong> no hay coreografías cargadas, pero sí música disponible.<br><br>`;
+                html += `Puedes <a href="${perf.musica.zip}" download><strong>descargar el ZIP de música</strong></a>.<br><br>`;
+                if (perf.musica.archivos?.length) {
+                    html += `<strong>Incluye:</strong><br>`;
+                    perf.musica.archivos.forEach(a => { html += `📄 ${a}<br>`; });
+                }
+                return html;
+            }
             return `🎵 En <strong>«${perf.title}»</strong> no tengo coreografías específicas cargadas. Si queréis, puedo contaros el reparto, el resumen por actos o qué personajes faltan por asignar.`;
         }
         let html = `🎵 <strong>Coreografías y canciones – «${perf.title}»</strong><br><br>`;
         perf.coreografias.forEach(c => { html += `${c}<br>`; });
-        html += `<br>💾 <strong>¿Quieres las canciones?</strong> Puedes reproducirlas directamente desde el <a href="2025-2026/Trimestre2/teatro.html" target="_blank">guion interactivo</a> o <a href="${perf.musica.zip}" download>descargar el ZIP con todas</a>.`;
+        html += `<br>💾 <strong>¿Quieres las canciones?</strong> Puedes reproducirlas directamente desde el <a href="2025-2026/Trimestre2/los-guardianes-del-planeta.html" target="_blank">guion interactivo</a> o <a href="${perf.musica.zip}" download>descargar el ZIP con todas</a>.`;
         return html;
     }
 
