@@ -281,5 +281,21 @@
             <p>&copy; 2025-2026 Nova-tro-s - Hacemos lo que podemos 🎭💚</p>
         </div>
     </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var players = document.querySelectorAll('.music-cue audio');
+
+            players.forEach(function (currentPlayer) {
+                currentPlayer.addEventListener('play', function () {
+                    players.forEach(function (otherPlayer) {
+                        if (otherPlayer !== currentPlayer) {
+                            otherPlayer.pause();
+                        }
+                    });
+                });
+            });
+        });
+    </script>
 </body>
 </html>
