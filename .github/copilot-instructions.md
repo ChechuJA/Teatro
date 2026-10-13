@@ -129,6 +129,7 @@ En la información de cada actuación, incluir estas aclaraciones para las famil
 - **¿Cuándo se prepara el guion?** Primero hay que conocer a los participantes para adaptar los personajes y el texto a las personas disponibles.
 - **¿Hay que asistir a los ensayos?** Es importante no faltar y, como mínimo, asistir al ensayo general, que se realiza uno o dos días antes de la actuación.
 - **¿Pueden asistir los niños a los ensayos?** Sí. Como ya no se puede ensayar en clase con ellos, los ensayos suelen hacerse en un parque o en una sala cedida. Se recomienda que los niños asistan siempre que puedan.
+- **¿A qué hora son los ensayos?** Hay personas que ensayan por la mañana y otras por la tarde. Como referencia, algunos ensayos de tarde suelen ser entre las 17:00 y las 20:00; los horarios concretos se acuerdan en el grupo de WhatsApp.
 - **¿A qué hora es la actuación?** Se realiza por la mañana, entre las 9:30 y las 10:30, y hay dos pases.
 - **¿Cuánto se ensaya el día del estreno?** Depende de cómo estén preparados los ensayos y colocados los personajes. Si todo está bien ensayado y organizado, no hace falta ensayar mucho antes del primer pase.
 
