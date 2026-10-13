@@ -992,6 +992,75 @@ h2 {
     margin-bottom: 3rem;
 }
 
+.faq-promo {
+    background: #f5f7ff;
+    border-left: 4px solid #667eea;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+}
+
+.faq-promo h2 {
+    margin-bottom: 0.5rem;
+}
+
+.faq-promo p {
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.faq-promo-link {
+    background: #667eea;
+    border-radius: 6px;
+    color: white;
+    display: inline-block;
+    font-weight: bold;
+    padding: 0.6rem 0.9rem;
+    text-decoration: none;
+}
+
+.faq-promo-link:hover {
+    background: #764ba2;
+}
+
+.faq-group {
+    margin-bottom: 2rem;
+}
+
+.faq-group h3 {
+    border-bottom: 2px solid #e5e7eb;
+    color: #444;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.4rem;
+}
+
+.faq-item {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 0.9rem 0;
+}
+
+.faq-item summary {
+    color: #333;
+    cursor: pointer;
+    font-size: 1.05rem;
+    font-weight: bold;
+}
+
+.faq-item summary::marker {
+    color: #667eea;
+}
+
+.faq-item p {
+    color: #555;
+    margin: 0.7rem 0 0 1.3rem;
+}
+
+.faq-back-link {
+    display: inline-block;
+    margin-bottom: 1rem;
+}
+
 .ack-intro {
     color: #666;
     font-size: 1.1rem;
