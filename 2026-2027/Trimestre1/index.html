@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lee en línea Navidad en el antiguo Oeste, una obra infantil de Nova-tro-s. Guion completo y PDF descargable.">
+    <title>Navidad en el antiguo Oeste | Nova-tro-s</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <style>
+        body { background: #e8efe9; color: #26332c; }
+        header { background: #173d35; color: #fff; }
+        header h1, .subtitle, .tagline { color: #fff; }
+        header h1 { font-family: Georgia, 'Times New Roman', serif; }
+        .reading-shell { max-width: 960px; margin: 0 auto 2rem; padding: 0 1rem; }
+        .reading-shell main { padding: clamp(1rem, 4vw, 2.5rem); border-radius: 8px; }
+        .back-link { color: #17634e; font-weight: 700; text-decoration: none; }
+        .back-link:hover { text-decoration: underline; }
+        .hero { margin: 1.2rem 0 1.5rem; padding: clamp(1.4rem, 5vw, 2.5rem); border-radius: 8px; color: #fff; background: #173d35; }
+        .hero h2 { margin: 0 0 .5rem; border: 0; color: #fff; font: 700 clamp(2rem, 5vw, 3.2rem)/1.08 Georgia, 'Times New Roman', serif; }
+        .hero p { margin: .3rem 0; color: #eaf3eb; }
+        .hero .eyebrow { color: #f3ce83; font-size: .85rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; }
+        .actions { display: flex; flex-wrap: wrap; gap: .7rem; margin-top: 1.2rem; }
+        .action { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: .65rem 1rem; border: 2px solid #f3ce83; border-radius: 5px; background: #f3ce83; color: #26332c; font-weight: 700; text-decoration: none; }
+        .action.secondary { border-color: #fff; background: transparent; color: #fff; }
+        .action:hover { filter: brightness(.94); }
+        .summary { padding: 1rem 1.2rem; border-left: 4px solid #b9473e; background: #f8f4e9; }
+        .summary p:last-child { margin-bottom: 0; }
+        .quick-nav { display: flex; flex-wrap: wrap; gap: .5rem; margin: 1.5rem 0 2rem; }
+        .quick-nav a { padding: .45rem .7rem; border: 1px solid #a9b8aa; border-radius: 4px; color: #174f40; background: #f5f8f4; font-weight: 700; text-decoration: none; }
+        .quick-nav a:hover { background: #dce9df; }
+        .cast-list { columns: 2; column-gap: 2rem; padding-left: 1.5rem; }
+        .cast-list li { break-inside: avoid; padding: .25rem 0; }
+        .scene { margin: 2.2rem 0; scroll-margin-top: 1rem; }
+        .scene h2 { padding: .7rem 1rem; border: 0; border-left: 5px solid #b9473e; border-radius: 0 5px 5px 0; background: #edf3ed; color: #174f40; font: 700 1.4rem/1.3 Georgia, 'Times New Roman', serif; }
+        .scene-note { color: #5b6a60; font-style: italic; }
+        .direction { margin: .8rem 0; padding: .55rem .8rem; border-left: 3px solid #d8c18b; color: #566259; background: #fbf8ef; font-style: italic; }
+        .dialogue { margin: .65rem 0; padding: .7rem .9rem; border-left: 3px solid #9bb4a2; background: #f6f8f5; }
+        .dialogue p { margin: .2rem 0 0; white-space: pre-line; }
+        .speaker { color: #174f40; font-weight: 800; }
+        .audience { margin: .8rem 0; padding: .8rem 1rem; border-left: 4px solid #be8b28; background: #fff5d9; font-weight: 700; }
+        .dance { margin: 1rem 0; padding: 1rem; border: 1px solid #c6d5c8; border-radius: 5px; background: #edf5ef; }
+        .dance h3 { margin-top: 0; color: #174f40; }
+        .closing-line { padding: 1.2rem; border-radius: 5px; color: #fff; background: #a83e39; text-align: center; font: 700 1.25rem/1.6 Georgia, 'Times New Roman', serif; }
+        .pdf-viewer { margin-top: 1.5rem; border: 1px solid #cbd5cc; border-radius: 5px; }
+        .pdf-viewer summary { padding: .8rem 1rem; color: #174f40; cursor: pointer; font-weight: 700; }
+        .pdf-viewer iframe { display: block; width: 100%; height: min(75vh, 850px); border: 0; border-top: 1px solid #cbd5cc; }
+        details.notes { margin: 1rem 0; padding: .9rem 1rem; border: 1px solid #cbd5cc; border-radius: 5px; background: #f7f9f6; }
+        details.notes summary { color: #174f40; cursor: pointer; font-weight: 700; }
+        footer { color: #fff; }
+        @media (max-width: 600px) {
+            .cast-list { columns: 1; }
+            .reading-shell main { padding: 1rem; }
+            .quick-nav a { flex: 1 1 42%; text-align: center; }
+            .pdf-viewer iframe { height: 65vh; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🎭 Nova-tro-s</h1>
+            <p class="subtitle">Hacemos lo que podemos</p>
+            <p class="tagline">Teatro de Familias · Educación Infantil</p>
+        </div>
+    </header>
+
+    <div class="reading-shell">
+        <main>
+            <a class="back-link" href="../../index.html">← Volver a todas las obras</a>
+
+            <section class="hero" aria-labelledby="play-title">
+                <p class="eyebrow">🎄 Primer trimestre · 2026-2027</p>
+                <h2 id="play-title">Navidad en el antiguo Oeste</h2>
+                <p>🎭 Obra infantil · 15 personajes · 5 escenas · 15-25 minutos</p>
+                <div class="actions">
+                    <a class="action" href="Navidad_en_el_antiguo_Oeste.pdf" download>📥 Descargar guion en PDF</a>
+                    <a class="action secondary" href="#guion">📖 Ir al guion</a>
+                </div>
+            </section>
+
+            <section class="summary">
+                <h2>✨ La historia</h2>
+                <p>En el pueblo de Estrella Nevada, vaqueros y miembros de una comunidad indígena quieren organizar fiestas separadas y demostrar que la suya es la mejor. Entre las ocurrencias de Caballo Loco, las confusiones del sheriff y una estrella que necesita muchas manos, descubrirán que pueden conservar sus tradiciones y compartir la celebración.</p>
+                <p><strong>Mensaje:</strong> escuchar, respetar las diferencias, compartir y aprender a convivir.</p>
+            </section>
+
+            <section aria-labelledby="cast-title">
+                <h2 id="cast-title">🎭 Los 15 personajes</h2>
+                <ul class="cast-list">
+                    <li>⭐ Sheriff Bigotes, sheriff despistado.</li>
+                    <li>🤠 Pepe Tranquilo, vaquero bonachón y distraído.</li>
+                    <li>🤠 Rosa Espuelas, vaquera decidida.</li>
+                    <li>👢 Billy Botas, vaquero torpe y gracioso.</li>
+                    <li>🎶 Lola Country, alegre y musical.</li>
+                    <li>🌤️ Jefe Nube Serena, líder sabio y firme.</li>
+                    <li>🐴 Caballo Loco, espontáneo y muy expresivo.</li>
+                    <li>🌙 Luna, observadora y sensible.</li>
+                    <li>🌊 Río, alegre y colaborador.</li>
+                    <li>☀️ Sol, expresiva e imaginativa.</li>
+                    <li>⭐ Estrella de Navidad, mágica y cariñosa.</li>
+                    <li>🔔 Doña Campanilla, encargada del saloon.</li>
+                    <li>📬 Tomás el Cartero, mensajero del pueblo.</li>
+                    <li>🍪 Abuela Canela, cocinera generosa.</li>
+                    <li>🎁 Duende Cascabel, ayudante navideño nervioso.</li>
+                </ul>
+                <p><em>El papel de narrador/a puede hacerlo una persona adulta.</em></p>
+            </section>
+
+            <nav class="quick-nav" aria-label="Navegación del guion">
+                <a href="#escena1">🎬 Escena 1</a>
+                <a href="#escena2">🎶 Escena 2</a>
+                <a href="#escena3">⭐ Escena 3</a>
+                <a href="#escena4">🤝 Escena 4</a>
+                <a href="#escena5">🎄 Escena 5</a>
+                <a href="#ensayos">📝 Ensayos</a>
+            </nav>
+
+            <div id="guion">
+                <section class="scene" id="escena1">
+                    <h2>🎬 Escena 1. Un pueblo dividido</h2>
+                    <p class="scene-note">Duración: 3-4 minutos · Música country de fondo.</p>
+                    <p class="direction">El escenario está vacío. Suena música de guitarra. Entra Doña Campanilla y coloca un cartel de «¡Feliz Navidad!». Entra Abuela Canela con una cesta imaginaria.</p>
+                    <div class="dialogue"><span class="speaker">📖 NARRADOR/A</span><p>En el lejano Oeste había un pueblo llamado Estrella Nevada. Allí vivían vaqueros y miembros de una comunidad indígena. Todos eran diferentes, pero tenían algo en común: ¡les encantaba celebrar! Bueno… casi siempre. Porque cuando llegaba la hora de ponerse de acuerdo, ¡comenzaban los problemas!</p></div>
+                    <div class="dialogue"><span class="speaker">🔔 DOÑA CAMPANILLA</span><p>¡Ya llega la Navidad! ¡Voy a decorar mi saloon!</p></div>
+                    <div class="dialogue"><span class="speaker">🍪 ABUELA CANELA</span><p>Y yo prepararé unas galletas para compartir.</p></div>
+                    <div class="dialogue"><span class="speaker">🔔 DOÑA CAMPANILLA</span><p>¡Que sean muchas! En Navidad siempre viene alguien con hambre.</p></div>
+                    <p class="direction">Entra Pepe Tranquilo caminando en dirección contraria.</p>
+                    <div class="dialogue"><span class="speaker">🤠 PEPE TRANQUILO</span><p>¡Buenos días! ¿Dónde está la estación de tren?</p></div>
+                    <div class="dialogue"><span class="speaker">🔔 DOÑA CAMPANILLA</span><p>¡Pepe, esto es un saloon!</p></div>
+                    <div class="dialogue"><span class="speaker">🤠 PEPE TRANQUILO</span><p>¡Ah! Entonces, ¿dónde está el tren que lleva al saloon?</p></div>
+                    <p class="direction">Entran Rosa Espuelas, Billy Botas y Lola Country.</p>
+                    <div class="dialogue"><span class="speaker">🤠 ROSA ESPUELAS</span><p>¡Este año nuestra fiesta será la mejor del Oeste!</p></div>
+                    <div class="dialogue"><span class="speaker">🎶 LOLA COUNTRY</span><p>¡Con música, palmas y baile country!</p></div>
+                    <div class="dialogue"><span class="speaker">👢 BILLY BOTAS</span><p>¡Y con mis botas bailarinas!</p></div>
+                    <p class="direction">Billy da dos pasos y mira sus pies.</p>
+                    <div class="dialogue"><span class="speaker">👢 BILLY BOTAS</span><p>Un momento… ¡creo que una bota se ha quedado dormida!</p></div>
+                    <div class="dialogue"><span class="speaker">🤠 PEPE TRANQUILO</span><p>¡Despiértala con un bostezo!</p></div>
+                    <p class="direction">Todos hacen un bostezo exagerado. Entra Sheriff Bigotes con su estrella de cartón y el sombrero al revés.</p>
+                    <div class="dialogue"><span class="speaker">⭐ SHERIFF BIGOTES</span><p>¡Atención! ¡Aquí manda el orden! ¿Por qué está todo tan oscuro?</p></div>
+                    <div class="dialogue"><span class="speaker">🎶 LOLA COUNTRY</span><p>¡Porque llevas el sombrero sobre los ojos!</p></div>
+                    <div class="dialogue"><span class="speaker">⭐ SHERIFF BIGOTES</span><p>¡Caso resuelto! Soy un sheriff estupendo.</p></div>
+                    <p class="direction">Entran el Jefe Nube Serena, Luna, Río, Sol y Caballo Loco.</p>
+                    <div class="dialogue"><span class="speaker">🌤️ JEFE NUBE SERENA</span><p>Buenos días. Queremos preparar nuestra celebración en la plaza.</p></div>
+                    <div class="dialogue"><span class="speaker">🤠 ROSA ESPUELAS</span><p>¡Pero la plaza la necesitamos nosotros!</p></div>
+                    <div class="dialogue"><span class="speaker">🌙 LUNA</span><p>Nosotros también vivimos aquí. Esta plaza es un lugar importante para nuestra comunidad.</p></div>
+                    <div class="dialogue"><span class="speaker">🤠 ROSA ESPUELAS</span><p>¡Pues nuestro baile va a ser el mejor!</p></div>
+                    <div class="dialogue"><span class="speaker">🌊 RÍO</span><p>¡Nuestro ritmo también será estupendo!</p></div>
+                    <div class="dialogue"><span class="speaker">☀️ SOL</span><p>¡Y nuestros movimientos serán preciosos!</p></div>
+                    <div class="dialogue"><span class="speaker">🐴 CABALLO LOCO</span><p>¡Y yo haré un baile de caballo!</p></div>
+                    <p class="direction">Caballo Loco da tres saltitos y relincha suavemente.</p>
+                    <div class="dialogue"><span class="speaker">🐴 CABALLO LOCO</span><p>¡Hiiii! ¡Perdón! ¡Me he convertido en una bicicleta!</p></div>
+                    <div class="dialogue"><span class="speaker">🤠 PEPE TRANQUILO</span><p>¿Una bicicleta?</p></div>
+                    <div class="dialogue"><span class="speaker">🐴 CABALLO LOCO</span><p>¡Sí! ¡Porque voy haciendo ring, ring!</p></div>
+                    <p class="direction">Caballo Loco mueve los brazos como si llevara un manillar.</p>
+                    <div class="dialogue"><span class="speaker">⭐ SHERIFF BIGOTES</span><p>¡Un momento! ¡No podemos discutir en la plaza!</p></div>
+                    <div class="dialogue"><span class="speaker">👢 BILLY BOTAS</span><p>¿Y podemos discutir en el saloon?</p></div>
+                    <div class="dialogue"><span class="speaker">⭐ SHERIFF BIGOTES</span><p>¡Tampoco!</p></div>
+                    <div class="dialogue"><span class="speaker">👢 BILLY BOTAS</span><p>¿Y en la cocina?</p></div>
+                    <div class="dialogue"><span class="speaker">⭐ SHERIFF BIGOTES</span><p>¡Billy!</p></div>
+                    <div class="dialogue"><span class="speaker">👢 BILLY BOTAS</span><p>¡Entendido! Discutiré en silencio.</p></div>
+                    <p class="direction">Billy mueve la boca sin emitir sonidos.</p>
+                    <div class="dialogue"><span class="speaker">📖 NARRADOR/A</span><p>Los dos grupos querían preparar su fiesta. Pero ninguno quería escuchar al otro.</p></div>
+                    <div class="dialogue"><span class="speaker">⭐ SHERIFF BIGOTES</span><p>¡A ver si nos entendemos! Cuando yo diga «¡Oeste!», vosotros decís «¡Amistad!»</p></div>
+                    <div class="dialogue"><span class="speaker">⭐ SHERIFF BIGOTES</span><p>¡Oeste!</p></div>
+                    <div class="audience">🤠 TODOS LOS VAQUEROS: ¡Amistad!</div>
+                    <div class="dialogue"><span class="speaker">⭐ SHERIFF BIGOTES</span><p>¡Oeste!</p></div>
+                    <div class="audience">🌙 MIEMBROS DE LA COMUNIDAD INDÍGENA: ¡Amistad!</div>
+                    <div class="dialogue"><span class="speaker">🐴 CABALLO LOCO</span><p>¡Oeste… con patatas!</p></div>
+                    <p class="direction">Todos se ríen. Los dos grupos se quedan mirándose.</p>
+                    <div class="dialogue"><span class="speaker">📖 NARRADOR/A</span><p>Pero la Navidad estaba cada vez más cerca… y aún no habían decidido cómo celebrarla.</p></div>
+                </section>
+
+                <section class="scene" id="escena2">
+                    <h2>🎶 Escena 2. Dos fiestas diferentes</h2>
+                    <p class="scene-note">Duración: 4 minutos · Dos espacios separados en el escenario.</p>
+                    <div class="dialogue"><span class="speaker">📖 NARRADOR/A</span><p>Como no conseguían ponerse de acuerdo, cada grupo decidió preparar su propia fiesta. Los vaqueros ensayarían un baile country. La comunidad indígena prepararía una danza escénica original para celebrar su encuentro y su hogar. ¡Y todos querían que su fiesta fuera la más divertida!</p></div>
+                    <h3>🤠 Parte A. Los preparativos de los vaqueros</h3>
+                    <p class="direction">Entran los vaqueros. Lola Country se coloca delante y marca el ritmo con palmas.</p>
+                    <div class="dialogue"><span class="speaker">🎶 LOLA COUNTRY</span><p>¡Equipo vaquero! ¡Preparados para bailar!</p></div>
+                    <div class="dialogue"><span class="speaker">🤠 ROSA ESPUELAS</span><p>¡Yo voy a hacer el giro más rápido del Oeste!</p></div>
+                    <div class="dialogue"><span class="speaker">👢 BILLY BOTAS</span><p>¡Y yo la pisada más elegante!</p></div>
+                    <p class="direction">Billy pisa suavemente el suelo dos veces y hace una reverencia.</p>
+                    <div class="dialogue"><span class="speaker">🤠 PEPE TRANQUILO</span><p>¿Qué tenemos que hacer?</p></div>
+                    <div class="dialogue"><span class="speaker">🎶 LOLA COUNTRY</span><p>Primero, dos pasos a la derecha.</p></div>
+                    <p class="direction">Todos dan dos pasos a la derecha.</p>
+                    <div class="dialogue"><span class="speaker">🎶 LOLA COUNTRY</span><p>Ahora, dos pasos a la izquierda.</p></div>
+                    <p class="direction">Todos dan dos pasos a la izquierda.</p>
+                    <div class="dialogue"><span class="speaker">🤠 PEPE TRANQUILO</span><p>¡Perfecto! ¡Dos pasos a la derecha!</p></div>
+                    <p class="direction">Pepe va hacia la izquierda.</p>
+                    <div class="dialogue"><span class="speaker">🤠 ROSA ESPUELAS</span><p>¡Pepe, al otro lado!</p></div>
+                    <div class="dialogue"><span class="speaker">🤠 PEPE TRANQUILO</span><p>¡Ah! ¡Es que mi derecha está de vacaciones!</p></div>
+                    <div class="dialogue"><span class="speaker">⭐ SHERIFF BIGOTES</span><p>¡En este pueblo hasta las direcciones son rebeldes!</p></div>
+                    <div class="dialogue"><span class="speaker">🎶 LOLA COUNTRY</span><p>¡Otra vez! ¡Pasos, palmas y giro!</p></div>
+                    <div class="dance"><h3>💃 Baile country · 40 segundos</h3><p>Ocho tiempos de pasos laterales alternos; ocho tiempos con cuatro palmas y cuatro pisadas suaves; ocho tiempos para un giro lento o medio círculo; ocho tiempos con manos en la cintura, saludo y pose final.</p></div>
+                    <div class="audience">🤠 TODOS LOS VAQUEROS: ¡Nuestro baile será el mejor!</div>
+                    <h3>🌟 Parte B. Los preparativos de la comunidad indígena</h3>
+                    <p class="direction">La música cambia a percusión suave. Entran Jefe Nube Serena, Luna, Río, Sol y Caballo Loco. Colocan telas de colores alrededor del espacio central.</p>
+                    <div class="dialogue"><span class="speaker">🌤️ JEFE NUBE SERENA</span><p>Prepararemos un encuentro para celebrar nuestra comunidad, nuestro hogar y la alegría de compartir.</p></div>
+                    <div class="dialogue"><span class="speaker">🌙 LUNA</span><p>Podemos movernos juntos, siguiendo el ritmo.</p></div>
+                    <div class="dialogue"><span class="speaker">🌊 RÍO</span><p>¡Yo marcaré las palmas!</p></div>
+                    <p class="direction">Río da dos palmas lentas.</p>
+                    <div class="dialogue"><span class="speaker">☀️ SOL</span><p>¡Y yo inventaré un movimiento con los brazos!</p></div>
+                    <p class="direction">Sol abre los brazos suavemente, como si dibujara un arco.</p>
+                    <div class="dialogue"><span class="speaker">🐴 CABALLO LOCO</span><p>¡Yo inventaré uno con las orejas!</p></div>
+                    <p class="direction">Mueve las manos junto a la cabeza como si tuviera orejas de caballo.</p>
+                    <div class="dialogue"><span class="speaker">🌙 LUNA</span><p>Caballo Loco, ¡no tienes orejas de caballo!</p></div>
+                    <div class="dialogue"><span class="speaker">🐴 CABALLO LOCO</span><p>¡Pues las he alquilado para Navidad!</p></div>
+                    <div class="dialogue"><span class="speaker">🌤️ JEFE NUBE SERENA</span><p>Vamos a probar los movimientos despacio.</p></div>
+                    <div class="dance"><h3>🔥 Danza escénica · 40 segundos</h3><p>Los cinco forman un círculo amplio; dan cuatro pasos lentos en un sentido, se detienen y levantan los brazos; dan cuatro pasos en sentido contrario; Río marca cuatro palmas lentas; todos terminan mirando al centro y después al público.</p></div>
+                    <div class="dialogue"><span class="speaker">☀️ SOL</span><p>¡Qué bonito queda cuando nos movemos juntos!</p></div>
+                    <div class="dialogue"><span class="speaker">🐴 CABALLO LOCO</span><p>¡Ahora voy a bailar como una gallina!</p></div>
+                    <p class="direction">Caballo Loco mueve los codos y da pequeños pasos.</p>
+                    <div class="dialogue"><span class="speaker">🌊 RÍO</span><p>¡Eso no es una gallina!</p></div>
+                    <div class="dialogue"><span class="speaker">🐴 CABALLO LOCO</span><p>¡Es una gallina del Oeste!</p></div>
+                    <div class="dialogue"><span class="speaker">🌤️ JEFE NUBE SERENA</span><p>Lo importante es que disfrutemos juntos de nuestra celebración.</p></div>
+                    <div class="dialogue"><span class="speaker">🌙 LUNA</span><p>¡Y que nadie se quede fuera!</p></div>
+                    <div class="dialogue"><span class="speaker">📖 NARRADOR/A</span><p>Los dos grupos ensayaban por separado. Cada uno estaba contento con su fiesta… hasta que llegó el momento de decidir dónde celebrar la Navidad.</p></div>
+                </section>
+
+                <section class="scene" id="escena3">
+                    <h2>⭐ Escena 3. ¡El gran enfrentamiento!</h2>
+                    <p class="scene-note">Duración: 3-4 minutos · Música cómica de suspense, breve y suave.</p>
+                    <p class="direction">Los vaqueros entran por la izquierda con adornos navideños. La comunidad indígena entra por la derecha con sus telas de colores. Ambos se detienen al ver que quieren utilizar el mismo espacio.</p>
+                    <div class="dialogue"><span class="speaker">🤠 ROSA ESPUELAS</span><p>¡Nosotros hemos llegado primero!</p></div>
+                    <div class="dialogue"><span class="speaker">🌤️ JEFE NUBE SERENA</span><p>Nosotros también necesitamos la plaza para reunirnos.</p></div>
+                    <div class="dialogue"><span class="speaker">👢 BILLY BOTAS</span><p>¡Pues hacemos una carrera!</p></div>
+                    <div class="dialogue"><span class="speaker">🌊 RÍO</span><p>¡No queremos competir!</p></div>
+                    <div class="dialogue"><span class="speaker">🤠 PEPE TRANQUILO</span><p>¿Y si hacemos dos plazas?</p></div>
+                    <div class="dialogue"><span class="speaker">🎶 LOLA COUNTRY</span><p>¡Pepe, solo tenemos una!</p></div>
+                    <div class="dialogue"><span class="speaker">🤠 PEPE TRANQUILO</span><p>¡Pues hacemos una plaza grande y otra pequeñita!</p></div>
+                    <div class="dialogue"><span class="speaker">⭐ SHERIFF BIGOTES</span><p>¡Silencio! ¡Voy a resolver este asunto con mi autoridad de sheriff!</p></div>
+                    <p class="direction">Levanta la mano solemnemente. Todos esperan.</p>
+                    <div class="dialogue"><span class="speaker">⭐ SHERIFF BIGOTES</span><p>La plaza será para…</p></div>
+                    <p class="direction">Pausa larga. El sheriff se rasca la cabeza.</p>
+                    <div class="dialogue"><span class="speaker">⭐ SHERIFF BIGOTES</span><p>¡Para quien tenga más… botones!</p></div>
+                    <p class="direction">Todos miran su ropa.</p>
+                    <div class="dialogue"><span class="speaker">👢 BILLY BOTAS</span><p>¡Yo tengo tres!</p></div>
+                    <div class="dialogue"><span class="speaker">☀️ SOL</span><p>¡Yo tengo dos!</p></div>
+                    <div class="dialogue"><span class="speaker">🐴 CABALLO LOCO</span><p>¡Yo tengo un botón invisible! ¡Es un botón muy tímido!</p></div>
+                    <div class="dialogue"><span class="speaker">⭐ SHERIFF BIGOTES</span><p>¡No podemos decidirlo contando botones!</p></div>
+                    <div class="dialogue"><span class="speaker">🤠 ROSA ESPUELAS</span><p>¡Nuestro baile necesita espacio!</p></div>
+                    <div class="dialogue"><span class="speaker">🌙 LUNA</span><p>¡Nuestra celebración también!</p></div>
+                    <div class="dialogue"><span class="speaker">🔔 DOÑA CAMPANILLA</span><p>¡Y yo necesito la plaza para colocar las mesas!</p></div>
+                    <div class="dialogue"><span class="speaker">🍪 ABUELA CANELA</span><p>¡Y yo necesito las mesas para poner las galletas!</p></div>
+                    <div class="dialogue"><span class="speaker">🤠 PEPE TRANQUILO</span><p>¡Y yo necesito las galletas para…!</p></div>
+                    <div class="audience">TODOS: ¡PEPE!</div>
+                    <div class="dialogue"><span class="speaker">🤠 PEPE TRANQUILO</span><p>¡Para compartirlas, claro!</p></div>
+                    <p class="direction">Se miran unos a otros. Breve silencio.</p>
+                    <div class="dialogue"><span class="speaker">🌤️ JEFE NUBE SERENA</span><p>No queremos que nadie nos quite nuestro hogar.</p></div>
+                    <div class="dialogue"><span class="speaker">🤠 ROSA ESPUELAS</span><p>Y nosotros queremos celebrar nuestra Navidad.</p></div>
+                    <div class="dialogue"><span class="speaker">🌙 LUNA</span><p>Pero no hace falta que uno gane para que el otro pueda disfrutar.</p></div>
+                    <div class="dialogue"><span class="speaker">⭐ SHERIFF BIGOTES</span><p>¡Vaya! ¡Eso tiene mucho sentido!</p></div>
+                    <div class="dialogue"><span class="speaker">👢 BILLY BOTAS</span><p>Entonces… ¿ya no hay concurso de botones?</p></div>
+                    <div class="dialogue"><span class="speaker">⭐ SHERIFF BIGOTES</span><p>¡No, Billy!</p></div>
+                    <div class="dialogue"><span class="speaker">👢 BILLY BOTAS</span><p>¡Menos mal! ¡Mi botón invisible acaba de escaparse!</p></div>
+                    <p class="direction">Billy busca por el suelo y Caballo Loco le ayuda. El público puede señalar dónde está el botón imaginario.</p>
+                    <div class="dialogue"><span class="speaker">🐴 CABALLO LOCO</span><p>¡Público! ¿Veis el botón?</p></div>
+                    <p class="direction">Se deja que los niños respondan. Caballo Loco finge encontrarlo detrás de su oreja.</p>
+                    <div class="dialogue"><span class="speaker">🐴 CABALLO LOCO</span><p>¡Aquí está! ¡Se había escondido en mi establo!</p></div>
+                    <div class="dialogue"><span class="speaker">📖 NARRADOR/A</span><p>Todos empezaban a comprender que discutir no les estaba ayudando. Pero entonces ocurrió algo inesperado.</p></div>
+                    <p class="direction">Se escucha una campanilla. Las luces del árbol se apagan o el árbol aparece sin su estrella.</p>
+                    <div class="dialogue"><span class="speaker">🔔 DOÑA CAMPANILLA</span><p>¡Oh, no! ¡La estrella de Navidad ha desaparecido!</p></div>
+                    <p class="direction">Entra Duende Cascabel corriendo.</p>
+                    <div class="dialogue"><span class="speaker">🎁 DUENDE CASCABEL</span><p>¡Tengo una noticia terrible!</p></div>
+                    <div class="audience">TODOS: ¿Qué ha pasado?</div>
+                    <div class="dialogue"><span class="speaker">🎁 DUENDE CASCABEL</span><p>¡La estrella se ha caído de la caja y no puedo colocarla yo solo!</p></div>
+                    <div class="dialogue"><span class="speaker">⭐ SHERIFF BIGOTES</span><p>¿Y dónde está?</p></div>
+                    <div class="dialogue"><span class="speaker">🎁 DUENDE CASCABEL</span><p>¡Está aquí, pero es demasiado grande para mí! ¡Necesito muchas manos!</p></div>
+                    <p class="direction">Señala una estrella de cartón situada a un lado del escenario.</p>
+                    <div class="dialogue"><span class="speaker">📖 NARRADOR/A</span><p>Y, por primera vez aquel día, todos miraron el problema en vez de mirarse como rivales.</p></div>
+                </section>
+
+                <section class="scene" id="escena4">
+                    <h2>🤝 Escena 4. El verdadero regalo de la Navidad</h2>
+                    <p class="scene-note">Duración: 3 minutos · Música navideña suave.</p>
+                    <p class="direction">Entra Tomás el Cartero con un paquete. Detrás aparece la Estrella de Navidad, llevando una estrella dorada grande.</p>
+                    <div class="dialogue"><span class="speaker">📬 TOMÁS EL CARTERO</span><p>¡Correo urgente para el pueblo de Estrella Nevada!</p></div>
+                    <div class="dialogue"><span class="speaker">🤠 PEPE TRANQUILO</span><p>¿Es una carta para mí?</p></div>
+                    <div class="dialogue"><span class="speaker">📬 TOMÁS EL CARTERO</span><p>No, Pepe. Es para todos.</p></div>
+                    <div class="dialogue"><span class="speaker">🤠 PEPE TRANQUILO</span><p>¡Menos mal! Ya estaba buscando mis gafas para leerla.</p></div>
+                    <div class="dialogue"><span class="speaker">⭐ ESTRELLA DE NAVIDAD</span><p>Hola, amigos. Traigo un mensaje muy especial.</p></div>
+                    <div class="dialogue"><span class="speaker">🐴 CABALLO LOCO</span><p>¿Es un mensaje de caballos?</p></div>
+                    <div class="dialogue"><span class="speaker">⭐ ESTRELLA DE NAVIDAD</span><p>No exactamente.</p></div>
+                    <div class="dialogue"><span class="speaker">🐴 CABALLO LOCO</span><p>¡Qué pena! Yo ya estaba practicando el relincho.</p></div>
+                    <div class="dialogue"><span class="speaker">⭐ ESTRELLA DE NAVIDAD</span><p>La Navidad no es una competición. No gana quien tiene más adornos, quien baila más rápido o quien habla más alto.</p></div>
+                    <div class="dialogue"><span class="speaker">🤠 ROSA ESPUELAS</span><p>¿Entonces no tenemos que ganar?</p></div>
+                    <div class="dialogue"><span class="speaker">⭐ ESTRELLA DE NAVIDAD</span><p>No. Podéis conservar vuestras costumbres, vuestros bailes y vuestras canciones.</p></div>
+                    <div class="dialogue"><span class="speaker">🌤️ JEFE NUBE SERENA</span><p>¿Y podemos compartir la plaza sin renunciar a nuestra identidad?</p></div>
+                    <div class="dialogue"><span class="speaker">⭐ ESTRELLA DE NAVIDAD</span><p>¡Claro que sí! Respetar a los demás no significa tener que ser todos iguales.</p></div>
+                    <div class="dialogue"><span class="speaker">🌙 LUNA</span><p>¡Podemos aprender unos de otros!</p></div>
+                    <div class="dialogue"><span class="speaker">🌊 RÍO</span><p>¡Podemos compartir nuestros ritmos!</p></div>
+                    <div class="dialogue"><span class="speaker">🎶 LOLA COUNTRY</span><p>¡Y podemos enseñar nuestros pasos de baile!</p></div>
+                    <div class="dialogue"><span class="speaker">☀️ SOL</span><p>¡Cada grupo tendrá su momento!</p></div>
+                    <div class="dialogue"><span class="speaker">⭐ SHERIFF BIGOTES</span><p>¡Por fin una norma que sí entiendo!</p></div>
+                    <div class="dialogue"><span class="speaker">👢 BILLY BOTAS</span><p>¿Y cuál es?</p></div>
+                    <div class="dialogue"><span class="speaker">⭐ SHERIFF BIGOTES</span><p>¡Que nadie tiene que ser el mejor para formar parte de la fiesta!</p></div>
+                    <div class="dialogue"><span class="speaker">👢 BILLY BOTAS</span><p>¡Esa norma me viene fenomenal!</p></div>
+                    <div class="dialogue"><span class="speaker">🎁 DUENDE CASCABEL</span><p>Pero todavía tenemos un problema. ¡Hay que colocar la estrella!</p></div>
+                    <div class="dialogue"><span class="speaker">🔔 DOÑA CAMPANILLA</span><p>Yo sujetaré un lado.</p></div>
+                    <div class="dialogue"><span class="speaker">🍪 ABUELA CANELA</span><p>Yo ayudaré desde el otro.</p></div>
+                    <div class="dialogue"><span class="speaker">🤠 ROSA ESPUELAS</span><p>Yo puedo acercar la estrella.</p></div>
+                    <div class="dialogue"><span class="speaker">🌤️ JEFE NUBE SERENA</span><p>Nosotros también ayudaremos.</p></div>
+                    <div class="dialogue"><span class="speaker">🐴 CABALLO LOCO</span><p>¡Yo sujetaré el viento!</p></div>
+                    <p class="direction">Caballo Loco extiende los brazos y sopla exageradamente.</p>
+                    <div class="dialogue"><span class="speaker">🌙 LUNA</span><p>¡El viento no se puede sujetar!</p></div>
+                    <div class="dialogue"><span class="speaker">🐴 CABALLO LOCO</span><p>¡Pues lo intentaré con mucho cariño!</p></div>
+                    <p class="direction">Un adulto o dos niños colocan la estrella desde el suelo. Se encienden las luces LED.</p>
+                    <div class="audience">TODOS: ¡Feliz Navidad!</div>
+                    <div class="dialogue"><span class="speaker">📖 NARRADOR/A</span><p>La estrella volvió a brillar porque muchas manos habían trabajado juntas. Y todos comprendieron que, cuando colaboramos, los problemas parecen más pequeños.</p></div>
+                    <div class="dialogue"><span class="speaker">🍪 ABUELA CANELA</span><p>¡Y ahora sí! ¡Ha llegado el momento de compartir!</p></div>
+                    <div class="dialogue"><span class="speaker">🤠 PEPE TRANQUILO</span><p>¿Compartir galletas?</p></div>
+                    <div class="dialogue"><span class="speaker">🍪 ABUELA CANELA</span><p>¡Compartirlo todo!</p></div>
+                    <div class="dialogue"><span class="speaker">🤠 PEPE TRANQUILO</span><p>¡Entonces yo compartiré mis galletas contigo!</p></div>
+                    <div class="dialogue"><span class="speaker">🍪 ABUELA CANELA</span><p>¡Pero si las galletas son mías!</p></div>
+                    <div class="dialogue"><span class="speaker">🤠 PEPE TRANQUILO</span><p>¡Por eso te las iba a compartir!</p></div>
+                </section>
+
+                <section class="scene" id="escena5">
+                    <h2>🎄 Escena 5. La paz alrededor del fuego</h2>
+                    <p class="scene-note">Duración: 5-6 minutos · Música alegre y celebración final.</p>
+                    <p class="direction">El escenario se ilumina con tonos cálidos. En el centro hay un fuego ficticio de telas rojas, naranjas y amarillas, iluminado con luces LED a pilas. Los dos grupos forman semicírculos separados.</p>
+                    <div class="dialogue"><span class="speaker">📖 NARRADOR/A</span><p>Llegó la noche de Navidad. Los vaqueros conservaron su baile country y la comunidad indígena mantuvo su propia forma de celebrar. Pero aquella vez decidieron compartir la plaza, escucharse y aprender unos de otros.</p></div>
+                    <div class="dialogue"><span class="speaker">🌤️ JEFE NUBE SERENA</span><p>Nuestra comunidad quiere compartir con vosotros nuestra danza escénica.</p></div>
+                    <div class="dialogue"><span class="speaker">🤠 ROSA ESPUELAS</span><p>¡Y nosotros queremos enseñaros nuestro baile country!</p></div>
+                    <div class="dialogue"><span class="speaker">🎶 LOLA COUNTRY</span><p>¡Todos preparados! ¡Vamos a aprender juntos!</p></div>
+                    <div class="dance"><h3>🤠 Baile 1. Los vaqueros enseñan el country</h3>
+                        <p class="direction">Los cinco vaqueros se colocan delante, en una fila. Los demás observan.</p>
+                        <div class="dialogue"><span class="speaker">🎶 LOLA COUNTRY</span><p>¡Primero, dos pasos a la derecha!</p></div>
+                        <p class="direction">Todos los vaqueros dan dos pasos laterales.</p>
+                        <div class="dialogue"><span class="speaker">🎶 LOLA COUNTRY</span><p>¡Ahora, dos pasos a la izquierda!</p></div>
+                        <div class="dialogue"><span class="speaker">👢 BILLY BOTAS</span><p>¡Y sin despertar a las botas!</p></div>
+                        <p class="direction">Todos hacen pisadas suaves.</p>
+                        <div class="dialogue"><span class="speaker">🤠 PEPE TRANQUILO</span><p>¡Ahora las palmas!</p></div>
+                        <p class="direction">Todos dan cuatro palmas.</p>
+                        <div class="dialogue"><span class="speaker">🤠 ROSA ESPUELAS</span><p>¡Y un giro despacito!</p></div>
+                        <p class="direction">Los vaqueros hacen un giro lento y saludan al público.</p>
+                        <div class="dialogue"><span class="speaker">🎶 LOLA COUNTRY</span><p>¡Ahora os toca a vosotros! ¿Queréis bailar con nosotros?</p></div>
+                        <p>Luna, Río, Sol, el jefe y Caballo Loco repiten los pasos. Después se incorporan sheriff, Doña Campanilla, Abuela Canela, Tomás, el duende y la Estrella de Navidad.</p>
+                        <div class="dialogue"><span class="speaker">🐴 CABALLO LOCO</span><p>¡Dos pasos a la derecha!</p></div>
+                        <p class="direction">Camina de lado.</p>
+                        <div class="dialogue"><span class="speaker">🐴 CABALLO LOCO</span><p>¡Dos pasos a la izquierda!</p></div>
+                        <p class="direction">Camina de lado y termina mirando al público.</p>
+                        <div class="dialogue"><span class="speaker">🐴 CABALLO LOCO</span><p>¡Perfecto! ¡He llegado al mismo sitio!</p></div>
+                        <div class="dialogue"><span class="speaker">🌙 LUNA</span><p>¡Eso significa que has aprendido!</p></div>
+                        <div class="dialogue"><span class="speaker">🐴 CABALLO LOCO</span><p>¡Soy un caballo muy estudioso!</p></div>
+                        <p>Todos repiten los pasos. La música country continúa unos segundos y termina con cuatro palmas.</p>
+                    </div>
+                    <div class="dance"><h3>🌟 Baile 2. Una danza escénica compartida</h3>
+                        <p class="direction">El Jefe Nube Serena, Luna, Río y Sol se colocan delante. Caballo Loco se sitúa al final, intentando imitar sus movimientos.</p>
+                        <div class="dialogue"><span class="speaker">🌤️ JEFE NUBE SERENA</span><p>Ahora os enseñaremos una danza que hemos creado para esta celebración.</p></div>
+                        <div class="dialogue"><span class="speaker">🌙 LUNA</span><p>Primero, abrimos los brazos.</p></div>
+                        <p>Todos los miembros de la comunidad abren los brazos lentamente.</p>
+                        <div class="dialogue"><span class="speaker">🌊 RÍO</span><p>Después, damos cuatro pasos siguiendo el círculo.</p></div>
+                        <p>Todos avanzan cuatro pasos en el mismo sentido.</p>
+                        <div class="dialogue"><span class="speaker">☀️ SOL</span><p>Ahora levantamos las manos y las movemos suavemente, como si saludáramos a las estrellas.</p></div>
+                        <p>Todos levantan los brazos y los balancean con suavidad.</p>
+                        <div class="dialogue"><span class="speaker">🐴 CABALLO LOCO</span><p>¡Y ahora movemos las orejas!</p></div>
+                        <div class="dialogue"><span class="speaker">☀️ SOL</span><p>¡Caballo Loco!</p></div>
+                        <div class="dialogue"><span class="speaker">🐴 CABALLO LOCO</span><p>¡Perdón! ¡Es que las estrellas me hacen cosquillas!</p></div>
+                        <p>El público puede acompañar con cuatro palmas lentas. Los vaqueros se incorporan al círculo y repiten los movimientos.</p>
+                        <div class="dialogue"><span class="speaker">🌤️ JEFE NUBE SERENA</span><p>Cada uno puede moverse a su manera, siempre respetando a los demás.</p></div>
+                        <div class="dialogue"><span class="speaker">🤠 ROSA ESPUELAS</span><p>¡Me gusta aprender vuestro baile!</p></div>
+                        <div class="dialogue"><span class="speaker">🌙 LUNA</span><p>Y a nosotros nos gusta aprender el vuestro.</p></div>
+                    </div>
+                    <div class="dance"><h3>🎉 Baile 3. Coreografía final conjunta</h3>
+                        <p><strong>Música:</strong> «Mi burrito sabanero» en versión infantil u otro villancico conocido por el colegio. Duración aproximada: 1 minuto y medio.</p>
+                        <ul>
+                            <li>Los quince personajes forman un círculo grande alrededor del fuego ficticio, dejando suficiente espacio y mirando al público.</li>
+                            <li>Todos dan dos pasos a la derecha y dos a la izquierda. Repiten cuatro palmas y dos pisadas suaves. Los más pequeños pueden quedarse en su sitio y mover las manos.</li>
+                            <li>Los niños con telas de colores las levantan lentamente. Los demás abren los brazos y balancean el cuerpo. Nadie se acerca demasiado al fuego decorativo.</li>
+                            <li>Todos levantan los brazos, se giran hacia el público y terminan en una media luna. La Estrella de Navidad queda en el centro y Caballo Loco se coloca en primera fila.</li>
+                        </ul>
+                    </div>
+                    <h3>🕊️ Diálogo de reconciliación</h3>
+                    <p class="direction">La música baja de volumen. Los niños permanecen en la media luna.</p>
+                    <div class="dialogue"><span class="speaker">⭐ SHERIFF BIGOTES</span><p>¡Atención, habitantes de Estrella Nevada! ¡Tengo una nueva norma!</p></div>
+                    <div class="dialogue"><span class="speaker">👢 BILLY BOTAS</span><p>¿Otra vez los botones?</p></div>
+                    <div class="dialogue"><span class="speaker">⭐ SHERIFF BIGOTES</span><p>¡No! ¡Esta vez es una norma de verdad!</p></div>
+                    <div class="dialogue"><span class="speaker">🔔 DOÑA CAMPANILLA</span><p>¡A ver, sheriff! ¡Cuéntanos!</p></div>
+                    <div class="dialogue"><span class="speaker">⭐ SHERIFF BIGOTES</span><p>En esta plaza todos tienen derecho a ser escuchados, a compartir y a celebrar con respeto.</p></div>
+                    <div class="dialogue"><span class="speaker">🌤️ JEFE NUBE SERENA</span><p>Seguiremos conservando nuestras costumbres y compartiendo aquello que queramos compartir.</p></div>
+                    <div class="dialogue"><span class="speaker">🤠 ROSA ESPUELAS</span><p>Y nosotros seguiremos bailando country.</p></div>
+                    <div class="dialogue"><span class="speaker">🌙 LUNA</span><p>Podemos ser diferentes y ser amigos.</p></div>
+                    <div class="dialogue"><span class="speaker">🌊 RÍO</span><p>Podemos aprender unos de otros.</p></div>
+                    <div class="dialogue"><span class="speaker">☀️ SOL</span><p>¡Y podemos bailar juntos!</p></div>
+                    <div class="dialogue"><span class="speaker">📬 TOMÁS EL CARTERO</span><p>¡Tengo otra carta!</p></div>
+                    <div class="audience">TODOS: ¿Otra carta?</div>
+                    <div class="dialogue"><span class="speaker">📬 TOMÁS EL CARTERO</span><p>¡Sí! ¡Una carta que dice que la amistad no necesita sello!</p></div>
+                    <div class="dialogue"><span class="speaker">🎁 DUENDE CASCABEL</span><p>¡Ni sobre!</p></div>
+                    <div class="dialogue"><span class="speaker">🍪 ABUELA CANELA</span><p>¡Ni siquiera necesita envoltorio!</p></div>
+                    <div class="dialogue"><span class="speaker">🤠 PEPE TRANQUILO</span><p>¡Pero las galletas sí necesitan envoltorio si las guardamos para mañana!</p></div>
+                    <div class="dialogue"><span class="speaker">🐴 CABALLO LOCO</span><p>¡Yo necesito un establo para guardar mi alegría!</p></div>
+                    <div class="dialogue"><span class="speaker">⭐ ESTRELLA DE NAVIDAD</span><p>La Navidad es más bonita cuando compartimos, respetamos y escuchamos a los demás.</p></div>
+                    <div class="dialogue"><span class="speaker">🌤️ JEFE NUBE SERENA</span><p>Que cada persona pueda celebrar sin dejar de ser quien es.</p></div>
+                    <div class="dialogue"><span class="speaker">🤠 ROSA ESPUELAS</span><p>¡Y que nadie se quede sin bailar!</p></div>
+                    <div class="dialogue"><span class="speaker">🎶 LOLA COUNTRY</span><p>¡Ni sin cantar!</p></div>
+                    <div class="dialogue"><span class="speaker">⭐ SHERIFF BIGOTES</span><p>¡Ni sin amigos!</p></div>
+                    <div class="dialogue"><span class="speaker">🐴 CABALLO LOCO</span><p>¡Y que nadie se olvide de las galletas!</p></div>
+                    <p class="direction">Todos ríen. Suena un breve fragmento musical.</p>
+                    <h3>💫 Frase final coral</h3>
+                    <p class="direction">Todos dan un paso hacia delante, levantan las manos y dicen juntos, despacio y con alegría:</p>
+                    <p class="closing-line">¡Que brille la estrella, que suene la canción, que haya sitio para todos en nuestro corazón!<br>¡En el Oeste y en cualquier lugar, siendo diferentes, podemos celebrar!<br>¡Compartiendo y respetando, la Navidad nos va acercando!</p>
+                    <p class="direction">Todos se cogen de las manos si les resulta cómodo, o unen las manos hacia el centro sin tocarse. Después saludan al público. Caballo Loco hace una reverencia exagerada y simula perder el equilibrio sin llegar a caerse.</p>
+                    <div class="dialogue"><span class="speaker">🐴 CABALLO LOCO</span><p>¡Feliz Navidad! ¡Y felices galopes para todos!</p></div>
+                    <div class="audience">TODOS: ¡FELIZ NAVIDAD!</div>
+                </section>
+            </div>
+
+            <section id="ensayos">
+                <h2>📝 Organización de los ensayos</h2>
+                <ol>
+                    <li>Primer ensayo: practicar entradas, salidas y posiciones sin diálogos.</li>
+                    <li>Segundo ensayo: aprender las frases cortas y los momentos de humor.</li>
+                    <li>Tercer ensayo: aprender los dos bailes por separado, primero sin música.</li>
+                    <li>Cuarto ensayo: unir diálogos, música y movimientos.</li>
+                    <li>Ensayo general: representar la obra completa con vestuario y decorado, sin detenerse por pequeños errores.</li>
+                </ol>
+                <p>Para niños de 3 y 4 años, conviene que los bailes se basen en movimientos repetitivos y que un adulto marque el ritmo. Los de 5 y 6 años pueden ayudar a recordar los pasos y orientar las entradas. Si algún niño tiene dificultades para recordar el texto, un adulto puede darle la primera palabra desde un lateral del escenario.</p>
+                <p><strong>Consejo:</strong> la obra no depende de que todos memoricen perfectamente el texto. Los gestos, las canciones, las pausas cómicas y la participación del público ayudarán a que la representación funcione incluso si alguien se equivoca.</p>
+            </section>
+
+            <section aria-labelledby="materials-title">
+                <h2 id="materials-title">📦 Escenografía, vestuario y seguridad</h2>
+                <ul>
+                    <li>Plaza de Estrella Nevada; saloon de cartón, cartel del pueblo, cactus y fardos decorativos de papel.</li>
+                    <li>Sombreros, chalecos, pañuelos y estrellas de cartulina para los vaqueros.</li>
+                    <li>Camisas lisas, chalecos de tela y colores tierra para la comunidad indígena, sin accesorios ceremoniales.</li>
+                    <li>Telas rojas, naranjas y amarillas, papel de seda y luces LED a pilas para el fuego ficticio; estrella dorada grande, caja de regalo y cascabeles.</li>
+                    <li>Marcas discretas en el suelo para orientar las posiciones.</li>
+                </ul>
+                <p><strong>Seguridad:</strong> no se utilizará fuego real, pirotecnia, armas ni objetos que puedan provocar tropiezos. La estrella se colocará desde el suelo o con ayuda de un adulto; nadie se subirá a estructuras.</p>
+                <p><strong>Música sugerida:</strong> guitarra country instrumental para las escenas 1 y 2; música cómica suave en la escena 3; campanillas y melodía tranquila en la escena 4; percusión suave con palmas y un villancico alegre para el final, como «Mi burrito sabanero» o una canción conocida por el colegio.</p>
+            </section>
+
+            <details class="notes pdf-viewer">
+                <summary>👀 Abrir el PDF en esta página</summary>
+                <iframe src="Navidad_en_el_antiguo_Oeste.pdf#toolbar=1" title="PDF de Navidad en el antiguo Oeste"></iframe>
+            </details>
+            <p class="actions"><a class="action" href="Navidad_en_el_antiguo_Oeste.pdf" download>📥 Descargar guion en PDF</a></p>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container"><p>© 2026-2027 Nova-tro-s · Hacemos lo que podemos 🎭</p></div>
+    </footer>
+</body>
+</html>
