@@ -5,12 +5,8 @@
 const BOT_NAME = "Apuntabot";
 
 const theaterData = {
-    curso: "2025-2026",
-    ensayos: {
-        dia: "jueves",
-        hora: "17:00",
-        lugar: "Centro de la Juventud"
-    },
+    curso: "2026-2027",
+    ensayos: null,
     performances: [
         {
             trimester: "primer trimestre",
@@ -495,6 +491,11 @@ Puedo enseñarte esto:<br><br>
 
     getEnsayos() {
         const e = theaterData.ensayos;
+        if (!e) {
+            return `🏋️ <strong>Ensayos del curso ${theaterData.curso}</strong><br><br>
+Todavía no se han confirmado el día, la hora ni el lugar de los ensayos.<br><br>
+<a href="https://chat.whatsapp.com/KseNFmIrTTp36YrCWEgVMC" target="_blank" rel="noopener noreferrer"><strong>Acceder al grupo de WhatsApp</strong></a>`;
+        }
         const current = this.getActivePerformance();
         return `🏋️ <strong>Ensayos de «${current.title}»</strong><br><br>
 📅 Todos los <strong>${e.dia}</strong><br>
