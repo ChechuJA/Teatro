@@ -122,6 +122,16 @@ Cuando se actualice `[nombre-obra].md`:
 - **Lenguaje:** Simple y directo
 - **Interacción:** Incluir momentos de participación del público (ej: repetir frases)
 
+### 9. **Preguntas Básicas sobre la Organización**
+
+En la información de cada actuación, incluir estas aclaraciones para las familias:
+- **¿Quién propone las fechas?** El grupo de teatro propone los días de la actuación; las profesoras dan fechas aproximadas y tienen la confirmación final.
+- **¿Cuándo se prepara el guion?** Primero hay que conocer a los participantes para adaptar los personajes y el texto a las personas disponibles.
+- **¿Hay que asistir a los ensayos?** Es importante no faltar y, como mínimo, asistir al ensayo general, que se realiza uno o dos días antes de la actuación.
+- **¿Pueden asistir los niños a los ensayos?** Sí. Como ya no se puede ensayar en clase con ellos, los ensayos suelen hacerse en un parque o en una sala cedida. Se recomienda que los niños asistan siempre que puedan.
+- **¿A qué hora es la actuación?** Se realiza por la mañana, entre las 9:30 y las 10:30, y hay dos pases.
+- **¿Cuánto se ensaya el día del estreno?** Depende de cómo estén preparados los ensayos y colocados los personajes. Si todo está bien ensayado y organizado, no hace falta ensayar mucho antes del primer pase.
+
 ## 🛠️ Tareas Comunes
 
 ### Crear Nueva Obra (Nuevo Trimestre)
