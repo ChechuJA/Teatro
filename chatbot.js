@@ -1,8 +1,8 @@
 // ============================================================
-//  APUNTABOT – el apuntador digital de Nova-tro-s 🎭
+//  TELONIO – el apuntador digital de Nova-tro-s 🎭
 // ============================================================
 
-const BOT_NAME = "Apuntabot";
+const BOT_NAME = "Telonio";
 
 const theaterData = {
     curso: "2026-2027",
@@ -23,7 +23,13 @@ const theaterData = {
             url: "2026-2027/Trimestre1/index.html",
             documentUrl: "2026-2027/Trimestre1/LO%20MA%CC%81S%20IMPORTANTE%20DE%20LA%20NAVIDAD%20(1).docx",
             personajes: ["Niña", "Abuela", "Árbol de Navidad", "Estrella", "Regalo", "Elfo", "Grinch", "Luces de Navidad", "Mantecado", "Muñeco de nieve", "Bastón de caramelo", "Galleta de jengibre", "Uvas", "Virgen María"],
-            canciones: ["Cascabel, cascabel, lindo cascabel", "¡Ay, Dios mío!", "Creo que mi padre es un elfo", "Turrón y mazapán. Pica pica", "Villancico del muñeco de nieve", "Mi burrito sabanero"]
+            canciones: ["Cascabel, cascabel, lindo cascabel", "¡Ay, Dios mío!", "Creo que mi padre es un elfo", "Turrón y mazapán. Pica pica", "Villancico del muñeco de nieve", "Mi burrito sabanero"],
+            escenas: [
+                { titulo: "Decoramos la casa", resumen: "La niña ayuda a su abuela a preparar el hogar. El árbol y la estrella discuten sobre quién es más importante, hasta que la niña les recuerda que se complementan." },
+                { titulo: "Regalos y visitas inesperadas", resumen: "Aparecen el regalo y un elfo que ha perdido un paquete. El Grinch protesta por la Navidad y la familia descubre que también necesita luces." },
+                { titulo: "Dulces, luces y un muñeco de nieve", resumen: "Las luces, el mantecado, el muñeco de nieve, el bastón de caramelo y la galleta presentan sus tradiciones y dulces navideños." },
+                { titulo: "Lo más importante", resumen: "Las uvas recuerdan la Nochevieja y María comparte el mensaje de amor, paz y unión. La niña y su abuela celebran el tiempo que pasan juntas, y el Grinch decide quedarse." }
+            ]
         },
         {
             trimester: "Teatro 2",
@@ -41,13 +47,18 @@ const theaterData = {
             pdfUrl: "2026-2027/Trimestre2/Navidad_en_el_antiguo_Oeste.pdf",
             personajes: ["Sheriff Bigotes", "Pepe Tranquilo", "Rosa Espuelas", "Billy Botas", "Lola Country", "Jefe Nube Serena", "Caballo Loco", "Luna", "Río", "Sol", "Estrella de Navidad", "Doña Campanilla", "Tomás el Cartero", "Abuela Canela", "Duende Cascabel"],
             canciones: ["Música country instrumental", "Percusión suave", "Mi burrito sabanero"],
-            zonas: ["🌲 Bosque (Árboles, Lobos, Linces, Guacamayos)", "🌊 Agua (Peces, Cocodrilos)", "❄️ Hielo (Osos Polares, Pingüinos)", "🌼 Flores (Abejas)"],
+            escenas: [
+                { titulo: "Un pueblo dividido", resumen: "En Estrella Nevada, vaqueros y miembros de una comunidad indígena quieren usar la plaza para sus celebraciones. El sheriff intenta poner orden entre bromas y malentendidos." },
+                { titulo: "Dos fiestas diferentes", resumen: "Los vaqueros ensayan un baile country y la comunidad prepara una danza escénica propia. Cada grupo está contento con su fiesta, pero todavía no se escucha con el otro." },
+                { titulo: "¡El gran enfrentamiento!", resumen: "Los grupos discuten por la plaza hasta que una estrella navideña necesita muchas manos para volver a colocarse. El problema empieza a unirlos." },
+                { titulo: "El verdadero regalo de la Navidad", resumen: "Un mensaje recuerda que compartir no obliga a renunciar a las propias costumbres. Todos colaboran para colocar la estrella y comprenden que pueden celebrar juntos." },
+                { titulo: "La paz alrededor del fuego", resumen: "Los grupos comparten sus bailes y aprenden los pasos unos de otros. La obra termina con una celebración conjunta y un mensaje de amistad." }
+            ],
             actos: [
                 "🎭 Acto 1 – Algo No Va Bien: Cada ecosistema muestra sus problemas ambientales ante el público.",
                 "🎭 Acto 2 – La Gran Reunión: Todos los animales buscan solución y descubren que el héroe es... ¡un niño!",
                 "🎭 Acto 3 – El Cambio: Las pequeñas acciones del Niño y el Apicultor transforman el planeta. ¡Celebración final!"
             ],
-            mensaje: "Pequeños gestos... ¡grandes cambios! ¿Queréis ser Guardianes del Planeta?",
             coreografias: [
                 "� Fondo → Música ambiental de fondo (suena durante toda la obra)",
                 "🌲 Bosque → «Juguemos en el Bosque» de Luli Pampín",
@@ -204,7 +215,7 @@ const theaterData = {
 };
 
 // ============================================================
-//  Clase principal – Apuntabot 🎭
+//  Clase principal – Telonio 🎭
 // ============================================================
 class TheaterChatbot {
     constructor() {
@@ -326,6 +337,7 @@ Puedo enseñarte esto:<br><br>
     <button class="qr-btn" data-q="¿Cuándo es la obra del teatro ${teatro}?">📅 Fecha</button>
     <button class="qr-btn" data-q="Dime los personajes del teatro ${teatro}">🎭 Personajes</button>
     <button class="qr-btn" data-q="¿De qué va la obra del teatro ${teatro}?">✨ Resumen</button>
+    <button class="qr-btn" data-q="Dime las escenas del teatro ${teatro}">🎬 Escenas</button>
     <button class="qr-btn" data-q="Ver guion online del teatro ${teatro}">📖 Guion online</button>
     <button class="qr-btn" data-q="¿Qué canciones tiene el teatro ${teatro}?">🎵 Música</button>
 </div>`;
@@ -365,9 +377,14 @@ Puedo enseñarte esto:<br><br>
             return `¡Hola! Soy <strong>${BOT_NAME}</strong>, el apuntador digital de Nova-tro-s 🎭<br>Te ayudo con reparto, fechas, guion y materiales.<br><br>${this.getTrimesterChooser()}`;
         }
 
+        // Origen del nombre del grupo
+        if (this.m(msg, ['de donde viene el nombre', 'origen del nombre', 'que significa el nombre', 'significa nova-tro-s', 'nombre del grupo', 'nova-tro-s'])) {
+            return `🎭 <strong>Nova-tro-s</strong> mezcla las palabras <strong>novatos</strong> y <strong>teatro</strong>, ¡y suena un poquito a «nosotros»! No somos expertos ni profesionales: somos familias que aprendemos y disfrutamos haciendo teatro juntas. Por eso nuestro lema es <strong>«Hacemos lo que podemos»</strong>.`;
+        }
+
         // Quién eres
         if (this.m(msg, ['quien eres', 'quién eres', 'como te llamas', 'tu nombre', 'que eres'])) {
-            return `Soy <strong>${BOT_NAME}</strong> 🎭, el apuntador digital de Nova-tro-s.<br>Como el apuntador de toda la vida... pero sin esconderme en la concha del escenario. ¡Y sé todos los textos de memoria!`;
+            return `Soy <strong>${BOT_NAME}</strong> 🎭, el apuntador digital de Nova-tro-s.<br>Mi nombre viene del telón: siempre estoy entre bambalinas, listo para echar una mano. ¡Y me sé los textos de memoria!`;
         }
 
         // Ayuda
@@ -580,6 +597,15 @@ Todavía no se han confirmado el día, la hora ni el lugar de los ensayos.<br><b
     getGuion(msg) {
         const perf = this.getPerformanceForMessage(msg);
         if (!perf.title) return `📜 La información del guion de <strong>${perf.trimester}</strong> todavía está pendiente.`;
+        if (perf.escenas) {
+            const sceneMatch = msg.match(/(?:escena|acto)\s*(?:numero\s*)?([1-9])/);
+            const escenas = sceneMatch ? [perf.escenas[Number(sceneMatch[1]) - 1]].filter(Boolean) : perf.escenas;
+            const resumen = escenas.map((escena, index) => {
+                const numero = sceneMatch ? Number(sceneMatch[1]) : perf.escenas.indexOf(escena) + 1;
+                return `<strong>🎬 Escena ${numero}. ${escena.titulo}</strong><br>${escena.resumen}`;
+            }).join('<br><br>');
+            return `📜 <strong>«${perf.title}»</strong><br><br>${resumen}<br><br><a href="${perf.url}" target="_blank"><strong>Abrir el guion completo</strong></a>`;
+        }
         if (perf.url) return `📖 Puedes leer el guion completo de <strong>«${perf.title}»</strong>:<br><br><a href="${perf.url}" target="_blank"><strong>Abrir guion online</strong></a><br><br>${perf.description}`;
         if (perf.num === 3) {
             const g = perf.guionResumen;
@@ -628,6 +654,7 @@ Todavía no se han confirmado el día, la hora ni el lugar de los ensayos.<br><b
     getZonas(msg = '') {
         const perf = this.getPerformanceForMessage(msg);
         if (!perf.zonas) {
+            if (perf.escenas) return `🎬 <strong>«${perf.title}»</strong> está organizada en escenas, no en zonas:<br><br>${perf.escenas.map((escena, index) => `${index + 1}. ${escena.titulo}`).join('<br>')}<br><br><a href="${perf.url}">Abrir el guion</a>`;
             return `🎬 <strong>«${perf.title}»</strong> no está organizada por zonas. Consulta el <a href="${perf.url}">guion web</a> para ver sus escenas.`;
         }
         let html = `🎬 <strong>Zonas de actuación – «${perf.title}»</strong><br><br>`;
