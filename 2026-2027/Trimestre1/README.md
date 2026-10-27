@@ -1,14 +1,17 @@
-# Primer Trimestre 2026-2027
+# Teatro 1 2026-2027
 
-## 🎄 Navidad en el antiguo Oeste
+## 🎄 Lo más importante de la Navidad
 
-Obra infantil ambientada en el pueblo de Estrella Nevada. Sus 15 personajes descubren que pueden compartir la Navidad, respetar sus diferencias y conservar sus propias tradiciones. Duración aproximada: 15-25 minutos.
+Una niña ayuda a su abuela a preparar la casa para las fiestas y conoce a los personajes que forman parte de sus tradiciones. Al final, descubrirán que lo más importante es compartir tiempo con las personas queridas.
+
+- **Personajes con diálogo:** 14
+- **Mensaje:** amor, paz, unión y tiempo compartido en familia.
+- **Reparto de participantes:** pendiente de asignar.
 
 ## 📁 Materiales disponibles
 
 - 📖 [Leer el guion completo en la web](index.html)
-- 📥 [Descargar el guion en PDF](Navidad_en_el_antiguo_Oeste.pdf)
-- 📝 [Consultar el prompt de creación](prompt.md)
+- 📥 [Descargar el documento Word](LO%20MA%CC%81S%20IMPORTANTE%20DE%20LA%20NAVIDAD%20(1).docx)
 
 ---
 

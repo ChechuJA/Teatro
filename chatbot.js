@@ -9,28 +9,38 @@ const theaterData = {
     ensayos: null,
     performances: [
         {
-            trimester: "primer trimestre",
+            trimester: "Teatro 1",
             num: 1,
-            emoji: "🍂",
-            title: null,
+            emoji: "🎄",
+            title: "Lo más importante de la Navidad",
             date: null,
             time: null,
             participants: null,
             location: "Hall de infantil",
-            status: "pendiente",
-            description: "La obra del primer trimestre está pendiente. ¡Pronto habrá novedades!"
+            status: "activa",
+            description: "Una niña ayuda a su abuela a preparar la casa para la Navidad y descubre, junto a los personajes de estas fiestas, que lo más importante es compartir tiempo con los seres queridos.",
+            mensaje: "Amor, paz, unión y tiempo compartido en familia.",
+            url: "2026-2027/Trimestre1/index.html",
+            documentUrl: "2026-2027/Trimestre1/LO%20MA%CC%81S%20IMPORTANTE%20DE%20LA%20NAVIDAD%20(1).docx",
+            personajes: ["Niña", "Abuela", "Árbol de Navidad", "Estrella", "Regalo", "Elfo", "Grinch", "Luces de Navidad", "Mantecado", "Muñeco de nieve", "Bastón de caramelo", "Galleta de jengibre", "Uvas", "Virgen María"],
+            canciones: ["Cascabel, cascabel, lindo cascabel", "¡Ay, Dios mío!", "Creo que mi padre es un elfo", "Turrón y mazapán. Pica pica", "Villancico del muñeco de nieve", "Mi burrito sabanero"]
         },
         {
-            trimester: "segundo trimestre",
+            trimester: "Teatro 2",
             num: 2,
-            emoji: "❄️",
-            title: "Los Guardianes del Planeta",
-            date: "25 de marzo de 2026",
-            time: "10:00h",
-            participants: 21,
+            emoji: "🤠",
+            title: "Navidad en el antiguo Oeste",
+            date: null,
+            time: null,
+            participants: null,
             location: "Hall de infantil",
             status: "activa",
-            description: "Obra educativa sobre el cuidado del medio ambiente. Los peques aprenderán que pequeñas acciones generan grandes cambios. 3 actos de 20 minutos con coreografías por zonas: 🌲 Bosque, 🌊 Agua, ❄️ Hielo y 🌼 Flores.",
+            description: "En el pueblo de Estrella Nevada, vaqueros y vecinos aprenden a compartir la celebración de Navidad y a respetar sus diferencias.",
+            mensaje: "Escuchar, respetar las diferencias, compartir y aprender a convivir.",
+            url: "2026-2027/Trimestre2/index.html",
+            pdfUrl: "2026-2027/Trimestre2/Navidad_en_el_antiguo_Oeste.pdf",
+            personajes: ["Sheriff Bigotes", "Pepe Tranquilo", "Rosa Espuelas", "Billy Botas", "Lola Country", "Jefe Nube Serena", "Caballo Loco", "Luna", "Río", "Sol", "Estrella de Navidad", "Doña Campanilla", "Tomás el Cartero", "Abuela Canela", "Duende Cascabel"],
+            canciones: ["Música country instrumental", "Percusión suave", "Mi burrito sabanero"],
             zonas: ["🌲 Bosque (Árboles, Lobos, Linces, Guacamayos)", "🌊 Agua (Peces, Cocodrilos)", "❄️ Hielo (Osos Polares, Pingüinos)", "🌼 Flores (Abejas)"],
             actos: [
                 "🎭 Acto 1 – Algo No Va Bien: Cada ecosistema muestra sus problemas ambientales ante el público.",
@@ -122,16 +132,16 @@ const theaterData = {
             }
         },
         {
-            trimester: "tercer trimestre",
+            trimester: "Teatro 3",
             num: 3,
             emoji: "🌸",
-            title: "Blancanieves y los 7 Enanitos",
-            date: "10 de junio de 2026",
-            time: "Por confirmar",
-            participants: 14,
+            title: null,
+            date: null,
+            time: null,
+            participants: null,
             location: "Hall de infantil",
-            status: "activa",
-            description: "Adaptación teatral del cuento clásico para Educación Infantil, con humor, participación del público y mensajes de amistad y ayuda mutua.",
+            status: "pendiente",
+            description: "La información del Teatro 3 se publicará cuando esté disponible.",
             mensaje: "Amistad, ayuda mutua y cooperación."
             ,actos: [
                 "🎭 Acto 1 – El espejo y la huida: La madrastra descubre que Blancanieves es la más bella y la manda al bosque.",
@@ -272,7 +282,7 @@ class TheaterChatbot {
     }
 
     getCurrentPerformance() {
-        return this.getT3();
+        return this.getPerformanceByIndex(0);
     }
 
     getSelectedPerformance() {
@@ -291,61 +301,49 @@ class TheaterChatbot {
     isTrimesterSelectionMessage(msg) {
         const clean = msg.trim();
         return [
-            'segundo trimestre', 'segundo', 'segunda', '2º', 'trimestre 2',
-            'tercer trimestre', 'tercero', 'tercer', '3º', 'trimestre 3'
+            'primer trimestre', 'primer teatro', 'teatro 1', '1º',
+            'segundo trimestre', 'segundo teatro', 'teatro 2', '2º',
+            'tercer trimestre', 'tercer teatro', 'teatro 3', '3º'
         ].includes(clean);
     }
 
     getTrimesterChooser() {
-        return `Antes de nada, dime sobre qué trimestre quieres información 👇<br><br>
+        return `Elige el teatro que quieres consultar 👇<br><br>
 <div class="quick-replies">
-    <button class="qr-btn" data-q="Segundo trimestre">❄️ Segundo trimestre</button>
-    <button class="qr-btn" data-q="Tercer trimestre">🌸 Tercer trimestre</button>
+    <button class="qr-btn" data-q="Teatro 1">🎄 Teatro 1</button>
+    <button class="qr-btn" data-q="Teatro 2">🤠 Teatro 2</button>
+    <button class="qr-btn" data-q="Teatro 3">🌸 Teatro 3</button>
 </div>`;
     }
 
     getTrimesterMenu(perf) {
         if (!perf) return this.getTrimesterChooser();
-
-        if (perf.num === 2) {
-            return `${perf.emoji} <strong>Has elegido ${perf.trimester}</strong>: <strong>«${perf.title}»</strong><br><br>
+        if (!perf.title) return `${perf.emoji} <strong>${perf.trimester}</strong>: la información todavía está pendiente.`;
+        const teatro = perf.num;
+        return `${perf.emoji} <strong>${perf.trimester}</strong>: <strong>«${perf.title}»</strong><br><br>
 Puedo enseñarte esto:<br><br>
 <div class="quick-replies">
-    <button class="qr-btn" data-q="¿Cuándo es la obra del segundo trimestre?">📅 Día del teatro</button>
-    <button class="qr-btn" data-q="Dame el reparto completo del segundo trimestre">🎭 Personajes y personas</button>
-    <button class="qr-btn" data-q="Cuéntame el guion del Acto 1 del segundo trimestre">📜 Ver guion resumido</button>
-    <button class="qr-btn" data-q="Ver guion online del segundo trimestre">📖 Ver guion online</button>
-    <button class="qr-btn" data-q="Descargar guion PDF del segundo trimestre">📄 Descargar guion</button>
-    <button class="qr-btn" data-q="Descargar canciones del segundo trimestre">🎵 Canciones</button>
-</div>`;
-        }
-
-        return `${perf.emoji} <strong>Has elegido ${perf.trimester}</strong>: <strong>«${perf.title}»</strong><br><br>
-Puedo enseñarte esto:<br><br>
-<div class="quick-replies">
-    <button class="qr-btn" data-q="¿Cuándo es la obra del tercer trimestre?">📅 Día del teatro</button>
-    <button class="qr-btn" data-q="Dame el reparto completo del tercer trimestre">🎭 Personajes y personas</button>
-    <button class="qr-btn" data-q="¿Qué personajes faltan por asignar en el tercer trimestre?">🚨 Pendientes por asignar</button>
-    <button class="qr-btn" data-q="Cuéntame el guion del Acto 1 de Blancanieves">📜 Ver guion resumido</button>
-    <button class="qr-btn" data-q="Ver guion online del tercer trimestre">📖 Ver guion online</button>
-    <button class="qr-btn" data-q="Descargar guion PDF del tercer trimestre">📄 Descargar guion</button>
-    <button class="qr-btn" data-q="Descargar canciones del tercer trimestre">🎵 Canciones</button>
+    <button class="qr-btn" data-q="¿Cuándo es la obra del teatro ${teatro}?">📅 Fecha</button>
+    <button class="qr-btn" data-q="Dime los personajes del teatro ${teatro}">🎭 Personajes</button>
+    <button class="qr-btn" data-q="¿De qué va la obra del teatro ${teatro}?">✨ Resumen</button>
+    <button class="qr-btn" data-q="Ver guion online del teatro ${teatro}">📖 Guion online</button>
+    <button class="qr-btn" data-q="¿Qué canciones tiene el teatro ${teatro}?">🎵 Música</button>
 </div>`;
     }
 
     getPerformanceForMessage(msg) {
         const ti = this.detectTrimester(msg);
         if (ti !== null) return theaterData.performances[ti];
+        if (this.m(msg, ['antiguo oeste', 'caballo loco', 'sheriff bigotes'])) return this.getPerformanceByIndex(1);
+        if (this.m(msg, ['lo mas importante de la navidad', 'lo más importante de la navidad', 'grinch', 'abuela', 'estrella de navidad'])) return this.getPerformanceByIndex(0);
         if (this.getSelectedPerformance()) return this.getSelectedPerformance();
-        if (this.m(msg, ['blancanieves', 'enanito', 'enanitos', 'madrastra', 'espejo', 'principe', 'príncipe', 'cazador', 'anciana'])) return this.getT3();
-        if (this.m(msg, ['guardianes', 'planeta', 'madre tierra', 'apicultor', 'abeja', 'bosque', 'agua', 'hielo', 'flores'])) return this.getT2();
         return this.getCurrentPerformance();
     }
 
     detectTrimester(msg) {
-        if (this.m(msg, ['primer', 'primero', '1º', 'trimestre 1'])) return 0;
-        if (this.m(msg, ['segundo', 'segunda', '2º', 'trimestre 2'])) return 1;
-        if (this.m(msg, ['tercer', 'tercero', '3º', 'trimestre 3'])) return 2;
+        if (this.m(msg, ['primer', 'primero', '1º', 'trimestre 1', 'teatro 1'])) return 0;
+        if (this.m(msg, ['segundo', 'segunda', '2º', 'trimestre 2', 'teatro 2'])) return 1;
+        if (this.m(msg, ['tercer', 'tercero', '3º', 'trimestre 3', 'teatro 3'])) return 2;
         return null;
     }
 
@@ -355,7 +353,7 @@ Puedo enseñarte esto:<br><br>
             .normalize('NFD').replace(/[\u0300-\u036f]/g, ''); // quitar tildes para comparar
 
         const trimesterIdx = this.detectTrimester(msg);
-        if (trimesterIdx !== null && trimesterIdx > 0) {
+        if (trimesterIdx !== null) {
             this.setSelectedTrimester(trimesterIdx);
             if (this.isTrimesterSelectionMessage(msg)) {
                 return this.getTrimesterMenu(this.getPerformanceByIndex(trimesterIdx));
@@ -409,32 +407,20 @@ Puedo enseñarte esto:<br><br>
 
         // Descarga canciones / ZIP
         if (this.m(msg, ['zip', 'mp3', 'mpeg', 'canciones', 'archivo', 'archivos', 'fichero']) || (this.m(msg, ['descarga', 'descargar']) && this.m(msg, ['canciones', 'musica', 'música']))) {
-            const perf = this.getPerformanceForMessage(msg);
-            if (perf.num === 3) {
-                let html = `🎵 <strong>Música de «${perf.title}»</strong><br><br>`;
-                html += `Puedes <a href="${perf.musica.zip}" download><strong>descargar el ZIP de música</strong></a> con estos audios:<br><br>`;
-                perf.musica.archivos.forEach(a => { html += `📄 ${a}<br>`; });
-                html += `<br>También tienes el <a href="2025-2026/Trimestre3/blancanieves-y-los-7-enanitos.html" target="_blank"><strong>guion online</strong></a> y el <a href="2025-2026/Trimestre3/blancanieves-y-los-7-enanitos.pdf" download><strong>PDF</strong></a>.`;
-                return html;
-            }
-            const t2 = this.getT2();
-            let html = `🎵 <strong>Canciones de «${t2.title}»</strong><br><br>`;
-            html += `Puedes <a href="${t2.musica.zip}" download><strong>descargar el ZIP con todas las canciones</strong></a> (6 archivos):<br><br>`;
-            t2.musica.archivos.forEach(a => { html += `📄 ${a}<br>`; });
-            html += `<br>También puedes reproducirlas directamente desde el <a href="2025-2026/Trimestre2/los-guardianes-del-planeta.html" target="_blank">guion interactivo</a>, con un botón Play en cada coreografía.`;
-            return html;
+            return this.getCoreografias(msg);
         }
 
         if (this.m(msg, ['ver guion online', 'guion online', 'leer guion', 'leer online'])) {
             const perf = this.getPerformanceForMessage(msg);
-            const path = perf.num === 3 ? '2025-2026/Trimestre3/blancanieves-y-los-7-enanitos.html' : '2025-2026/Trimestre2/los-guardianes-del-planeta.html';
-            return `📖 Puedes ver el guion online de <strong>«${perf.title}»</strong> aquí:<br><br><a href="${path}" target="_blank"><strong>Abrir guion online</strong></a>`;
+            if (!perf.title) return `📖 El guion de <strong>${perf.trimester}</strong> todavía no está disponible.`;
+            return `📖 Puedes ver el guion online de <strong>«${perf.title}»</strong> aquí:<br><br><a href="${perf.url}" target="_blank"><strong>Abrir guion online</strong></a>`;
         }
 
         if (this.m(msg, ['pdf', 'descargar guion', 'guion pdf'])) {
             const perf = this.getPerformanceForMessage(msg);
-            const path = perf.num === 3 ? '2025-2026/Trimestre3/blancanieves-y-los-7-enanitos.pdf' : '2025-2026/Trimestre2/los-guardianes-del-planeta.pdf';
-            return `📄 Puedes descargar el PDF de <strong>«${perf.title}»</strong> aquí:<br><br><a href="${path}" download><strong>Descargar guion en PDF</strong></a>`;
+            if (perf.documentUrl) return `📄 El guion de <strong>«${perf.title}»</strong> está disponible en Word:<br><br><a href="${perf.documentUrl}" download><strong>Descargar documento Word</strong></a>`;
+            if (perf.pdfUrl) return `📄 Puedes descargar el guion de <strong>«${perf.title}»</strong>:<br><br><a href="${perf.pdfUrl}" download><strong>Descargar guion en PDF</strong></a>`;
+            return `📄 Todavía no hay un documento descargable para <strong>${perf.trimester}</strong>.`;
         }
 
         // Fecha / cuándo
@@ -506,6 +492,11 @@ Todavía no se han confirmado el día, la hora ni el lugar de los ensayos.<br><b
 
     getReparto(msg) {
         const perf = this.getPerformanceForMessage(msg);
+        if (!perf.title) return `🎭 La información del reparto de <strong>${perf.trimester}</strong> todavía está pendiente.`;
+        if (perf.personajes) {
+            const personajes = perf.personajes.map(personaje => `🎭 ${personaje}`).join('<br>');
+            return `🎭 <strong>Personajes de «${perf.title}»</strong><br><br>${personajes}<br><br>El reparto de participantes todavía está pendiente.`;
+        }
         if (!perf.reparto) return `🎭 Aún no tengo el reparto cargado de <strong>${perf.title}</strong>.`;
 
         if (perf.num === 3) {
@@ -588,6 +579,8 @@ Todavía no se han confirmado el día, la hora ni el lugar de los ensayos.<br><b
 
     getGuion(msg) {
         const perf = this.getPerformanceForMessage(msg);
+        if (!perf.title) return `📜 La información del guion de <strong>${perf.trimester}</strong> todavía está pendiente.`;
+        if (perf.url) return `📖 Puedes leer el guion completo de <strong>«${perf.title}»</strong>:<br><br><a href="${perf.url}" target="_blank"><strong>Abrir guion online</strong></a><br><br>${perf.description}`;
         if (perf.num === 3) {
             const g = perf.guionResumen;
             if (this.m(msg, ['principe', 'príncipe', 'florian', 'florián'])) {
@@ -635,7 +628,7 @@ Todavía no se han confirmado el día, la hora ni el lugar de los ensayos.<br><b
     getZonas(msg = '') {
         const perf = this.getPerformanceForMessage(msg);
         if (!perf.zonas) {
-            return `🎬 <strong>«${perf.title}»</strong> no está organizada por zonas como la obra del segundo trimestre. Aquí la obra va por <strong>3 actos</strong>.`;
+            return `🎬 <strong>«${perf.title}»</strong> no está organizada por zonas. Consulta el <a href="${perf.url}">guion web</a> para ver sus escenas.`;
         }
         let html = `🎬 <strong>Zonas de actuación – «${perf.title}»</strong><br><br>`;
         perf.zonas.forEach(z => { html += `${z}<br>`; });
@@ -644,6 +637,11 @@ Todavía no se han confirmado el día, la hora ni el lugar de los ensayos.<br><b
 
     getCoreografias(msg = '') {
         const perf = this.getPerformanceForMessage(msg);
+        if (!perf.title) return `🎵 La información musical de <strong>${perf.trimester}</strong> todavía está pendiente.`;
+        if (perf.canciones) {
+            const canciones = perf.canciones.map(cancion => `🎵 ${cancion}`).join('<br>');
+            return `🎵 <strong>Música de «${perf.title}»</strong><br><br>${canciones}<br><br>Las indicaciones aparecen en el <a href="${perf.url}">guion web</a>.`;
+        }
         if (!perf.coreografias) {
             if (perf.musica?.zip) {
                 let html = `🎵 En <strong>«${perf.title}»</strong> no hay coreografías cargadas, pero sí música disponible.<br><br>`;
@@ -666,46 +664,55 @@ Todavía no se han confirmado el día, la hora ni el lugar de los ensayos.<br><b
         const ti = this.detectTrimester(msg);
         if (ti !== null) {
             const perf = theaterData.performances[ti];
-            if (perf.status === 'pendiente') return `📅 Aún no hay fecha confirmada para el <strong>${perf.trimester}</strong>. ¡Estate atento a las novedades! ${perf.emoji}`;
+            if (!perf.date) return `📅 Aún no hay fecha confirmada para <strong>${perf.trimester}</strong>. ${perf.emoji}`;
             return `📅 <strong>${perf.emoji} ${perf.title}</strong><br>Fecha: <strong>${perf.date}</strong> a las <strong>${perf.time}</strong>`;
         }
         const current = this.getActivePerformance();
-        return `📅 La obra seleccionada es <strong>«${current.title}»</strong> y se representa el <strong>${current.date}</strong> a las <strong>${current.time}</strong> en el ${current.location}.`;
+        return current.date
+            ? `📅 La obra seleccionada es <strong>«${current.title}»</strong> y se representa el <strong>${current.date}</strong> a las <strong>${current.time}</strong> en el ${current.location}.`
+            : `📅 Aún no hay fecha confirmada para <strong>${current.title || current.trimester}</strong>.`;
     }
 
     getHora(msg) {
         const ti = this.detectTrimester(msg);
         if (ti !== null) {
             const perf = theaterData.performances[ti];
-            if (perf.status === 'pendiente') return `⏰ Todavía no hay hora confirmada para el <strong>${perf.trimester}</strong>.`;
+            if (!perf.time) return `⏰ Todavía no hay hora confirmada para <strong>${perf.trimester}</strong>.`;
             return `⏰ La actuación del <strong>${perf.trimester}</strong> es a las <strong>${perf.time}</strong>.`;
         }
         const current = this.getActivePerformance();
-        return `⏰ La hora de <strong>«${current.title}»</strong> es <strong>${current.time}</strong>.`;
+        return current.time
+            ? `⏰ La hora de <strong>«${current.title}»</strong> es <strong>${current.time}</strong>.`
+            : `⏰ Todavía no hay hora confirmada para <strong>${current.title || current.trimester}</strong>.`;
     }
 
     getParticipantes(msg) {
         const ti = this.detectTrimester(msg);
         if (ti !== null) {
             const perf = theaterData.performances[ti];
-            if (perf.status === 'pendiente') return `👥 Todavía no se conoce el número de participantes del <strong>${perf.trimester}</strong>.`;
+            if (!perf.participants) return `👥 Todavía no se conoce el número de participantes de <strong>${perf.trimester}</strong>.`;
             return `👥 En el <strong>${perf.trimester}</strong> participan <strong>${perf.participants} familias (adultos)</strong>.`;
         }
         const current = this.getActivePerformance();
-        return `👥 En <strong>«${current.title}»</strong> participan <strong>${current.participants} familias (adultos)</strong>.`;
+        return current.participants
+            ? `👥 En <strong>«${current.title}»</strong> participan <strong>${current.participants} familias (adultos)</strong>.`
+            : `👥 Todavía no se conoce el número de participantes de <strong>${current.title || current.trimester}</strong>.`;
     }
 
     getLugar(msg) {
         const ti = this.detectTrimester(msg);
         const current = ti !== null ? theaterData.performances[ti] : this.getActivePerformance();
-        return `📍 La actuación de <strong>«${current.title}»</strong> será en el <strong>${current.location}</strong>.<br>Los ensayos son en el <strong>${theaterData.ensayos.lugar}</strong>, los ${theaterData.ensayos.dia} a las ${theaterData.ensayos.hora}.`;
+        const ensayo = theaterData.ensayos
+            ? `<br>Los ensayos son en el <strong>${theaterData.ensayos.lugar}</strong>, los ${theaterData.ensayos.dia} a las ${theaterData.ensayos.hora}.`
+            : '';
+        return `📍 La actuación de <strong>«${current.title || current.trimester}»</strong> será en el <strong>${current.location}</strong>.${ensayo}`;
     }
 
     getTitulo(msg) {
         const ti = this.detectTrimester(msg);
         if (ti !== null) {
             const perf = theaterData.performances[ti];
-            if (perf.status === 'pendiente') return `${perf.emoji} El título del <strong>${perf.trimester}</strong> aún no está anunciado. ¡Pronto lo sabremos!`;
+            if (!perf.title) return `${perf.emoji} La información del <strong>${perf.trimester}</strong> todavía está pendiente.`;
             return `${perf.emoji} El <strong>${perf.trimester}</strong> se llama <strong>«${perf.title}»</strong>.`;
         }
         const current = this.getActivePerformance();
@@ -714,10 +721,10 @@ Todavía no se han confirmado el día, la hora ni el lugar de los ensayos.<br><b
         }
         let html = `📅 <strong>Programación ${theaterData.curso}:</strong><br><br>`;
         theaterData.performances.forEach(p => {
-            if (p.status === 'pendiente') {
+            if (!p.title) {
                 html += `${p.emoji} <strong>${p.trimester.charAt(0).toUpperCase() + p.trimester.slice(1)}:</strong> Pendiente<br>`;
             } else {
-                html += `${p.emoji} <strong>${p.trimester.charAt(0).toUpperCase() + p.trimester.slice(1)}:</strong> «${p.title}» — ${p.date}<br>`;
+                html += `${p.emoji} <strong>${p.trimester}:</strong> «${p.title}» — ${p.date || 'fecha por confirmar'}<br>`;
             }
         });
         html += `<br>${this.getTrimesterChooser()}`;
@@ -726,19 +733,19 @@ Todavía no se han confirmado el día, la hora ni el lugar de los ensayos.<br><b
 
     getResumen(msg) {
         const perf = this.getPerformanceForMessage(msg);
-        return `${perf.emoji} <strong>«${perf.title}»</strong><br><br>
+        return `${perf.emoji} <strong>«${perf.title || perf.trimester}»</strong><br><br>
 ${perf.description}<br><br>
 💬 Mensaje de la obra: <em>«${perf.mensaje || 'Amistad y cooperación.'}»</em><br><br>
-📅 ${perf.date} · ⏰ ${perf.time} · 📍 ${perf.location}`;
+    📅 ${perf.date || 'Fecha por confirmar'} · 📍 ${perf.location}`;
     }
 
     getProgramacion() {
         let html = `📅 <strong>Programación ${theaterData.curso}:</strong><br><br>`;
         theaterData.performances.forEach(p => {
-            if (p.status === 'pendiente') {
+            if (!p.title) {
                 html += `${p.emoji} <strong>${p.trimester.charAt(0).toUpperCase() + p.trimester.slice(1)}:</strong> Pendiente<br>`;
             } else {
-                html += `${p.emoji} <strong>${p.trimester.charAt(0).toUpperCase() + p.trimester.slice(1)}:</strong> «${p.title}» — ${p.date} a las ${p.time}<br>`;
+                html += `${p.emoji} <strong>${p.trimester}:</strong> «${p.title}» — ${p.date || 'fecha por confirmar'}<br>`;
             }
         });
         return html;
@@ -751,12 +758,8 @@ ${perf.description}<br><br>
 
         if (selected) performances.push(selected);
         if (!performances.includes(current)) performances.push(current);
-        theaterData.performances.forEach(perf => {
-            if (perf?.reparto && !performances.includes(perf)) performances.push(perf);
-        });
-
         for (const perf of performances) {
-            const p = perf.reparto ? perf.reparto.find(persona => msg.includes(persona.nombre.toLowerCase()) && persona.nombre.toLowerCase() !== 'por asignar') : null;
+            const p = perf.personasAsignadas && perf.reparto ? perf.reparto.find(persona => msg.includes(persona.nombre.toLowerCase()) && persona.nombre.toLowerCase() !== 'por asignar') : null;
             if (p) return { ...p, obra: perf.title };
         }
 
