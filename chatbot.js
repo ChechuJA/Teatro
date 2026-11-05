@@ -44,7 +44,8 @@ const theaterData = {
             description: "En el pueblo de Estrella Nevada, vaqueros y vecinos aprenden a compartir la celebración de Navidad y a respetar sus diferencias.",
             mensaje: "Escuchar, respetar las diferencias, compartir y aprender a convivir.",
             url: "2026-2027/Trimestre2/index.html",
-            pdfUrl: "2026-2027/Trimestre2/Navidad_en_el_antiguo_Oeste.pdf",
+            pdfUrl: "2026-2027/Trimestre2/Navidad_en_el_antiguo_Oeste_15personajes_v1.pdf",
+            pdfUrl19: "2026-2027/Trimestre2/Navidad_en_el_antiguo_Oeste_19personajes_v2.pdf",
             personajes: ["Sheriff Bigotes", "Pepe Tranquilo", "Rosa Espuelas", "Billy Botas", "Lola Country", "Jefe Nube Serena", "Caballo Loco", "Luna", "Río", "Sol", "Estrella de Navidad", "Doña Campanilla", "Tomás el Cartero", "Abuela Canela", "Duende Cascabel"],
             canciones: ["Música country instrumental", "Percusión suave", "Mi burrito sabanero"],
             escenas: [
@@ -436,6 +437,7 @@ Puedo enseñarte esto:<br><br>
         if (this.m(msg, ['pdf', 'descargar guion', 'guion pdf'])) {
             const perf = this.getPerformanceForMessage(msg);
             if (perf.documentUrl) return `📄 El guion de <strong>«${perf.title}»</strong> está disponible en Word:<br><br><a href="${perf.documentUrl}" download><strong>Descargar documento Word</strong></a>`;
+            if (perf.pdfUrl19) return `📄 Puedes descargar las dos versiones del guion de <strong>«${perf.title}»</strong>:<br><br><a href="${perf.pdfUrl}" download><strong>PDF · 15 personajes</strong></a><br><a href="${perf.pdfUrl19}" download><strong>PDF · 19 personajes</strong></a>`;
             if (perf.pdfUrl) return `📄 Puedes descargar el guion de <strong>«${perf.title}»</strong>:<br><br><a href="${perf.pdfUrl}" download><strong>Descargar guion en PDF</strong></a>`;
             return `📄 Todavía no hay un documento descargable para <strong>${perf.trimester}</strong>.`;
         }
