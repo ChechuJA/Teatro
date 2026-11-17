@@ -9,12 +9,12 @@ const theaterData = {
     ensayos: null,
     performances: [
         {
-            trimester: "Teatro 1",
+            trimester: "Primer trimestre",
             num: 1,
             emoji: "🎄",
             title: "Lo más importante de la Navidad",
-            date: null,
-            time: null,
+            date: "miércoles 16 de diciembre de 2026",
+            time: "dos pases entre las 9:30 y las 10:30",
             participants: null,
             location: "Hall de infantil",
             status: "activa",
@@ -34,12 +34,12 @@ const theaterData = {
             ]
         },
         {
-            trimester: "Teatro 2",
+            trimester: "Segundo trimestre",
             num: 2,
             emoji: "🤠",
             title: "Navidad en el antiguo Oeste",
             date: null,
-            time: null,
+            time: "dos pases entre las 9:30 y las 10:30",
             participants: null,
             location: "Hall de infantil",
             status: "activa",
@@ -146,16 +146,16 @@ const theaterData = {
             }
         },
         {
-            trimester: "Teatro 3",
+            trimester: "Tercer trimestre",
             num: 3,
             emoji: "🌸",
             title: null,
             date: null,
-            time: null,
+            time: "dos pases entre las 9:30 y las 10:30",
             participants: null,
             location: "Hall de infantil",
             status: "pendiente",
-            description: "La información del Teatro 3 se publicará cuando esté disponible.",
+            description: "La información del tercer trimestre se publicará cuando esté disponible.",
             mensaje: "Amistad, ayuda mutua y cooperación."
             ,actos: [
                 "🎭 Acto 1 – El espejo y la huida: La madrastra descubre que Blancanieves es la más bella y la manda al bosque.",
@@ -322,27 +322,27 @@ class TheaterChatbot {
     }
 
     getTrimesterChooser() {
-        return `Elige el teatro que quieres consultar 👇<br><br>
+        return `Elige el trimestre que quieres consultar 👇<br><br>
 <div class="quick-replies">
-    <button class="qr-btn" data-q="Teatro 1">🎄 Teatro 1</button>
-    <button class="qr-btn" data-q="Teatro 2">🤠 Teatro 2</button>
-    <button class="qr-btn" data-q="Teatro 3">🌸 Teatro 3</button>
+    <button class="qr-btn" data-q="Primer trimestre">🎄 Primer trimestre</button>
+    <button class="qr-btn" data-q="Segundo trimestre">🤠 Segundo trimestre</button>
+    <button class="qr-btn" data-q="Tercer trimestre">🌸 Tercer trimestre</button>
 </div>`;
     }
 
     getTrimesterMenu(perf) {
         if (!perf) return this.getTrimesterChooser();
         if (!perf.title) return `${perf.emoji} <strong>${perf.trimester}</strong>: la información todavía está pendiente.`;
-        const teatro = perf.num;
+        const trimestre = perf.trimester.toLowerCase();
         return `${perf.emoji} <strong>${perf.trimester}</strong>: <strong>«${perf.title}»</strong><br><br>
 Puedo enseñarte esto:<br><br>
 <div class="quick-replies">
-    <button class="qr-btn" data-q="¿Cuándo es la obra del teatro ${teatro}?">📅 Fecha</button>
-    <button class="qr-btn" data-q="Dime los personajes del teatro ${teatro}">🎭 Personajes</button>
-    <button class="qr-btn" data-q="¿De qué va la obra del teatro ${teatro}?">✨ Resumen</button>
-    <button class="qr-btn" data-q="Dime las escenas del teatro ${teatro}">🎬 Escenas</button>
-    <button class="qr-btn" data-q="Ver guion online del teatro ${teatro}">📖 Guion online</button>
-    <button class="qr-btn" data-q="¿Qué canciones tiene el teatro ${teatro}?">🎵 Música</button>
+    <button class="qr-btn" data-q="¿Cuándo es la obra del ${trimestre}?">📅 Fecha</button>
+    <button class="qr-btn" data-q="Dime los personajes del ${trimestre}">🎭 Personajes</button>
+    <button class="qr-btn" data-q="¿De qué va la obra del ${trimestre}?">✨ Resumen</button>
+    <button class="qr-btn" data-q="Dime las escenas del ${trimestre}">🎬 Escenas</button>
+    <button class="qr-btn" data-q="Ver guion online del ${trimestre}">📖 Guion online</button>
+    <button class="qr-btn" data-q="¿Qué canciones tiene el ${trimestre}?">🎵 Música</button>
 </div>`;
     }
 
@@ -698,11 +698,11 @@ Todavía no se han confirmado el día, la hora ni el lugar de los ensayos.<br><b
         if (ti !== null) {
             const perf = theaterData.performances[ti];
             if (!perf.date) return `📅 Aún no hay fecha confirmada para <strong>${perf.trimester}</strong>. ${perf.emoji}`;
-            return `📅 <strong>${perf.emoji} ${perf.title}</strong><br>Fecha: <strong>${perf.date}</strong> a las <strong>${perf.time}</strong>`;
+            return `📅 <strong>${perf.emoji} ${perf.title}</strong><br>Fecha: <strong>${perf.date}</strong><br>Horario: <strong>${perf.time}</strong>`;
         }
         const current = this.getActivePerformance();
         return current.date
-            ? `📅 La obra seleccionada es <strong>«${current.title}»</strong> y se representa el <strong>${current.date}</strong> a las <strong>${current.time}</strong> en el ${current.location}.`
+            ? `📅 La obra seleccionada es <strong>«${current.title}»</strong> y se representa el <strong>${current.date}</strong>, en horario de <strong>${current.time}</strong>, en el ${current.location}.`
             : `📅 Aún no hay fecha confirmada para <strong>${current.title || current.trimester}</strong>.`;
     }
 
@@ -711,11 +711,11 @@ Todavía no se han confirmado el día, la hora ni el lugar de los ensayos.<br><b
         if (ti !== null) {
             const perf = theaterData.performances[ti];
             if (!perf.time) return `⏰ Todavía no hay hora confirmada para <strong>${perf.trimester}</strong>.`;
-            return `⏰ La actuación del <strong>${perf.trimester}</strong> es a las <strong>${perf.time}</strong>.`;
+            return `⏰ La actuación del <strong>${perf.trimester}</strong> tiene <strong>${perf.time}</strong>.`;
         }
         const current = this.getActivePerformance();
         return current.time
-            ? `⏰ La hora de <strong>«${current.title}»</strong> es <strong>${current.time}</strong>.`
+            ? `⏰ El horario de <strong>«${current.title}»</strong> es <strong>${current.time}</strong>.`
             : `⏰ Todavía no hay hora confirmada para <strong>${current.title || current.trimester}</strong>.`;
     }
 
