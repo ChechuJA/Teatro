@@ -8,6 +8,13 @@ Una niña ayuda a su abuela a preparar la casa para las fiestas y conoce a los p
 - **Mensaje:** amor, paz, unión y tiempo compartido en familia.
 - **Reparto de participantes:** pendiente de asignar.
 
+## 🎭 Versión ampliada: 18 personajes
+
+Se conserva el guion original de 14 personajes y se añade una versión ampliada con dos niños, los abuelos, el rey Baltasar y San José.
+
+- 📖 [Leer la versión ampliada en la web](index-18personajes.html)
+- 📥 [Descargar el documento Word de 18 personajes](Lo_mas_importante_de_la_Navidad_guion_definitivo.docx)
+
 ## 📁 Materiales disponibles
 
 - 📖 [Leer el guion completo en la web](index.html)

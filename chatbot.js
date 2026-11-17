@@ -22,6 +22,8 @@ const theaterData = {
             mensaje: "Amor, paz, unión y tiempo compartido en familia.",
             url: "2026-2027/Trimestre1/index.html",
             documentUrl: "2026-2027/Trimestre1/LO%20MA%CC%81S%20IMPORTANTE%20DE%20LA%20NAVIDAD%20(1).docx",
+            documentUrl18: "2026-2027/Trimestre1/Lo_mas_importante_de_la_Navidad_guion_definitivo.docx",
+            url18: "2026-2027/Trimestre1/index-18personajes.html",
             personajes: ["Niña", "Abuela", "Árbol de Navidad", "Estrella", "Regalo", "Elfo", "Grinch", "Luces de Navidad", "Mantecado", "Muñeco de nieve", "Bastón de caramelo", "Galleta de jengibre", "Uvas", "Virgen María"],
             canciones: ["Cascabel, cascabel, lindo cascabel", "¡Ay, Dios mío!", "Creo que mi padre es un elfo", "Turrón y mazapán. Pica pica", "Villancico del muñeco de nieve", "Mi burrito sabanero"],
             escenas: [
@@ -436,6 +438,7 @@ Puedo enseñarte esto:<br><br>
 
         if (this.m(msg, ['pdf', 'descargar guion', 'guion pdf'])) {
             const perf = this.getPerformanceForMessage(msg);
+            if (perf.documentUrl18) return `📄 Hay dos versiones del guion de <strong>«${perf.title}»</strong>:<br><br><a href="${perf.documentUrl}" download><strong>Word · 14 personajes</strong></a><br><a href="${perf.documentUrl18}" download><strong>Word · 18 personajes</strong></a>`;
             if (perf.documentUrl) return `📄 El guion de <strong>«${perf.title}»</strong> está disponible en Word:<br><br><a href="${perf.documentUrl}" download><strong>Descargar documento Word</strong></a>`;
             if (perf.pdfUrl19) return `📄 Puedes descargar las dos versiones del guion de <strong>«${perf.title}»</strong>:<br><br><a href="${perf.pdfUrl}" download><strong>PDF · 15 personajes</strong></a><br><a href="${perf.pdfUrl19}" download><strong>PDF · 19 personajes</strong></a>`;
             if (perf.pdfUrl) return `📄 Puedes descargar el guion de <strong>«${perf.title}»</strong>:<br><br><a href="${perf.pdfUrl}" download><strong>Descargar guion en PDF</strong></a>`;
@@ -608,6 +611,7 @@ Todavía no se han confirmado el día, la hora ni el lugar de los ensayos.<br><b
             }).join('<br><br>');
             return `📜 <strong>«${perf.title}»</strong><br><br>${resumen}<br><br><a href="${perf.url}" target="_blank"><strong>Abrir el guion completo</strong></a>`;
         }
+        if (perf.url18) return `📖 Puedes leer las dos versiones de <strong>«${perf.title}»</strong>:<br><br><a href="${perf.url}" target="_blank"><strong>Guion online · 14 personajes</strong></a><br><a href="${perf.url18}" target="_blank"><strong>Guion online · 18 personajes</strong></a><br><br>${perf.description}`;
         if (perf.url) return `📖 Puedes leer el guion completo de <strong>«${perf.title}»</strong>:<br><br><a href="${perf.url}" target="_blank"><strong>Abrir guion online</strong></a><br><br>${perf.description}`;
         if (perf.num === 3) {
             const g = perf.guionResumen;
